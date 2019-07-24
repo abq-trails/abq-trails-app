@@ -32,4 +32,67 @@ public class Trail {
   @ColumnInfo(name = "dogs_allowed")
   private boolean dog;
 
+  public long getId() {
+    return id;
+  }
+
+  public void setId(long id) {
+    this.id = id;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public double getLength() {
+    return length;
+  }
+
+  public void setLength(double length) {
+    this.length = length;
+  }
+
+  public double getRating() {
+    return rating;
+  }
+
+  public void setRating(double rating) {
+    this.rating = rating;
+  }
+
+  public double getCoordinates() {
+    return coordinates;
+  }
+
+  public void setCoordinates(double coordinates) {
+    this.coordinates = coordinates;
+  }
+
+  public boolean isBike() {
+    return bike;
+  }
+
+  public void setBike(boolean bike) {
+    this.bike = bike;
+  }
+
+  public boolean isHorse() {
+    return horse;
+  }
+
+  public void setHorse(boolean horse) {
+    this.horse = horse;
+  }
+
+  public boolean isDog() {
+    return dog;
+  }
+
+  public void setDog(boolean dog) {
+    this.dog = dog;
+  }
 }
