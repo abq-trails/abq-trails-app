@@ -892,6 +892,10 @@
         "source": "C:\\Users\\Mommy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0-beta01.aar\\b979ced404962eb235b049dddbd38bcb\\res\\drawable-v21\\abc_dialog_material_background.xml"
     },
     {
+        "merged": "C:\\Users\\Mommy\\Desktop\\bootcamp\\projects\\abq-trails-client-side\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_user_rating.xml.flat",
+        "source": "C:\\Users\\Mommy\\Desktop\\bootcamp\\projects\\abq-trails-client-side\\app\\src\\main\\res\\layout\\fragment_user_rating.xml"
+    },
+    {
         "merged": "C:\\Users\\Mommy\\Desktop\\bootcamp\\projects\\abq-trails-client-side\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_tabs_legacy_text_color_selector.xml.flat",
         "source": "C:\\Users\\Mommy\\.gradle\\caches\\transforms-1\\files-1.1\\material-1.0.0-beta01.aar\\94dd8c7e07d8923c26038b5d28bda2e8\\res\\color\\mtrl_tabs_legacy_text_color_selector.xml"
     },

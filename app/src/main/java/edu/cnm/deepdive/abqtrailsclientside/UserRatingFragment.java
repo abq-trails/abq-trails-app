@@ -24,6 +24,7 @@ public class UserRatingFragment extends Fragment {
     return new UserRatingFragment();
   }
 
+  @Override
   public View onCreateView(LayoutInflater inflater,
       ViewGroup container,
       Bundle savedInstanceState) {
@@ -52,8 +53,8 @@ public class UserRatingFragment extends Fragment {
           case 5:
             ratingScale.setText("Awesome");
             break;
-            default:
-              ratingScale.setText("");
+          default:
+            ratingScale.setText("");
         }
       }
     });
@@ -63,15 +64,18 @@ public class UserRatingFragment extends Fragment {
       @Override
       public void onClick(View view) {
         if (feedback.getText().toString().isEmpty()) {
-          Toast.makeText(UserRatingFragment.this, "Please leave feedback.", Toast)
+          Toast.makeText(getContext(), "Please leave feedback.", Toast.LENGTH_SHORT).show();
+        } else {
+          feedback.setText("");
+          ratingBar.setRating(0);
+          Toast.makeText(getContext(), "Thank you for sharing your feedback.", Toast.LENGTH_SHORT)
+              .show();
         }
       }
     });
-
-
-
-
-
+    return view;
   }
 
 }
+
+
