@@ -63,16 +63,16 @@ public class UserRatingFragment extends Fragment {
     sendFeedback.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View view) {
-        if (feedback.getText().toString().isEmpty()) {
-          Toast.makeText(getContext(), "Please leave feedback.", Toast.LENGTH_SHORT).show();
-        } else {
+        //if (feedback.getText().toString().isEmpty()) {
+        //  Toast.makeText(getContext(), "Please leave feedback.", Toast.LENGTH_SHORT).show();
+        //} else {
           feedback.setText("");
           ratingBar.setRating(0);
           Toast.makeText(getContext(), "Thank you for sharing your feedback.", Toast.LENGTH_SHORT)
               .show();
         }
-      }
-    });
+      });
+
     return view;
   }
 

@@ -18,9 +18,11 @@
     android:id="@+id/rating_bar"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_marginTop="15dp"
+    android:theme="@style/RatingsBar"
     android:numStars="5"
     android:stepSize="1"
-    android:rating="5"/>
+    android:rating="0"/>
 
   <TextView
     android:id="@+id/rating_scale"
@@ -28,7 +30,7 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:layout_marginTop="10dp"
-    android:text="Awesome"/>
+    android:text=""/>
 
   <EditText
     android:id="@+id/leave_feedback"

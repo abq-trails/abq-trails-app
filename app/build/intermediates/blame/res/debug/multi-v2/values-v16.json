@@ -4,17 +4,7 @@
             "outputFile": "C:\\Users\\Mommy\\Desktop\\bootcamp\\projects\\abq-trails-client-side\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Mommy\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.0.0-beta01.aar\\95c33b3397ed8cc06ffd9bee5b0c0d89\\res\\values-v16\\values-v16.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "65",
-                        "endOffsets": "116"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Mommy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0-beta01.aar\\b979ced404962eb235b049dddbd38bcb\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\Mommy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.2.aar\\302ef864f1378bdc1f340f7ed569efab\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -30,6 +20,16 @@
                         "endLines": "6",
                         "endColumns": "12",
                         "endOffsets": "289"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Mommy\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.0.1.aar\\d0a17d4139f5de28a5cd58540484e19f\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
                     }
                 }
             ]

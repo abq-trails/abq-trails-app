@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\Mommy\\Desktop\\bootcamp\\projects\\abq-trails-client-side\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Mommy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0-beta01.aar\\b979ced404962eb235b049dddbd38bcb\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\Mommy\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.2.aar\\302ef864f1378bdc1f340f7ed569efab\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,19,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
@@ -15,7 +15,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Mommy\\.gradle\\caches\\transforms-1\\files-1.1\\cardview-1.0.0-beta01.aar\\1c91f0f53681f49c29bc333665dc7c46\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\Mommy\\.gradle\\caches\\transforms-1\\files-1.1\\cardview-1.0.0.aar\\e9537e36e94183b900b9d227b89790db\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
