@@ -13,13 +13,20 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 
+/**
+ *
+ */
 public class UserRatingFragment extends Fragment {
 
-  private RatingBar ratingBar;
-  private TextView ratingScale;
-  private EditText feedback;
-  private Button sendFeedback;
+  private RatingBar ratingBar; /**Stars for users to rate trail */
+  private TextView ratingScale; /**Users rate trails on a scale if 1-5 */
+  private EditText feedback; /** Comment box for users to leave a comment. */
+  private Button sendFeedback; /** Button for submitting feedback. */
 
+  /**
+   *
+   * @return
+   */
   public static UserRatingFragment newInstance() {
     return new UserRatingFragment();
   }
@@ -59,7 +66,11 @@ public class UserRatingFragment extends Fragment {
       }
     });
 
-    sendFeedback = view.findViewById(R.id.submit_button);
+    sendFeedback = view.findViewById(R.id.submit_button); /**     */
+
+    /**
+     *  Listens for rating change events.
+     */
     sendFeedback.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View view) {
