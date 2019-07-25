@@ -1,0 +1,169 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml:2:1-24:12
+MERGED from [com.google.android.material:material:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\material-1.0.0-beta01.aar\94dd8c7e07d8923c26038b5d28bda2e8\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\appcompat-1.0.0-beta01.aar\b979ced404962eb235b049dddbd38bcb\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.2] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\constraintlayout-1.1.2.aar\de22d894c42abbe7fc6d2b0cd38ebe4d\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.fragment:fragment:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\fragment-1.0.0-beta01.aar\c0970e9b2f022861595b0b1a26311a62\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\vectordrawable-animated-1.0.0-beta01.aar\ca3569f9f310ab43fb426f2841156fbb\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\recyclerview-1.0.0-beta01.aar\c0677e2eee3434d5c4b30b83d721dd4e\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\legacy-support-core-ui-1.0.0-beta01.aar\234ef9e28dfd927d4d1b9ce1fcae7919\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\legacy-support-core-utils-1.0.0-beta01.aar\79685fe3001781ddf3cfce74835f976c\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\vectordrawable-1.0.0-beta01.aar\d5d2a9229dc33e0db11e5c790c97c72f\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\transition-1.0.0-beta01.aar\18e7822e5ac94e6c4c29e993c42f37f8\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\loader-1.0.0-beta01.aar\7527abb8dcd227f3f25373fdac986675\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\viewpager-1.0.0-beta01.aar\83dee54e1e230440539ce65d0afd153e\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-1.0.0-beta01.aar\be44319ce3f117c065afa5d3d294c89f\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\drawerlayout-1.0.0-beta01.aar\30429c78a84566ae3f1f883f7e51bd60\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-1.0.0-beta01.aar\7db7f792fa8990fada43d0d9ed82c4d2\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\customview-1.0.0-beta01.aar\ad21e86659f2a998f6c8511b5b1c637d\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-1.0.0-beta01.aar\f41897cc0632126e3aa17e6d3e8c8028\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-1.0.0-beta01.aar\c2f84b6404da9828699c247a229f9f0d\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\core-1.0.0-beta01.aar\95c33b3397ed8cc06ffd9bee5b0c0d89\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\cursoradapter-1.0.0-beta01.aar\14a2346eec89ed974e1a74073937747c\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\cardview-1.0.0-beta01.aar\1c91f0f53681f49c29bc333665dc7c46\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\versionedparcelable-1.0.0-beta01.aar\f8670b1670bf9aac1d57d3020e6588ea\AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.documentfile:documentfile:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\documentfile-1.0.0-beta01.aar\f3a8abe926b70dd6ccf4c8d0a8bde58d\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-1.0.0-beta01.aar\a84dfd5df15bd15f2f185a1c6f7c40ab\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\print-1.0.0-beta01.aar\34f2808112b17b5a7382381453a18982\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\interpolator-1.0.0-beta01.aar\808b032e25284c05b516d1d7faa09028\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\lifecycle-runtime-2.0.0-beta01.aar\b79b12a237b4979c538e990a0aa5ed58\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\lifecycle-viewmodel-2.0.0-beta01.aar\ee884c3059fd53da0db17b0b5b09c493\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\lifecycle-livedata-core-2.0.0-beta01.aar\03a11159203df4df41e6d5337ebc7f74\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\core-runtime-2.0.0-beta01.aar\91cba784279a60d2256f8c880345868c\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml:2:1-24:12
+	package
+		ADDED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml:3:3-49
+		INJECTED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml:2:1-24:12
+		INJECTED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml:2:1-24:12
+		INJECTED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml:2:11-69
+application
+ADDED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml:5:3-22:17
+MERGED from [com.google.android.material:material:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\material-1.0.0-beta01.aar\94dd8c7e07d8923c26038b5d28bda2e8\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\material-1.0.0-beta01.aar\94dd8c7e07d8923c26038b5d28bda2e8\AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.2] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\constraintlayout-1.1.2.aar\de22d894c42abbe7fc6d2b0cd38ebe4d\AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.2] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\constraintlayout-1.1.2.aar\de22d894c42abbe7fc6d2b0cd38ebe4d\AndroidManifest.xml:9:5-20
+MERGED from [androidx.core:core:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\core-1.0.0-beta01.aar\95c33b3397ed8cc06ffd9bee5b0c0d89\AndroidManifest.xml:22:5-89
+MERGED from [androidx.core:core:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\core-1.0.0-beta01.aar\95c33b3397ed8cc06ffd9bee5b0c0d89\AndroidManifest.xml:22:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\versionedparcelable-1.0.0-beta01.aar\f8670b1670bf9aac1d57d3020e6588ea\AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\versionedparcelable-1.0.0-beta01.aar\f8670b1670bf9aac1d57d3020e6588ea\AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\core-1.0.0-beta01.aar\95c33b3397ed8cc06ffd9bee5b0c0d89\AndroidManifest.xml:22:18-86
+	android:supportsRtl
+		ADDED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml:10:5-31
+	android:label
+		ADDED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml:8:5-37
+	android:roundIcon
+		ADDED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml:9:5-50
+	android:icon
+		ADDED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml:7:5-39
+	android:allowBackup
+		ADDED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml:6:5-31
+	android:theme
+		ADDED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml:11:5-36
+activity#edu.cnm.deepdive.abqtrailsclientside.MainActivity
+ADDED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml:12:5-21:16
+	android:label
+		ADDED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml:13:7-39
+	android:theme
+		ADDED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml:15:7-50
+	android:name
+		ADDED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml:14:7-35
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml:16:7-20:23
+action#android.intent.action.MAIN
+ADDED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml:17:9-60
+	android:name
+		ADDED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml:17:17-58
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml:19:9-68
+	android:name
+		ADDED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml:19:19-66
+uses-sdk
+INJECTED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml
+MERGED from [com.google.android.material:material:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\material-1.0.0-beta01.aar\94dd8c7e07d8923c26038b5d28bda2e8\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\material-1.0.0-beta01.aar\94dd8c7e07d8923c26038b5d28bda2e8\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\appcompat-1.0.0-beta01.aar\b979ced404962eb235b049dddbd38bcb\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\appcompat-1.0.0-beta01.aar\b979ced404962eb235b049dddbd38bcb\AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.2] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\constraintlayout-1.1.2.aar\de22d894c42abbe7fc6d2b0cd38ebe4d\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.2] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\constraintlayout-1.1.2.aar\de22d894c42abbe7fc6d2b0cd38ebe4d\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.fragment:fragment:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\fragment-1.0.0-beta01.aar\c0970e9b2f022861595b0b1a26311a62\AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\fragment-1.0.0-beta01.aar\c0970e9b2f022861595b0b1a26311a62\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\vectordrawable-animated-1.0.0-beta01.aar\ca3569f9f310ab43fb426f2841156fbb\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\vectordrawable-animated-1.0.0-beta01.aar\ca3569f9f310ab43fb426f2841156fbb\AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\recyclerview-1.0.0-beta01.aar\c0677e2eee3434d5c4b30b83d721dd4e\AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\recyclerview-1.0.0-beta01.aar\c0677e2eee3434d5c4b30b83d721dd4e\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\legacy-support-core-ui-1.0.0-beta01.aar\234ef9e28dfd927d4d1b9ce1fcae7919\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\legacy-support-core-ui-1.0.0-beta01.aar\234ef9e28dfd927d4d1b9ce1fcae7919\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\legacy-support-core-utils-1.0.0-beta01.aar\79685fe3001781ddf3cfce74835f976c\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\legacy-support-core-utils-1.0.0-beta01.aar\79685fe3001781ddf3cfce74835f976c\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\vectordrawable-1.0.0-beta01.aar\d5d2a9229dc33e0db11e5c790c97c72f\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\vectordrawable-1.0.0-beta01.aar\d5d2a9229dc33e0db11e5c790c97c72f\AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\transition-1.0.0-beta01.aar\18e7822e5ac94e6c4c29e993c42f37f8\AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\transition-1.0.0-beta01.aar\18e7822e5ac94e6c4c29e993c42f37f8\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\loader-1.0.0-beta01.aar\7527abb8dcd227f3f25373fdac986675\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\loader-1.0.0-beta01.aar\7527abb8dcd227f3f25373fdac986675\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\viewpager-1.0.0-beta01.aar\83dee54e1e230440539ce65d0afd153e\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\viewpager-1.0.0-beta01.aar\83dee54e1e230440539ce65d0afd153e\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-1.0.0-beta01.aar\be44319ce3f117c065afa5d3d294c89f\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-1.0.0-beta01.aar\be44319ce3f117c065afa5d3d294c89f\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\drawerlayout-1.0.0-beta01.aar\30429c78a84566ae3f1f883f7e51bd60\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\drawerlayout-1.0.0-beta01.aar\30429c78a84566ae3f1f883f7e51bd60\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-1.0.0-beta01.aar\7db7f792fa8990fada43d0d9ed82c4d2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-1.0.0-beta01.aar\7db7f792fa8990fada43d0d9ed82c4d2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\customview-1.0.0-beta01.aar\ad21e86659f2a998f6c8511b5b1c637d\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\customview-1.0.0-beta01.aar\ad21e86659f2a998f6c8511b5b1c637d\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-1.0.0-beta01.aar\f41897cc0632126e3aa17e6d3e8c8028\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-1.0.0-beta01.aar\f41897cc0632126e3aa17e6d3e8c8028\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-1.0.0-beta01.aar\c2f84b6404da9828699c247a229f9f0d\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-1.0.0-beta01.aar\c2f84b6404da9828699c247a229f9f0d\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\core-1.0.0-beta01.aar\95c33b3397ed8cc06ffd9bee5b0c0d89\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\core-1.0.0-beta01.aar\95c33b3397ed8cc06ffd9bee5b0c0d89\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\cursoradapter-1.0.0-beta01.aar\14a2346eec89ed974e1a74073937747c\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\cursoradapter-1.0.0-beta01.aar\14a2346eec89ed974e1a74073937747c\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\cardview-1.0.0-beta01.aar\1c91f0f53681f49c29bc333665dc7c46\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\cardview-1.0.0-beta01.aar\1c91f0f53681f49c29bc333665dc7c46\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\versionedparcelable-1.0.0-beta01.aar\f8670b1670bf9aac1d57d3020e6588ea\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\versionedparcelable-1.0.0-beta01.aar\f8670b1670bf9aac1d57d3020e6588ea\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\documentfile-1.0.0-beta01.aar\f3a8abe926b70dd6ccf4c8d0a8bde58d\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\documentfile-1.0.0-beta01.aar\f3a8abe926b70dd6ccf4c8d0a8bde58d\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-1.0.0-beta01.aar\a84dfd5df15bd15f2f185a1c6f7c40ab\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-1.0.0-beta01.aar\a84dfd5df15bd15f2f185a1c6f7c40ab\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\print-1.0.0-beta01.aar\34f2808112b17b5a7382381453a18982\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\print-1.0.0-beta01.aar\34f2808112b17b5a7382381453a18982\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\interpolator-1.0.0-beta01.aar\808b032e25284c05b516d1d7faa09028\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\interpolator-1.0.0-beta01.aar\808b032e25284c05b516d1d7faa09028\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\lifecycle-runtime-2.0.0-beta01.aar\b79b12a237b4979c538e990a0aa5ed58\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\lifecycle-runtime-2.0.0-beta01.aar\b79b12a237b4979c538e990a0aa5ed58\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\lifecycle-viewmodel-2.0.0-beta01.aar\ee884c3059fd53da0db17b0b5b09c493\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\lifecycle-viewmodel-2.0.0-beta01.aar\ee884c3059fd53da0db17b0b5b09c493\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\lifecycle-livedata-core-2.0.0-beta01.aar\03a11159203df4df41e6d5337ebc7f74\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\lifecycle-livedata-core-2.0.0-beta01.aar\03a11159203df4df41e6d5337ebc7f74\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\core-runtime-2.0.0-beta01.aar\91cba784279a60d2256f8c880345868c\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0-beta01] C:\Users\Mommy\.gradle\caches\transforms-1\files-1.1\core-runtime-2.0.0-beta01.aar\91cba784279a60d2256f8c880345868c\AndroidManifest.xml:20:5-44
+INJECTED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Mommy\Desktop\bootcamp\projects\abq-trails-client-side\app\src\main\AndroidManifest.xml
