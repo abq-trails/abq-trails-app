@@ -1,0 +1,76 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "6c775f3f05fd5f5d304f6a90cd9d2919",
+    "entities": [
+      {
+        "tableName": "Trail",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`trail_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `trail_name` TEXT, `trail_length` REAL NOT NULL, `trail_rating` REAL NOT NULL, `trail_head_coordinates` REAL NOT NULL, `bike_trail` INTEGER NOT NULL, `horse_trail` INTEGER NOT NULL, `dogs_allowed` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "trail_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "trail_name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "length",
+            "columnName": "trail_length",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rating",
+            "columnName": "trail_rating",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "coordinates",
+            "columnName": "trail_head_coordinates",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bike",
+            "columnName": "bike_trail",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "horse",
+            "columnName": "horse_trail",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dog",
+            "columnName": "dogs_allowed",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "trail_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '6c775f3f05fd5f5d304f6a90cd9d2919')"
+    ]
+  }
+}
