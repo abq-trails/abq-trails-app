@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.abqtrailsclientside.controller;
+package edu.cnm.deepdive.abqtrailsclientside;
 
 import android.os.Bundle;
 import android.view.Menu;
@@ -6,11 +6,12 @@ import android.view.MenuItem;
 import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
-import edu.cnm.deepdive.abqtrailsclientside.R;
 
-//David Nelson put this here to commit.
 public class MainActivity extends AppCompatActivity {
 
   @Override
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
   public boolean onCreateOptionsMenu(Menu menu) {
     // Inflate the menu; this adds items to the action bar if it is present.
     getMenuInflater().inflate(R.menu.menu_main, menu);
+
     return true;
   }
 
@@ -46,6 +48,18 @@ public class MainActivity extends AppCompatActivity {
 
     //noinspection SimplifiableIfStatement
     if (id == R.id.action_settings) {
+      // Hack needs to be removed.
+      FragmentManager manager = getSupportFragmentManager();
+      Fragment fragment = UserRatingFragment.newInstance();
+      String tag = fragment.getClass().getSimpleName() + "";
+      if (manager.findFragmentByTag(tag) != null) {
+        manager.popBackStackImmediate(tag, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+      }
+      FragmentTransaction transaction = manager.beginTransaction();
+      transaction.replace(R.id.container, fragment, tag);
+      transaction.addToBackStack(tag);
+      transaction.commit();
+      // End of hack.
       return true;
     }
 
