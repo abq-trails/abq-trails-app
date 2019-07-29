@@ -5,4 +5,6 @@
     <string name="action_maps">Maps</string>
     <string name="action_user_profile">User Profile</string>
     <string name="action_upload_profile">Upload Profile</string>
+    <string name="text_welcome_to_abq_trails">Welcome to ABQ Trails</string>
+    <string name="google_app_id">AIzaSyDO3AUR43Ff0MuSXbWH-gpRoy-gsNXQ1NQ</string>
 </resources>
