@@ -14,11 +14,11 @@ public class TrailViewModel extends AndroidViewModel {
 
   public TrailViewModel(@NonNull Application application) {
     super(application);
-    TrailsDatabase db = TrailsDatabase.getInstance(application);
-    trails = db.trailDao().getAll();
   }
 
   public LiveData<List<Trail>> getTrails() {
+    trails = TrailsDatabase.getInstance(getApplication()).trailDao().getAll();
     return trails;
   }
+
 }

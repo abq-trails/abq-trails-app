@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:2:1-25:12
-INJECTED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:2:1-25:12
-INJECTED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:2:1-25:12
-INJECTED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:2:1-25:12
+ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:2:1-55:12
+INJECTED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:2:1-55:12
+INJECTED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:2:1-55:12
+INJECTED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:2:1-55:12
 MERGED from [androidx.preference:preference:1.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/preference-1.0.0.aar/c731bca81f40c3f5a895d40bfc038d3d/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.material:material:1.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/material-1.0.0.aar/391443dbb8b78c60bf2698f7df8879d7/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.0.2] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/69e38533b37dc7400bc36dabd33c8a14/AndroidManifest.xml:17:1-22:12
@@ -12,10 +12,13 @@ MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/davidnelson/.gradle
 MERGED from [androidx.room:room-runtime:2.1.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/room-runtime-2.1.0.aar/3c5b4e37bf16c08219774b09212090a5/AndroidManifest.xml:17:1-30:12
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/lifecycle-extensions-2.0.0.aar/588a02cb3ebe9eff4ec2c7cfb1ba95ad/AndroidManifest.xml:17:1-25:12
 MERGED from [com.google.android.gms:play-services-auth:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-auth-17.0.0.aar/bd65c747cfcd1ea8e1f52527d852c0d0/AndroidManifest.xml:17:1-39:12
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-maps-17.0.0.aar/b00a86966a50d640d6a4d7d50ab5d74d/AndroidManifest.xml:17:1-38:12
+MERGED from [com.google.android.gms:play-services-location:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-location-17.0.0.aar/851d23739e2cebb876dcdf5d82a1d174/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-auth-api-phone:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-auth-api-phone-17.0.0.aar/b0d26d4639b69ec15bea4a977bb41cc2/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.gms:play-services-auth-base:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-17.0.0.aar/70d8e2d3966316be23c6d3128d9b7c5a/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.gms:play-services-base:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-base-17.0.0.aar/50b218e8160e60fa553f7519eac177e2/AndroidManifest.xml:17:1-29:12
 MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-tasks-17.0.0.aar/5b4566b619fb1ed4fd720ebc29b6f822/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-17.0.0.aar/42f8d4727664900aa8937b6b3ac6c4ab/AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-basement-17.0.0.aar/734aa6221801036394efc85304cf7599/AndroidManifest.xml:17:1-28:12
 MERGED from [androidx.fragment:fragment:1.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/fragment-1.0.0.aar/737e3391e6c78b071a44bec2dd544aa4/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/vectordrawable-animated-1.0.0.aar/8a0f7e471c913f88506a07157cd28b86/AndroidManifest.xml:17:1-22:12
@@ -52,25 +55,29 @@ MERGED from [androidx.print:print:1.0.0] /Users/davidnelson/.gradle/caches/trans
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0.aar/d735843008d73228081db76ed6a82d03/AndroidManifest.xml:17:1-22:12
 MERGED from [com.facebook.stetho:stetho:1.5.1] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/stetho-1.5.1.aar/2bb4e408441742481f57594ab8286f9e/AndroidManifest.xml:2:1-13:12
 MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/rxandroid-2.1.1.aar/2d138fee18b34ef62c54a9151c5821b6/AndroidManifest.xml:15:1-20:12
-INJECTED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:2:1-25:12
-INJECTED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:2:1-25:12
-INJECTED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:2:1-55:12
+INJECTED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:2:1-55:12
+INJECTED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:2:1-55:12
 	package
-		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:3:3-49
+		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:3:11-57
 		INJECTED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml
-		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:2:1-25:12
+		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:2:1-55:12
 		INJECTED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml
-		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:2:1-25:12
+		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:2:1-55:12
 		INJECTED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:9:5-78
+	android:name
+		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:9:22-76
 application
-ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:5:3-23:17
+ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:12:5-53:19
 MERGED from [com.google.android.material:material:1.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/material-1.0.0.aar/391443dbb8b78c60bf2698f7df8879d7/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/material-1.0.0.aar/391443dbb8b78c60bf2698f7df8879d7/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/constraintlayout-1.1.3.aar/0a910356fd783d632ab6fd45ddb33171/AndroidManifest.xml:9:5-20
@@ -81,10 +88,16 @@ MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /Users/davidnelson/.
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/lifecycle-extensions-2.0.0.aar/588a02cb3ebe9eff4ec2c7cfb1ba95ad/AndroidManifest.xml:22:5-23:19
 MERGED from [com.google.android.gms:play-services-auth:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-auth-17.0.0.aar/bd65c747cfcd1ea8e1f52527d852c0d0/AndroidManifest.xml:22:5-37:19
 MERGED from [com.google.android.gms:play-services-auth:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-auth-17.0.0.aar/bd65c747cfcd1ea8e1f52527d852c0d0/AndroidManifest.xml:22:5-37:19
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-maps-17.0.0.aar/b00a86966a50d640d6a4d7d50ab5d74d/AndroidManifest.xml:30:5-36:19
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-maps-17.0.0.aar/b00a86966a50d640d6a4d7d50ab5d74d/AndroidManifest.xml:30:5-36:19
+MERGED from [com.google.android.gms:play-services-location:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-location-17.0.0.aar/851d23739e2cebb876dcdf5d82a1d174/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-location:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-location-17.0.0.aar/851d23739e2cebb876dcdf5d82a1d174/AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-base:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-base-17.0.0.aar/50b218e8160e60fa553f7519eac177e2/AndroidManifest.xml:22:5-27:19
 MERGED from [com.google.android.gms:play-services-base:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-base-17.0.0.aar/50b218e8160e60fa553f7519eac177e2/AndroidManifest.xml:22:5-27:19
 MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-tasks-17.0.0.aar/5b4566b619fb1ed4fd720ebc29b6f822/AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-tasks-17.0.0.aar/5b4566b619fb1ed4fd720ebc29b6f822/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-17.0.0.aar/42f8d4727664900aa8937b6b3ac6c4ab/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-17.0.0.aar/42f8d4727664900aa8937b6b3ac6c4ab/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-basement-17.0.0.aar/734aa6221801036394efc85304cf7599/AndroidManifest.xml:22:5-26:19
 MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-basement-17.0.0.aar/734aa6221801036394efc85304cf7599/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.core:core:1.0.1] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/5911fd0ac2533d148608ed557e525ca8/AndroidManifest.xml:22:5-89
@@ -98,37 +111,49 @@ MERGED from [com.facebook.stetho:stetho:1.5.1] /Users/davidnelson/.gradle/caches
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.0.1] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/5911fd0ac2533d148608ed557e525ca8/AndroidManifest.xml:22:18-86
 	android:supportsRtl
-		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:11:5-31
+		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:18:5-31
 	android:label
-		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:8:5-37
+		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:15:5-37
 	android:roundIcon
-		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:10:5-50
+		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:17:5-50
 	android:icon
-		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:7:5-39
+		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:14:5-39
 	android:allowBackup
-		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:6:5-31
+		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:13:5-31
 	android:theme
-		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:12:5-36
+		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:19:5-36
 	android:name
-		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:9:5-41
-activity#edu.cnm.deepdive.abqtrailsclientside.MainActivity
-ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:13:5-22:16
+		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:16:5-41
+meta-data#com.google.android.geo.API_KEY
+ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:35:9-37:58
+	android:value
+		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:37:17-56
+	android:name
+		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:36:17-62
+activity#edu.cnm.deepdive.abqtrailsclientside.controller.MapsActivity
+ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:39:9-42:20
 	android:label
-		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:14:7-39
+		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:41:17-60
+	android:name
+		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:40:17-56
+activity#edu.cnm.deepdive.abqtrailsclientside.controller.MainActivity
+ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:43:9-52:20
+	android:label
+		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:45:17-49
 	android:theme
-		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:16:7-50
+		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:46:17-60
 	android:name
-		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:15:7-35
+		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:44:17-56
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:17:7-21:23
+ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:47:13-51:29
 action#android.intent.action.MAIN
-ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:18:9-60
+ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:48:17-68
 	android:name
-		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:18:17-58
+		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:48:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:20:9-68
+ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:50:17-76
 	android:name
-		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:20:19-66
+		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:50:27-74
 uses-sdk
 INJECTED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml
@@ -149,6 +174,10 @@ MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /Users/davidnelson/.
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/lifecycle-extensions-2.0.0.aar/588a02cb3ebe9eff4ec2c7cfb1ba95ad/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-auth:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-auth-17.0.0.aar/bd65c747cfcd1ea8e1f52527d852c0d0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-auth:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-auth-17.0.0.aar/bd65c747cfcd1ea8e1f52527d852c0d0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-maps-17.0.0.aar/b00a86966a50d640d6a4d7d50ab5d74d/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-maps-17.0.0.aar/b00a86966a50d640d6a4d7d50ab5d74d/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-location:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-location-17.0.0.aar/851d23739e2cebb876dcdf5d82a1d174/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-location:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-location-17.0.0.aar/851d23739e2cebb876dcdf5d82a1d174/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-auth-api-phone:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-auth-api-phone-17.0.0.aar/b0d26d4639b69ec15bea4a977bb41cc2/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-auth-api-phone:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-auth-api-phone-17.0.0.aar/b0d26d4639b69ec15bea4a977bb41cc2/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-auth-base:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-17.0.0.aar/70d8e2d3966316be23c6d3128d9b7c5a/AndroidManifest.xml:5:5-44
@@ -157,6 +186,8 @@ MERGED from [com.google.android.gms:play-services-base:17.0.0] /Users/davidnelso
 MERGED from [com.google.android.gms:play-services-base:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-base-17.0.0.aar/50b218e8160e60fa553f7519eac177e2/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-tasks-17.0.0.aar/5b4566b619fb1ed4fd720ebc29b6f822/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-tasks-17.0.0.aar/5b4566b619fb1ed4fd720ebc29b6f822/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-17.0.0.aar/42f8d4727664900aa8937b6b3ac6c4ab/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-17.0.0.aar/42f8d4727664900aa8937b6b3ac6c4ab/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-basement-17.0.0.aar/734aa6221801036394efc85304cf7599/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-basement-17.0.0.aar/734aa6221801036394efc85304cf7599/AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/fragment-1.0.0.aar/737e3391e6c78b071a44bec2dd544aa4/AndroidManifest.xml:20:5-44
@@ -263,6 +294,26 @@ ADDED from [com.google.android.gms:play-services-auth:17.0.0] /Users/davidnelson
 		ADDED from [com.google.android.gms:play-services-auth:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-auth-17.0.0.aar/bd65c747cfcd1ea8e1f52527d852c0d0/AndroidManifest.xml:36:13-107
 	android:name
 		ADDED from [com.google.android.gms:play-services-auth:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-auth-17.0.0.aar/bd65c747cfcd1ea8e1f52527d852c0d0/AndroidManifest.xml:34:13-89
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.android.gms:play-services-maps:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-maps-17.0.0.aar/b00a86966a50d640d6a4d7d50ab5d74d/AndroidManifest.xml:23:5-79
+	android:name
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-maps-17.0.0.aar/b00a86966a50d640d6a4d7d50ab5d74d/AndroidManifest.xml:23:22-76
+uses-permission#android.permission.INTERNET
+ADDED from [com.google.android.gms:play-services-maps:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-maps-17.0.0.aar/b00a86966a50d640d6a4d7d50ab5d74d/AndroidManifest.xml:24:5-67
+	android:name
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-maps-17.0.0.aar/b00a86966a50d640d6a4d7d50ab5d74d/AndroidManifest.xml:24:22-64
+uses-feature#0x00020000
+ADDED from [com.google.android.gms:play-services-maps:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-maps-17.0.0.aar/b00a86966a50d640d6a4d7d50ab5d74d/AndroidManifest.xml:26:5-28:35
+	android:glEsVersion
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-maps-17.0.0.aar/b00a86966a50d640d6a4d7d50ab5d74d/AndroidManifest.xml:27:9-41
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-maps-17.0.0.aar/b00a86966a50d640d6a4d7d50ab5d74d/AndroidManifest.xml:28:9-32
+uses-library#org.apache.http.legacy
+ADDED from [com.google.android.gms:play-services-maps:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-maps-17.0.0.aar/b00a86966a50d640d6a4d7d50ab5d74d/AndroidManifest.xml:33:9-35:40
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-maps-17.0.0.aar/b00a86966a50d640d6a4d7d50ab5d74d/AndroidManifest.xml:35:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-maps-17.0.0.aar/b00a86966a50d640d6a4d7d50ab5d74d/AndroidManifest.xml:34:13-50
 activity#com.google.android.gms.common.api.GoogleApiActivity
 ADDED from [com.google.android.gms:play-services-base:17.0.0] /Users/davidnelson/.gradle/caches/transforms-1/files-1.1/play-services-base-17.0.0.aar/50b218e8160e60fa553f7519eac177e2/AndroidManifest.xml:23:9-26:75
 	android:exported
