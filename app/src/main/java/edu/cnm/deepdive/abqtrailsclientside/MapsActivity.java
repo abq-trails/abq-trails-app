@@ -41,9 +41,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         MarkerOptions marker = new MarkerOptions();
         marker.position(new LatLng(35.0844, -106.6504));
         marker.title("Albuquerque, NM");
-        marker.snippet("More details...");
+        marker.snippet("The Land Of Enchantment");
         marker.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(35.0844, -106.6504), 4));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(35.0844, -106.6504), 10));
         googleMap.addMarker(marker);
     }
 }
