@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.abqtrailsclientside;
+package edu.cnm.deepdive.abqtrailsclientside.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,6 +12,7 @@ import android.widget.RatingBar.OnRatingBarChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.fragment.app.Fragment;
+import edu.cnm.deepdive.abqtrailsclientside.R;
 
 public class UserRatingFragment extends Fragment {
 

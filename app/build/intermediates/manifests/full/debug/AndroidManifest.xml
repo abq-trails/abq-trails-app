@@ -61,7 +61,7 @@
             android:label="@string/title_activity_maps" >
         </activity>
         <activity
-            android:name="edu.cnm.deepdive.abqtrailsclientside.controller.MainActivity"
+            android:name="edu.cnm.deepdive.abqtrailsclientside.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>

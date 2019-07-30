@@ -11,6 +11,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import edu.cnm.deepdive.abqtrailsclientside.fragment.TrailViewFragment;
+import edu.cnm.deepdive.abqtrailsclientside.fragment.UserRatingFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -50,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
     if (id == R.id.action_settings) {
       // Hack needs to be removed.
       FragmentManager manager = getSupportFragmentManager();
-      Fragment fragment = UserRatingFragment.newInstance();
+      Fragment fragment = TrailViewFragment.newInstance();
       String tag = fragment.getClass().getSimpleName() + "";
       if (manager.findFragmentByTag(tag) != null) {
         manager.popBackStackImmediate(tag, FragmentManager.POP_BACK_STACK_INCLUSIVE);

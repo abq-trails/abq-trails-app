@@ -135,15 +135,15 @@ ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/a
 	android:label
 		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:41:17-60
 	android:name
-		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:40:17-56
-activity#edu.cnm.deepdive.abqtrailsclientside.controller.MainActivity
+		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:40:11-50
+activity#edu.cnm.deepdive.abqtrailsclientside.MainActivity
 ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:43:9-52:20
 	android:label
 		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:45:17-49
 	android:theme
 		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:46:17-60
 	android:name
-		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:44:17-56
+		ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:44:11-39
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from /Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/src/main/AndroidManifest.xml:47:13-51:29
 action#android.intent.action.MAIN

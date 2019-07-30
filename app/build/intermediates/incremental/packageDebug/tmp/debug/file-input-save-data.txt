@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sun Jul 28 03:42:56 MDT 2019
+#Tue Jul 30 14:10:16 MDT 2019
 0.baseType=DIRECTORY
 0.base=/Users/davidnelson/Desktop/bootcamp/projects/abq-trails-client-side/app/build/intermediates/transforms/dexMerger/debug/0
 0.path=classes.dex

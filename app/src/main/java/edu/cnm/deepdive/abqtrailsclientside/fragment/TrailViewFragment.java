@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.room.DatabaseConfiguration;
@@ -27,8 +28,6 @@ public class TrailViewFragment extends Fragment {
   private Context context;
 
   private TrailViewModel viewModel;
-
-  private long trailId = 2L;
 
   private TrailsDatabase db = new TrailsDatabase() {
     @Override
@@ -69,7 +68,7 @@ public class TrailViewFragment extends Fragment {
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
       @Nullable Bundle savedInstanceState) {
-    long trailId = getArguments() != null ? getArguments().getLong("trailId") : 0;
+    long trailId = 1;
     final View view = inflater.inflate(R.layout.fragment_trail_view, container, false);
     final TrailViewModel viewModel = ViewModelProviders.of(this).get(TrailViewModel.class);
     viewModel.getTrails().observe(this, trails -> {
@@ -80,17 +79,12 @@ public class TrailViewFragment extends Fragment {
     });
     Button ratingsButton = view.findViewById(R.id.add_rating_button);
     viewModel.getTrails().observe(this, trails -> {
-      ImageView horse = (db.trailDao().findById(trailId).isHorse()) ?
+      ImageView horse = (db.trailDao().findById(0L).isHorse()) ?
           view.findViewById(R.id.horse_marker_black) : view.findViewById(R.id.horse_marker_grey);
 
-      ImageView bike = (db.trailDao().findById(trailId).isBike()) ?
+      ImageView bike = (db.trailDao().findById(0L).isBike()) ?
           view.findViewById(R.id.bicycle_marker_black)
           : view.findViewById(R.id.bicycle_marker_grey);
-
-      ImageView dog = (db.trailDao().findById(trailId).isDog()) ?
-          view.findViewById(R.id.dog_marker_black) : view.findViewById(R.id.dog_marker_grey);
-
-
     });
     return view;
   }
