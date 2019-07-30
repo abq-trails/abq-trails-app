@@ -10,15 +10,14 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "BASE_URL", '"http://10.0.2.2:28282/rest/abqtrails/"'
+        buildConfigField "String", "CLIENT_ID", '"897420277761-lp06uk4jdv6k8hgo9er5mrbsobjt53ng.apps.googleusercontent.com"'
+        buildConfigField "String", "AUTHORIZATION_FORMAT", '"Bearer %s"'
+    }
         packagingOptions {
             exclude 'META-INF/proguard/androidx-annotations.pro'
         }
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
-            }
 
-        }
         buildTypes {
             release {
                 minifyEnabled false
@@ -82,8 +81,6 @@ android {
         androidTestImplementation 'androidx.test:runner:1.3.0-alpha02'
         androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0-alpha02'
     }
-
-}
 
 dependencies {
     implementation 'com.google.android.gms:play-services-maps:+'

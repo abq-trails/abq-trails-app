@@ -1,5 +1,6 @@
 package edu.cnm.deepdive.abqtrailsclientside;
 
+import android.content.Intent;
 import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -14,19 +15,17 @@ public class MainActivity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_maps2);// TODO change back to activity_main, used to verify map was working
+    setContentView(R.layout.activity_main);
     Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
-//    TODO replace with action, for now removed to verify map was working.
-//    FloatingActionButton fab = findViewById(R.id.fab);
-//    fab.setOnClickListener(new View.OnClickListener() {
-//      @Override
-//      public void onClick(View view) {
-//        Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//            .setAction("Action", null).show();
-//      }
-//    });
+    FloatingActionButton fab = findViewById(R.id.fab);
+    fab.setOnClickListener(new View.OnClickListener() {
+      public void onClick(View view) {
+        Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+            .setAction("Action", null).show();
+      }
+    });
   }
 
   @Override
@@ -42,21 +41,21 @@ public class MainActivity extends AppCompatActivity {
     // automatically handle clicks on the Home/Up button, so long
     // as you specify a parent activity in AndroidManifest.xml.
     int id = item.getItemId();
-
-    //noinspection SimplifiableIfStatement
-    if (id == R.id.action_settings) {
-      return true;
-    }
     if (id == R.id.action_maps) {
-      return true;
+      Intent intent = new Intent(this, MapsActivity.class);
+      startActivity(intent);
     }
-    if (id == R.id.action_upload_profile) {
-      return true;
-    }
-    if (id == R.id.action_user_profile) {
-      return true;
-    }
-
-    return super.onOptionsItemSelected(item);
+    // TODO add back in when all is combined
+//    if (id == R.id.action_reviews) {
+//      Intent intent = new Intent(this, MapsActivity.class);
+//      startActivity(intent);    }
+//    if (id == R.id.action_upload_profile) {
+//      Intent intent = new Intent(this, MapsActivity.class);
+//      startActivity(intent);    }
+//    if (id == R.id.action_user_profile) {
+//      Intent intent = new Intent(this, MapsActivity.class);
+//      startActivity(intent);    }
+    return false;
   }
+
 }

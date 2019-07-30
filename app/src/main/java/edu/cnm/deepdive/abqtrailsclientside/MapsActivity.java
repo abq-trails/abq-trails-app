@@ -7,6 +7,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -36,10 +37,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
-        // Add a marker in Albququerque, NM and move the camera
-        LatLng albuquerque = new LatLng(-35.0844, 106.6504);
-        mMap.addMarker(new MarkerOptions().position(albuquerque).title("Marker in albuquerque"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(albuquerque));
+        // Add a marker in Albuquerque, NM
+        MarkerOptions marker = new MarkerOptions();
+        marker.position(new LatLng(35.0844, -106.6504));
+        marker.title("Albuquerque, NM");
+        marker.snippet("More details...");
+        marker.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
+//        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(35.0844, -106.6504), 4));
+//        mMap.addMarker(marker);
     }
 }

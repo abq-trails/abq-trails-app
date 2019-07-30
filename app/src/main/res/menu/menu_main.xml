@@ -12,6 +12,12 @@
           app:showAsAction="never"/>
 
   <item
+          android:id="@+id/action_reviews"
+          android:orderInCategory="100"
+          android:title="@string/action_reviews"
+          app:showAsAction="never"/>
+
+  <item
           android:id="@+id/action_user_profile"
           android:orderInCategory="100"
           android:title="@string/action_user_profile"
@@ -21,10 +27,5 @@
           android:id="@+id/action_upload_profile"
           android:orderInCategory="100"
           android:title="@string/action_upload_profile"
-          app:showAsAction="never"/>
-  <item
-          android:id="@+id/action_settings"
-          android:orderInCategory="100"
-          android:title="@string/action_settings"
           app:showAsAction="never"/>
 </menu>
