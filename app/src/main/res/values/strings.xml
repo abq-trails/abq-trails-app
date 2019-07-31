@@ -8,4 +8,5 @@
     <string name="text_welcome_to_abq_trails">Welcome to ABQ Trails</string>
     <string name="google_app_id">AIzaSyDO3AUR43Ff0MuSXbWH-gpRoy-gsNXQ1NQ</string>
     <string name="action_reviews">Reviews</string>
+    <string name="box_search_location_here">Search Location here</string>
 </resources>

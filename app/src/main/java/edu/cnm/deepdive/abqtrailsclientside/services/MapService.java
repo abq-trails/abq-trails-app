@@ -15,7 +15,7 @@ public interface MapService {
     static MapService getInstance() {
         return MapService.InstanceHolder.INSTANCE;
     }
-// TODO Work with Postman to get exact "wording"
+// TODO if anything is needed add more after access to the database.
     @GET("search/coordinates")
     Single getCoordinates(@Query("q") String fragment);
 

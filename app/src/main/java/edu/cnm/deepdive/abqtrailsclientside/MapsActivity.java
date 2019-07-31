@@ -1,8 +1,7 @@
 package edu.cnm.deepdive.abqtrailsclientside;
 
-import androidx.fragment.app.FragmentActivity;
 import android.os.Bundle;
-
+import androidx.fragment.app.FragmentActivity;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -20,7 +19,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private static final int COLOR_PURPLE_ARGB = 0xff81C784;
     private static final int COLOR_ORANGE_ARGB = 0xffF57F17;
     private static final int COLOR_BLUE_ARGB = 0xffF9A825;
-
     private static final int POLYGON_STROKE_WIDTH_PX = 8;
     private static final int PATTERN_DASH_LENGTH_PX = 20;
     private static final int PATTERN_GAP_LENGTH_PX = 20;
@@ -43,15 +41,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mapFragment.getMapAsync(this);
     }
 
-
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
+     * This is where we add markers or lines, add listeners or move the camera. In this case,
      * we just add a marker near Albuquerque, NM.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -66,10 +60,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         MarkerOptions marker2 = new MarkerOptions();
         marker2.position(new LatLng(35.16430139231649, -106.46370012666549));
-        marker2.title("Test Trail Head");
-        marker2.snippet("This is a test");
+        marker2.title("140a");
+        marker2.snippet("Distance: ");
         marker2.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
         googleMap.addMarker(marker2);
+
 
         Polygon polygon = googleMap.addPolygon(new PolygonOptions()
                 .clickable(true)
@@ -81,40 +76,42 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         new LatLng(35.16391005961822, -106.46474238050092),
                         new LatLng(35.16389932961822, -106.46475580050091),
                         new LatLng(35.16389127961822, -106.4647692105009),
-                        new LatLng(35.16379710695103, -106.4648969014523)));
-        polygon.setTag("Test Trail");
+                        new LatLng(35.16379710695103, -106.4648969014523)
+                ));
+        polygon.setTag("Trail 140a");
     }
 
-        private void stylePolygon (Polygon polygon) {
-            String type = "";
-            // Get the data object stored with the polygon.
-            if (polygon.getTag() != null) {
-                type = polygon.getTag().toString();
-            }
-
-            List<PatternItem> pattern = null;
-            int strokeColor = COLOR_BLACK_ARGB;
-            int fillColor = COLOR_WHITE_ARGB;
-
-            switch (type) {
-                // If no type is given, allow the API to use the default.
-                case "alpha":
-                    // Apply a stroke pattern to render a dashed line, and define colors.
-                    pattern = PATTERN_POLYGON_ALPHA;
-                    strokeColor = COLOR_GREEN_ARGB;
-                    fillColor = COLOR_PURPLE_ARGB;
-                    break;
-                case "beta":
-                    // Apply a stroke pattern to render a line of dots and dashes, and define colors.
-                    pattern = PATTERN_POLYGON_BETA;
-                    strokeColor = COLOR_ORANGE_ARGB;
-                    fillColor = COLOR_BLUE_ARGB;
-                    break;
-            }
-
-            polygon.setStrokePattern(pattern);
-            polygon.setStrokeWidth(POLYGON_STROKE_WIDTH_PX);
-            polygon.setStrokeColor(strokeColor);
-            polygon.setFillColor(fillColor);
+    private void stylePolygon(Polygon polygon) {
+        String type = "";
+        // Get the data object stored with the polygon.
+        if (polygon.getTag() != null) {
+            type = polygon.getTag().toString();
         }
+
+        List<PatternItem> pattern = null;
+        int strokeColor = COLOR_BLACK_ARGB;
+        int fillColor = COLOR_WHITE_ARGB;
+
+        switch (type) {
+            // If no type is given, allow the API to use the default.
+            case "alpha":
+                // Apply a stroke pattern to render a dashed line, and define colors.
+                pattern = PATTERN_POLYGON_ALPHA;
+                strokeColor = COLOR_GREEN_ARGB;
+                fillColor = COLOR_PURPLE_ARGB;
+                break;
+            case "beta":
+                // Apply a stroke pattern to render a line of dots and dashes, and define colors.
+                pattern = PATTERN_POLYGON_BETA;
+                strokeColor = COLOR_ORANGE_ARGB;
+                fillColor = COLOR_BLUE_ARGB;
+                break;
+        }
+
+        polygon.setStrokePattern(pattern);
+        polygon.setStrokeWidth(POLYGON_STROKE_WIDTH_PX);
+        polygon.setStrokeColor(strokeColor);
+        polygon.setFillColor(fillColor);
     }
+
+}
