@@ -25,33 +25,10 @@ import edu.cnm.deepdive.abqtrailsclientside.model.viewmodel.TrailViewModel;
 
 public class TrailViewFragment extends Fragment {
 
+
   private Context context;
 
   private TrailViewModel viewModel;
-
-  private TrailsDatabase db = new TrailsDatabase() {
-    @Override
-    public TrailDao trailDao() {
-      return null;
-    }
-
-    @NonNull
-    @Override
-    protected SupportSQLiteOpenHelper createOpenHelper(DatabaseConfiguration config) {
-      return null;
-    }
-
-    @NonNull
-    @Override
-    protected InvalidationTracker createInvalidationTracker() {
-      return null;
-    }
-
-    @Override
-    public void clearAllTables() {
-
-    }
-  };
 
   public static TrailViewFragment newInstance() {
     return new TrailViewFragment();
@@ -68,24 +45,7 @@ public class TrailViewFragment extends Fragment {
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
       @Nullable Bundle savedInstanceState) {
-    long trailId = 1;
     final View view = inflater.inflate(R.layout.fragment_trail_view, container, false);
-    final TrailViewModel viewModel = ViewModelProviders.of(this).get(TrailViewModel.class);
-    viewModel.getTrails().observe(this, trails -> {
-      final ArrayAdapter<Trail> adapter = new ArrayAdapter<>(context,
-          android.R.layout.simple_list_item_1, trails);
-      ListView ratingsListView = view.findViewById(R.id.ratings_cards);
-      ratingsListView.setAdapter(adapter);
-    });
-    Button ratingsButton = view.findViewById(R.id.add_rating_button);
-    viewModel.getTrails().observe(this, trails -> {
-      ImageView horse = (db.trailDao().findById(0L).isHorse()) ?
-          view.findViewById(R.id.horse_marker_black) : view.findViewById(R.id.horse_marker_grey);
-
-      ImageView bike = (db.trailDao().findById(0L).isBike()) ?
-          view.findViewById(R.id.bicycle_marker_black)
-          : view.findViewById(R.id.bicycle_marker_grey);
-    });
     return view;
   }
 
@@ -93,7 +53,33 @@ public class TrailViewFragment extends Fragment {
   public void onActivityCreated(@Nullable Bundle savedInstanceState) {
     super.onActivityCreated(savedInstanceState);
     viewModel = ViewModelProviders.of(this).get(TrailViewModel.class);
-    // TODO: Use the ViewModel
+    TrailsDatabase db = TrailsDatabase.getInstance(getContext());
+    View view = getView();
+
+    final TrailViewModel viewModel = ViewModelProviders.of(this).get(TrailViewModel.class);
+    viewModel.getTrails().observe(this, trails -> {
+
+      final ArrayAdapter<Trail> adapter = new ArrayAdapter<>(context,
+          android.R.layout.simple_list_item_1, trails);
+
+      assert view != null;
+      ListView ratingsListView = view.findViewById(R.id.ratings_cards);
+      ratingsListView.setAdapter(adapter);
+
+      ImageView horse = (db.trailDao().findById(1L).isHorse()) ?
+          view.findViewById(R.id.horse_marker_black) : view.findViewById(R.id.horse_marker_grey);
+
+      ImageView bike = (db.trailDao().findById(1L).isBike()) ?
+          view.findViewById(R.id.bicycle_marker_black)
+          : view.findViewById(R.id.bicycle_marker_grey);
+    });
+    Button ratingsButton = view.findViewById(R.id.add_rating_button);
+    viewModel.getTrails().observe(this, trails -> {
+
+      //use return object pulled from the db in a callback
+      //then throw it back on the UI thread
+
+    });
   }
 
 }
