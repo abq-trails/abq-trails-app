@@ -45,27 +45,24 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
      * This is where we add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Albuquerque, NM.
+     * we just added camera zoom default near Albuquerque, NM.
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        // Add a marker in Albuquerque, NM
+        // Default on opening when maps is clicked
         MarkerOptions marker = new MarkerOptions();
         marker.position(new LatLng(35.0844, -106.6504));
-        marker.title("Albuquerque, NM");
-        marker.snippet("The Land Of Enchantment");
-        marker.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(35.0844, -106.6504), 10));
-        googleMap.addMarker(marker);
 
+        // Hard Coded in an example trail
         MarkerOptions marker2 = new MarkerOptions();
         marker2.position(new LatLng(35.16430139231649, -106.46370012666549));
         marker2.title("140a");
-        marker2.snippet("Distance: ");
+        marker2.snippet("Distance: blah blah ");
         marker2.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
         googleMap.addMarker(marker2);
 
-
+        //Hard coded in some coordinates trail.
         Polygon polygon = googleMap.addPolygon(new PolygonOptions()
                 .clickable(true)
                 .add(
@@ -80,7 +77,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 ));
         polygon.setTag("Trail 140a");
     }
-
+    // Hard coded in some features to the the trail lines.
     private void stylePolygon(Polygon polygon) {
         String type = "";
         // Get the data object stored with the polygon.
