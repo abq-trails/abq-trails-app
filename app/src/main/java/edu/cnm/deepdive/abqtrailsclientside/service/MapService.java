@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.abqtrailsclientside.services;
+package edu.cnm.deepdive.abqtrailsclientside.service;
 
 import edu.cnm.deepdive.abqtrailsclientside.BuildConfig;
 import io.reactivex.Single;
