@@ -20,15 +20,36 @@ import retrofit2.http.Query;
 
 public interface AbqTrailsService {
 
+  /**
+   * Specify the request type, pass the relative URL and wrap response in an Observable object with
+   * the type of the expected result.
+   * @param fragment
+   * @return trail object
+   */
   @GET("trails/search")
   Single<Trail> searchById(@Query("cabqId") String fragment);
 
+
+  /**
+   *
+   * @param fragment
+   * @return list of trails by name
+   */
   @GET("trails/search")
   Observable<List<Trail>> searchByName(@Query("nameFrag") String fragment);
 
+
+  /**
+   *
+   * @return list of trails
+   */
   @GET("trails")
   Observable<List<Trail>> listTrails();
 
+  /**
+   *
+   * @return trail id
+   */
   @GET("trails/{id}")
   Single<Trail> id();
 
@@ -45,14 +66,24 @@ public interface AbqTrailsService {
 //  Observable<List<Review>> getReviews();
 
 
+  /**
+   * Allows initialization on demand for this service.
+   * @return instance of this service
+   */
   static AbqTrailsService getInstance() {
     return InstanceHolder.INSTANCE;
   }
 
+  /**
+   * Implements singleton pattern for this service.
+   */
   class InstanceHolder {
 
     private static final AbqTrailsService INSTANCE;
 
+    /**
+     * Creates a retrofit object and an instance of this service for making requests to the backend.
+     */
     static {
       // Following five lines should be removed/commented out for production release.
       HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
@@ -63,7 +94,7 @@ public interface AbqTrailsService {
       Retrofit retrofit = new Retrofit.Builder()
           .client(client) // This should be removed/commented out for production release.
           .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-          .addConverterFactory(GsonConverterFactory.create()) // TODO Check; maybe change?
+          .addConverterFactory(GsonConverterFactory.create()) 
           .baseUrl(BuildConfig.BASE_URL)
           .build();
       INSTANCE = retrofit.create(AbqTrailsService.class);
