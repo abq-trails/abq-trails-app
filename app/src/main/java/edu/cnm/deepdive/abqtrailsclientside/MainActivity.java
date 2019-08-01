@@ -54,19 +54,19 @@ public class MainActivity extends AppCompatActivity {
     if (id == R.id.action_maps) {
         Intent intent = new Intent(this, MapsActivity.class);
         startActivity(intent);
-    } else if (id == R.id.action_settings) {
-      // Hack needs to be removed.
-      FragmentManager manager = getSupportFragmentManager();
-      Fragment fragment = UserRatingFragment.newInstance();
-      String tag = fragment.getClass().getSimpleName() + "";
-      if (manager.findFragmentByTag(tag) != null) {
-        manager.popBackStackImmediate(tag, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-      }
-      FragmentTransaction transaction = manager.beginTransaction();
-      transaction.replace(R.id.container, fragment, tag);
-      transaction.addToBackStack(tag);
-      transaction.commit();
-      // End of hack.
+//    } else if (id == R.id.action_settings) {
+//      // Hack needs to be removed.
+//      FragmentManager manager = getSupportFragmentManager();
+//      Fragment fragment = UserRatingFragment.newInstance();
+//      String tag = fragment.getClass().getSimpleName() + "";
+//      if (manager.findFragmentByTag(tag) != null) {
+//        manager.popBackStackImmediate(tag, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+//      }
+//      FragmentTransaction transaction = manager.beginTransaction();
+//      transaction.replace(R.id.container, fragment, tag);
+//      transaction.addToBackStack(tag);
+//      transaction.commit();
+//      // End of hack.
       return true;
     }
     // TODO add back in when all is combined

@@ -32,17 +32,17 @@ public interface AbqTrailsService {
   @GET("trails/{id}")
   Single<Trail> id();
 
-  @GET("users/{id}")
-  Single<User> getById();
-
-  @GET("users")
-  Observable<List<User>> listUsers();
-
-  @POST("reviews")
-  Single<Review> create(@Header("Authorization") String oauthHeader, @Body Review review);
-
-  @GET("reviews")
-  Observable<List<Review>> getReviews();
+//  @GET("users/{id}")
+//  Single<User> getById();
+//
+//  @GET("users")
+//  Observable<List<User>> listUsers();
+//
+//  @POST("reviews")
+//  Single<Review> create(@Header("Authorization") String oauthHeader, @Body Review review);
+//
+//  @GET("reviews")
+//  Observable<List<Review>> getReviews();
 
 
   static AbqTrailsService getInstance() {
