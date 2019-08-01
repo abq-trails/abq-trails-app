@@ -44,7 +44,7 @@ public interface AbqTrailsService {
   @GET("reviews")
   Observable<List<Review>> getReviews();
 
-  
+
   static AbqTrailsService getInstance() {
     return InstanceHolder.INSTANCE;
   }
