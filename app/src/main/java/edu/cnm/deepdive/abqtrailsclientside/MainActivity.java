@@ -9,7 +9,16 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
+//David Nelson put this here to commit.
 public class MainActivity extends AppCompatActivity {
 
   @Override
@@ -21,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     FloatingActionButton fab = findViewById(R.id.fab);
     fab.setOnClickListener(new View.OnClickListener() {
+        @Override
       public void onClick(View view) {
         Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
             .setAction("Action", null).show();
@@ -42,8 +52,22 @@ public class MainActivity extends AppCompatActivity {
     // as you specify a parent activity in AndroidManifest.xml.
     int id = item.getItemId();
     if (id == R.id.action_maps) {
-      Intent intent = new Intent(this, MapsActivity.class);
-      startActivity(intent);
+        Intent intent = new Intent(this, MapsActivity.class);
+        startActivity(intent);
+    } else if (id == R.id.action_settings) {
+      // Hack needs to be removed.
+      FragmentManager manager = getSupportFragmentManager();
+      Fragment fragment = UserRatingFragment.newInstance();
+      String tag = fragment.getClass().getSimpleName() + "";
+      if (manager.findFragmentByTag(tag) != null) {
+        manager.popBackStackImmediate(tag, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+      }
+      FragmentTransaction transaction = manager.beginTransaction();
+      transaction.replace(R.id.container, fragment, tag);
+      transaction.addToBackStack(tag);
+      transaction.commit();
+      // End of hack.
+      return true;
     }
     // TODO add back in when all is combined
 //    if (id == R.id.action_reviews) {
@@ -55,7 +79,8 @@ public class MainActivity extends AppCompatActivity {
 //    if (id == R.id.action_user_profile) {
 //      Intent intent = new Intent(this, MapsActivity.class);
 //      startActivity(intent);    }
-    return false;
+      return super.onOptionsItemSelected(item);
+
   }
 
 }
