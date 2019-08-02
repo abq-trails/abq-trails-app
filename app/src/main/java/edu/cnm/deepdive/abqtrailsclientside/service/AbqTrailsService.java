@@ -53,6 +53,9 @@ public interface AbqTrailsService {
   @GET("trails/{id}")
   Single<Trail> id();
 
+  @GET("trails/coordinates")
+  List<Trail> searchByCoordinates(@Query("coordinates") String fragment);
+
 //  @GET("users/{id}")
 //  Single<User> getById();
 //
