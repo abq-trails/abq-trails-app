@@ -9,14 +9,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import edu.cnm.deepdive.abqtrailsclientside.controller.MapsActivity;
 
 //David Nelson put this here to commit.
 public class MainActivity extends AppCompatActivity {
@@ -57,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 //    } else if (id == R.id.action_settings) {
 //      // Hack needs to be removed.
 //      FragmentManager manager = getSupportFragmentManager();
-//      Fragment fragment = UserRatingFragment.newInstance();
+//      Fragment fragment = TrailViewFragment.newInstance();
 //      String tag = fragment.getClass().getSimpleName() + "";
 //      if (manager.findFragmentByTag(tag) != null) {
 //        manager.popBackStackImmediate(tag, FragmentManager.POP_BACK_STACK_INCLUSIVE);
@@ -66,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 //      transaction.replace(R.id.container, fragment, tag);
 //      transaction.addToBackStack(tag);
 //      transaction.commit();
-//      // End of hack.
+      // End of hack.
       return true;
     }
     // TODO add back in when all is combined

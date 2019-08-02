@@ -45,6 +45,10 @@ public abstract class TrailsDatabase extends RoomDatabase {
      Trail trail1 = new Trail();
      trail1.setName("Test Entry");
      trail1.setLength(5.2);
+     trail1.setBike(true);
+     trail1.setDog(false);
+     trail1.setHorse(true);
+     trail1.setId(0L);
      db.trailDao().insert(trail1);
      return null;
    }

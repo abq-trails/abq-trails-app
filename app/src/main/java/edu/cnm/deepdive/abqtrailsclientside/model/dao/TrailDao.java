@@ -23,6 +23,7 @@ public interface TrailDao {
   @Query("SELECT * FROM Trail WHERE trail_name LIKE :searchString")
   Trail search(String searchString);
 
+
   //Only used in ABQTrailsApplication.java to start db.
   @Delete
   int delete(Trail... trail);
