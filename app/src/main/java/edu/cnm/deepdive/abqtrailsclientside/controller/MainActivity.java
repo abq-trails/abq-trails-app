@@ -1,21 +1,18 @@
-package edu.cnm.deepdive.abqtrailsclientside;
+package edu.cnm.deepdive.abqtrailsclientside.controller;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import edu.cnm.deepdive.abqtrailsclientside.R;
 import edu.cnm.deepdive.abqtrailsclientside.fragment.UserRatingFragment;
 import edu.cnm.deepdive.abqtrailsclientside.service.GoogleSignInService;
-import edu.cnm.deepdive.abqtrailsclientside.controller.MapsActivity;
 
 //David Nelson put this here to commit.
 public class MainActivity extends AppCompatActivity {
@@ -27,15 +24,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
 
     @Override
@@ -50,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         boolean handled = true;
         switch (item.getItemId()) {
             case R.id.action_maps:
-                Intent intent = new Intent(this, MapsActivity.class);
+                Intent intent = new Intent(this, MapActivity.class);
                 startActivity(intent);
                 break;
             case R.id.action_reviews:

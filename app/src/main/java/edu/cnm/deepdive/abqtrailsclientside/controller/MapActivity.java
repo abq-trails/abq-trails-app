@@ -1,7 +1,8 @@
 package edu.cnm.deepdive.abqtrailsclientside.controller;
 
 import android.os.Bundle;
-import androidx.fragment.app.FragmentActivity;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProviders;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -9,10 +10,12 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.*;
 
 import edu.cnm.deepdive.abqtrailsclientside.R;
+import edu.cnm.deepdive.abqtrailsclientside.model.viewmodel.MapViewModel;
+
 import java.util.Arrays;
 import java.util.List;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private static final int COLOR_BLACK_ARGB = 0xff000000;
     private static final int COLOR_WHITE_ARGB = 0xffffffff;
@@ -31,19 +34,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     // Create a stroke pattern of a dot followed by a gap, a dash, and another gap.
     private static final List<PatternItem> PATTERN_POLYGON_BETA =
             Arrays.asList(DOT, GAP, DASH, GAP);
+    private MapViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_map);
+        setupViewModel();
+        setContentView(R.layout.activity_map);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
     }
-
-
-
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -51,7 +53,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         MarkerOptions marker = new MarkerOptions();
         marker.position(new LatLng(35.0844, -106.6504));
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(35.0844, -106.6504), 10));
-
         // Hard Coded in an example trail
         MarkerOptions marker2 = new MarkerOptions();
         marker2.position(new LatLng(35.16430139231649, -106.46370012666549));
@@ -59,7 +60,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         marker2.snippet("Distance: blah blah ");
         marker2.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
         googleMap.addMarker(marker2);
-
         //Hard coded in some coordinates trail.
         Polygon polygon = googleMap.addPolygon(new PolygonOptions()
                 .clickable(true)
@@ -82,7 +82,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         if (polygon.getTag() != null) {
             type = polygon.getTag().toString();
         }
-
         List<PatternItem> pattern = null;
         int strokeColor = COLOR_BLACK_ARGB;
         int fillColor = COLOR_WHITE_ARGB;
@@ -102,11 +101,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 fillColor = COLOR_BLUE_ARGB;
                 break;
         }
-
         polygon.setStrokePattern(pattern);
         polygon.setStrokeWidth(POLYGON_STROKE_WIDTH_PX);
         polygon.setStrokeColor(strokeColor);
         polygon.setFillColor(fillColor);
+    }
+
+    private void setupViewModel() {
+        viewModel = ViewModelProviders.of(this).get(MapViewModel.class);
+        viewModel.searchTrails(null).observe(this, (trails) -> {
+            // Iterate over trails and create markers for each, and put them on the map.
+        });
     }
 
 }

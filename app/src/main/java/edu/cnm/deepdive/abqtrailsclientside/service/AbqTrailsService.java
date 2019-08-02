@@ -21,19 +21,16 @@ import retrofit2.http.Query;
 public interface AbqTrailsService {
 
   @GET("trails/search")
-  Single<Trail> searchById(@Query("cabqId") String fragment);
+  Single<Trail> searchById(@Query("cabqId") String id);
 
   @GET("trails/search")
-  Observable<List<Trail>> searchByName(@Query("nameFrag") String fragment);
+  Observable<List<Trail>> searchByName(@Query("nameFrag") String name);
 
   @GET("trails")
   Observable<List<Trail>> listTrails();
 
   @GET("trails/{id}")
   Single<Trail> id();
-
-  @GET("trails/coordinates")
-  List<Trail> searchByCoordinates(@Query("coordinates") String fragment);
 
 //  @GET("users/{id}")
 //  Single<User> getById();
