@@ -38,7 +38,6 @@ public class TrailViewFragment extends Fragment {
   public void onAttach(@NonNull Context context) {
     super.onAttach(context);
     this.context = context;
-
   }
 
 
@@ -53,33 +52,38 @@ public class TrailViewFragment extends Fragment {
   public void onActivityCreated(@Nullable Bundle savedInstanceState) {
     super.onActivityCreated(savedInstanceState);
     viewModel = ViewModelProviders.of(this).get(TrailViewModel.class);
-    TrailsDatabase db = TrailsDatabase.getInstance(getContext());
-    View view = getView();
 
-    final TrailViewModel viewModel = ViewModelProviders.of(this).get(TrailViewModel.class);
-    viewModel.getTrails().observe(this, trails -> {
+    new Thread(() -> {
+      TrailsDatabase db = TrailsDatabase.getInstance(getContext());
+      View view = getView();
 
-      final ArrayAdapter<Trail> adapter = new ArrayAdapter<>(context,
-          android.R.layout.simple_list_item_1, trails);
+      final TrailViewModel viewModel = ViewModelProviders.of(this).get(TrailViewModel.class);
+      viewModel.getTrails().observe(this, trails -> {
 
-      assert view != null;
-      ListView ratingsListView = view.findViewById(R.id.ratings_cards);
-      ratingsListView.setAdapter(adapter);
+        final ArrayAdapter<Trail> adapter = new ArrayAdapter<>(context,
+            android.R.layout.simple_list_item_1, trails);
 
-      ImageView horse = (db.trailDao().findById(1L).isHorse()) ?
-          view.findViewById(R.id.horse_marker_black) : view.findViewById(R.id.horse_marker_grey);
+        assert view != null;
 
-      ImageView bike = (db.trailDao().findById(1L).isBike()) ?
-          view.findViewById(R.id.bicycle_marker_black)
-          : view.findViewById(R.id.bicycle_marker_grey);
-    });
-    Button ratingsButton = view.findViewById(R.id.add_rating_button);
-    viewModel.getTrails().observe(this, trails -> {
+        ListView ratingsListView = view.findViewById(R.id.ratings_cards);
+        ratingsListView.setAdapter(adapter);
 
-      //use return object pulled from the db in a callback
-      //then throw it back on the UI thread
+        ImageView horse = (db.trailDao().findById(1L).isHorse()) ?
+            view.findViewById(R.id.horse_marker_black) : view.findViewById(R.id.horse_marker_grey);
 
-    });
+        ImageView bike = (db.trailDao().findById(1L).isBike()) ?
+            view.findViewById(R.id.bicycle_marker_black)
+            : view.findViewById(R.id.bicycle_marker_grey);
+      });
+
+      Button ratingsButton = view.findViewById(R.id.add_rating_button);
+
+    }).start();
   }
 
+  //use reactivex, return object pulled from the db in a callback
+  //then throw it back on the UI thread
+
 }
+
+

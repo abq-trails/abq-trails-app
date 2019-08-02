@@ -2,9 +2,6 @@ package edu.cnm.deepdive.abqtrailsclientside;
 
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,9 +9,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import edu.cnm.deepdive.abqtrailsclientside.controller.MapsActivity;
-import edu.cnm.deepdive.abqtrailsclientside.fragment.TrailViewFragment;
-import edu.cnm.deepdive.abqtrailsclientside.fragment.UserRatingFragment;
+import edu.cnm.deepdive.abqtrailsclientside.fragment.MapsFragment;
 
 //David Nelson put this here to commit.
 public class MainActivity extends AppCompatActivity {
@@ -50,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     // as you specify a parent activity in AndroidManifest.xml.
     int id = item.getItemId();
     if (id == R.id.action_maps) {
-        Intent intent = new Intent(this, MapsActivity.class);
+        Intent intent = new Intent(this, MapsFragment.class);
         startActivity(intent);
 //    } else if (id == R.id.action_settings) {
 //      // Hack needs to be removed.
