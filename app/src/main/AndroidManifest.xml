@@ -37,11 +37,11 @@
                 android:value="AIzaSyBmj2E4nR0pHN0_vsaLOMKp4HoQ2LFZLF8"/>
 
         <activity
-                android:name=".MapsActivity"
+          android:name=".controller.MapsActivity"
                 android:label="@string/title_activity_maps">
         </activity>
         <activity
-                android:name=".MainActivity"
+          android:name=".MainActivity"
                 android:label="@string/app_name"
                 android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

@@ -15,6 +15,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import edu.cnm.deepdive.abqtrailsclientside.fragment.UserRatingFragment;
 import edu.cnm.deepdive.abqtrailsclientside.service.GoogleSignInService;
+import edu.cnm.deepdive.abqtrailsclientside.controller.MapsActivity;
 
 //David Nelson put this here to commit.
 public class MainActivity extends AppCompatActivity {
