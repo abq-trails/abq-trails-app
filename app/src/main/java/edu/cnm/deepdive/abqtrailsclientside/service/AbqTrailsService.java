@@ -94,7 +94,7 @@ public interface AbqTrailsService {
       Retrofit retrofit = new Retrofit.Builder()
           .client(client) // This should be removed/commented out for production release.
           .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-          .addConverterFactory(GsonConverterFactory.create()) 
+          .addConverterFactory(GsonConverterFactory.create())
           .baseUrl(BuildConfig.BASE_URL)
           .build();
       INSTANCE = retrofit.create(AbqTrailsService.class);

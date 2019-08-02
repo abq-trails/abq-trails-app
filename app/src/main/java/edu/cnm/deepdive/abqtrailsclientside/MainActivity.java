@@ -70,15 +70,15 @@ public class MainActivity extends AppCompatActivity {
       return true;
     }
     // TODO add back in when all is combined
-//    if (id == R.id.action_reviews) {
-//      Intent intent = new Intent(this, MapsActivity.class);
-//      startActivity(intent);    }
-//    if (id == R.id.action_upload_profile) {
-//      Intent intent = new Intent(this, MapsActivity.class);
-//      startActivity(intent);    }
-//    if (id == R.id.action_user_profile) {
-//      Intent intent = new Intent(this, MapsActivity.class);
-//      startActivity(intent);    }
+    //if (id == R.id.action_reviews) {
+    //  Intent intent = new Intent(this, MapsActivity.class);
+    //  startActivity(intent);    }
+    //if (id == R.id.action_upload_profile) {
+    //  Intent intent = new Intent(this, MapsActivity.class);
+    //  startActivity(intent);    }
+    //if (id == R.id.action_user_profile) {
+    //  Intent intent = new Intent(this, MapsActivity.class);
+    //  startActivity(intent);    }
       return super.onOptionsItemSelected(item);
 
   }
