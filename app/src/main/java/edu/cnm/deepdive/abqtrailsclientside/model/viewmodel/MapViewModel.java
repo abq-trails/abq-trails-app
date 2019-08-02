@@ -8,7 +8,6 @@ import edu.cnm.deepdive.abqtrailsclientside.service.AbqTrailsService;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
-
 import java.util.LinkedList;
 import java.util.List;
 
