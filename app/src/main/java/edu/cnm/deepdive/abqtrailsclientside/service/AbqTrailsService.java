@@ -27,7 +27,7 @@ public interface AbqTrailsService {
   Observable<List<Trail>> searchByName(@Query("nameFrag") String fragment);
 
   @GET("trails")
-  Observable<List<Trail>> listTrails();
+  List<Trail> listTrails();
 
   @GET("trails/{id}")
   Single<Trail> id();

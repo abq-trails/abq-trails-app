@@ -11,6 +11,10 @@ public class Trail {
   @ColumnInfo(name = "trail_id")
   private long  id;
 
+  //change to Long if long does not work.
+  @ColumnInfo(name = "cabq_id")
+  private long cabqId;
+
   @ColumnInfo(name = "trail_name")
   private String name;
 
@@ -21,16 +25,13 @@ public class Trail {
   private double rating;
 
   @ColumnInfo(name = "trail_head_coordinates")
-  private double coordinates;
+  private String coordinates;
 
   @ColumnInfo(name = "bike_trail")
   private boolean bike;
 
   @ColumnInfo(name = "horse_trail")
   private boolean horse;
-
-  @ColumnInfo(name = "dogs_allowed")
-  private boolean dog;
 
   public long getId() {
     return id;
@@ -64,12 +65,20 @@ public class Trail {
     this.rating = rating;
   }
 
-  public double getCoordinates() {
+  public String getCoordinates() {
     return coordinates;
   }
 
-  public void setCoordinates(double coordinates) {
+  public void setCoordinates(String coordinates) {
     this.coordinates = coordinates;
+  }
+
+  public long getCabqId() {
+    return cabqId;
+  }
+
+  public void setCabqId(long cabqId) {
+    this.cabqId = cabqId;
   }
 
   public boolean isBike() {
@@ -88,11 +97,4 @@ public class Trail {
     this.horse = horse;
   }
 
-  public boolean isDog() {
-    return dog;
-  }
-
-  public void setDog(boolean dog) {
-    this.dog = dog;
-  }
 }

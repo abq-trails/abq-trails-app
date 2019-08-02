@@ -2,15 +2,21 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "6c775f3f05fd5f5d304f6a90cd9d2919",
+    "identityHash": "b89788e86159c9b67f0a542fe5551719",
     "entities": [
       {
         "tableName": "Trail",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`trail_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `trail_name` TEXT, `trail_length` REAL NOT NULL, `trail_rating` REAL NOT NULL, `trail_head_coordinates` REAL NOT NULL, `bike_trail` INTEGER NOT NULL, `horse_trail` INTEGER NOT NULL, `dogs_allowed` INTEGER NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`trail_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `cabq_id` INTEGER NOT NULL, `trail_name` TEXT, `trail_length` REAL NOT NULL, `trail_rating` REAL NOT NULL, `trail_head_coordinates` TEXT, `bike_trail` INTEGER NOT NULL, `horse_trail` INTEGER NOT NULL)",
         "fields": [
           {
             "fieldPath": "id",
             "columnName": "trail_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cabqId",
+            "columnName": "cabq_id",
             "affinity": "INTEGER",
             "notNull": true
           },
@@ -35,8 +41,8 @@
           {
             "fieldPath": "coordinates",
             "columnName": "trail_head_coordinates",
-            "affinity": "REAL",
-            "notNull": true
+            "affinity": "TEXT",
+            "notNull": false
           },
           {
             "fieldPath": "bike",
@@ -47,12 +53,6 @@
           {
             "fieldPath": "horse",
             "columnName": "horse_trail",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
-            "fieldPath": "dog",
-            "columnName": "dogs_allowed",
             "affinity": "INTEGER",
             "notNull": true
           }
@@ -70,7 +70,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '6c775f3f05fd5f5d304f6a90cd9d2919')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'b89788e86159c9b67f0a542fe5551719')"
     ]
   }
 }

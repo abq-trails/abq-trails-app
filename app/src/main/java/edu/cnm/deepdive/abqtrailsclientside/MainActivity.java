@@ -2,6 +2,7 @@ package edu.cnm.deepdive.abqtrailsclientside;
 
 import android.content.Intent;
 import android.os.Bundle;
+import androidx.annotation.NonNull;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +18,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import edu.cnm.deepdive.abqtrailsclientside.controller.LoginActivity;
+import edu.cnm.deepdive.abqtrailsclientside.service.GoogleSignInService;
 
 //David Nelson put this here to commit.
 public class MainActivity extends AppCompatActivity {
@@ -46,29 +49,58 @@ public class MainActivity extends AppCompatActivity {
   }
 
   @Override
-  public boolean onOptionsItemSelected(MenuItem item) {
-    // Handle action bar item clicks here. The action bar will
-    // automatically handle clicks on the Home/Up button, so long
-    // as you specify a parent activity in AndroidManifest.xml.
-    int id = item.getItemId();
-    if (id == R.id.action_maps) {
+  public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+    boolean handled = true;
+    switch (item.getItemId()) {
+      case R.id.action_maps:
         Intent intent = new Intent(this, MapsActivity.class);
         startActivity(intent);
-//    } else if (id == R.id.action_settings) {
-//      // Hack needs to be removed.
-//      FragmentManager manager = getSupportFragmentManager();
-//      Fragment fragment = UserRatingFragment.newInstance();
-//      String tag = fragment.getClass().getSimpleName() + "";
-//      if (manager.findFragmentByTag(tag) != null) {
-//        manager.popBackStackImmediate(tag, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-//      }
-//      FragmentTransaction transaction = manager.beginTransaction();
-//      transaction.replace(R.id.container, fragment, tag);
-//      transaction.addToBackStack(tag);
-//      transaction.commit();
-//      // End of hack.
-      return true;
+        break;
+      case R.id.action_reviews:
+        FragmentManager manager = getSupportFragmentManager();
+      Fragment fragment = UserRatingFragment.newInstance();
+      String tag = fragment.getClass().getSimpleName() + "";
+      if (manager.findFragmentByTag(tag) != null) {
+        manager.popBackStackImmediate(tag, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+      }
+      FragmentTransaction transaction = manager.beginTransaction();
+      transaction.replace(R.id.container, fragment, tag);
+      transaction.addToBackStack(tag);
+      transaction.commit();
+      break;
+      case R.id.sign_out:
+        signOut();
+        break;
+      default:
+        handled = super.onOptionsItemSelected(item);
     }
+    return handled;
+  }
+
+//  @Override
+//  public boolean onOptionsItemSelected(MenuItem item) {
+//    // Handle action bar item clicks here. The action bar will
+//    // automatically handle clicks on the Home/Up button, so long
+//    // as you specify a parent activity in AndroidManifest.xml.
+//    int id = item.getItemId();
+//    if (id == R.id.action_maps) {
+//        Intent intent = new Intent(this, MapsActivity.class);
+//        startActivity(intent);
+////    } else if (id == R.id.action_settings) {
+////      // Hack needs to be removed.
+////      FragmentManager manager = getSupportFragmentManager();
+////      Fragment fragment = UserRatingFragment.newInstance();
+////      String tag = fragment.getClass().getSimpleName() + "";
+////      if (manager.findFragmentByTag(tag) != null) {
+////        manager.popBackStackImmediate(tag, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+////      }
+////      FragmentTransaction transaction = manager.beginTransaction();
+////      transaction.replace(R.id.container, fragment, tag);
+////      transaction.addToBackStack(tag);
+////      transaction.commit();
+////      // End of hack.
+//      return true;
+//    }
     // TODO add back in when all is combined
 //    if (id == R.id.action_reviews) {
 //      Intent intent = new Intent(this, MapsActivity.class);
@@ -79,8 +111,18 @@ public class MainActivity extends AppCompatActivity {
 //    if (id == R.id.action_user_profile) {
 //      Intent intent = new Intent(this, MapsActivity.class);
 //      startActivity(intent);    }
-      return super.onOptionsItemSelected(item);
+//      return super.onOptionsItemSelected(item);
+//
+//  }
 
+  private void signOut() {
+    GoogleSignInService service = GoogleSignInService.getInstance();
+    service.getClient().signOut().addOnCompleteListener((task) -> {
+      service.setAccount(null);
+      Intent intent = new Intent(this, LoginActivity.class);
+      intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+      startActivity(intent);
+    });
   }
 
 }
