@@ -8,7 +8,7 @@
         android:layout_height="match_parent"
         android:id="@+id/map"
         android:orientation="vertical"
-        tools:context=".fragment.MapsFragment"
+        tools:context=".controller.MapsActivity"
         android:name="com.google.android.gms.maps.SupportMapFragment">
 
 </fragment>

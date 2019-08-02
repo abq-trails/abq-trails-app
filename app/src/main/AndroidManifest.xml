@@ -37,7 +37,7 @@
                 android:value="AIzaSyBmj2E4nR0pHN0_vsaLOMKp4HoQ2LFZLF8"/>
 
         <activity
-          android:name=".fragment.MapsFragment"
+          android:name=".controller.MapsActivity"
                 android:label="@string/title_activity_maps">
         </activity>
         <activity

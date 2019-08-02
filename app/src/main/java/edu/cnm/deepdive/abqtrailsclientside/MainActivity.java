@@ -9,7 +9,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import edu.cnm.deepdive.abqtrailsclientside.fragment.MapsFragment;
+import edu.cnm.deepdive.abqtrailsclientside.controller.MapsActivity;
 
 //David Nelson put this here to commit.
 public class MainActivity extends AppCompatActivity {
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     // as you specify a parent activity in AndroidManifest.xml.
     int id = item.getItemId();
     if (id == R.id.action_maps) {
-        Intent intent = new Intent(this, MapsFragment.class);
+        Intent intent = new Intent(this, MapsActivity.class);
         startActivity(intent);
 //    } else if (id == R.id.action_settings) {
 //      // Hack needs to be removed.

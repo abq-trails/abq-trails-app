@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.abqtrailsclientside.fragment;
+package edu.cnm.deepdive.abqtrailsclientside.controller;
 
 import android.os.Bundle;
 import androidx.fragment.app.FragmentActivity;
@@ -12,7 +12,7 @@ import edu.cnm.deepdive.abqtrailsclientside.R;
 import java.util.Arrays;
 import java.util.List;
 
-public class MapsFragment extends FragmentActivity implements OnMapReadyCallback {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private static final int COLOR_BLACK_ARGB = 0xff000000;
     private static final int COLOR_WHITE_ARGB = 0xffffffff;
