@@ -1,5 +1,6 @@
 package edu.cnm.deepdive.abqtrailsclientside.service;
 
+import androidx.lifecycle.LiveData;
 import edu.cnm.deepdive.abqtrailsclientside.BuildConfig;
 import edu.cnm.deepdive.abqtrailsclientside.model.entity.Trail;
 import io.reactivex.Observable;
@@ -11,12 +12,10 @@ import okhttp3.logging.HttpLoggingInterceptor.Level;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.http.Body;
 import retrofit2.http.GET;
-import retrofit2.http.Header;
-import retrofit2.http.POST;
-import retrofit2.http.PUT;
 import retrofit2.http.Query;
+
+
 
 public interface AbqTrailsService {
 
@@ -64,7 +63,7 @@ public interface AbqTrailsService {
           .client(client) // This should be removed/commented out for production release.
           .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
           .addConverterFactory(GsonConverterFactory.create()) // TODO Check; maybe change?
-          .baseUrl(BuildConfig.BASE_URL)
+          .baseUrl(BuildConfig.CLIENT_ID)
           .build();
       INSTANCE = retrofit.create(AbqTrailsService.class);
 

@@ -68,10 +68,10 @@ public class TrailViewFragment extends Fragment {
         ListView ratingsListView = view.findViewById(R.id.ratings_cards);
         ratingsListView.setAdapter(adapter);
 
-        ImageView horse = (db.trailDao().findById(1L).isHorse()) ?
+          ImageView horse = (db.trailDao().findByCabqIdSynchronous(1L).isHorse()) ?
             view.findViewById(R.id.horse_marker_black) : view.findViewById(R.id.horse_marker_grey);
 
-        ImageView bike = (db.trailDao().findById(1L).isBike()) ?
+        ImageView bike = (db.trailDao().findByCabqIdSynchronous(1L).isBike()) ?
             view.findViewById(R.id.bicycle_marker_black)
             : view.findViewById(R.id.bicycle_marker_grey);
       });
