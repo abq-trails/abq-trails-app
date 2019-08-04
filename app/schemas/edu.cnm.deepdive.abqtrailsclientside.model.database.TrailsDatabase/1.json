@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "b89788e86159c9b67f0a542fe5551719",
+    "identityHash": "e792348b3f85e707040223a0785c3f84",
     "entities": [
       {
         "tableName": "Trail",
@@ -63,14 +63,23 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_Trail_cabq_id",
+            "unique": true,
+            "columnNames": [
+              "cabq_id"
+            ],
+            "createSql": "CREATE UNIQUE INDEX `index_Trail_cabq_id` ON `${TABLE_NAME}` (`cabq_id`)"
+          }
+        ],
         "foreignKeys": []
       }
     ],
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'b89788e86159c9b67f0a542fe5551719')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'e792348b3f85e707040223a0785c3f84')"
     ]
   }
 }

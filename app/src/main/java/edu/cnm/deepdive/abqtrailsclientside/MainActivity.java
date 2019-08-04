@@ -2,27 +2,28 @@ package edu.cnm.deepdive.abqtrailsclientside;
 
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.LiveData;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import edu.cnm.deepdive.abqtrailsclientside.controller.LoginActivity;
+import edu.cnm.deepdive.abqtrailsclientside.model.database.TrailsDatabase;
+import edu.cnm.deepdive.abqtrailsclientside.model.entity.Trail;
 import edu.cnm.deepdive.abqtrailsclientside.service.GoogleSignInService;
+import java.util.List;
 
 //David Nelson put this here to commit.
 public class MainActivity extends AppCompatActivity {
+
+  LiveData<List<Trail>> trails;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
             .setAction("Action", null).show();
       }
     });
+    getTrails();
   }
 
   @Override
@@ -77,44 +79,6 @@ public class MainActivity extends AppCompatActivity {
     return handled;
   }
 
-//  @Override
-//  public boolean onOptionsItemSelected(MenuItem item) {
-//    // Handle action bar item clicks here. The action bar will
-//    // automatically handle clicks on the Home/Up button, so long
-//    // as you specify a parent activity in AndroidManifest.xml.
-//    int id = item.getItemId();
-//    if (id == R.id.action_maps) {
-//        Intent intent = new Intent(this, MapsActivity.class);
-//        startActivity(intent);
-////    } else if (id == R.id.action_settings) {
-////      // Hack needs to be removed.
-////      FragmentManager manager = getSupportFragmentManager();
-////      Fragment fragment = UserRatingFragment.newInstance();
-////      String tag = fragment.getClass().getSimpleName() + "";
-////      if (manager.findFragmentByTag(tag) != null) {
-////        manager.popBackStackImmediate(tag, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-////      }
-////      FragmentTransaction transaction = manager.beginTransaction();
-////      transaction.replace(R.id.container, fragment, tag);
-////      transaction.addToBackStack(tag);
-////      transaction.commit();
-////      // End of hack.
-//      return true;
-//    }
-    // TODO add back in when all is combined
-//    if (id == R.id.action_reviews) {
-//      Intent intent = new Intent(this, MapsActivity.class);
-//      startActivity(intent);    }
-//    if (id == R.id.action_upload_profile) {
-//      Intent intent = new Intent(this, MapsActivity.class);
-//      startActivity(intent);    }
-//    if (id == R.id.action_user_profile) {
-//      Intent intent = new Intent(this, MapsActivity.class);
-//      startActivity(intent);    }
-//      return super.onOptionsItemSelected(item);
-//
-//  }
-
   private void signOut() {
     GoogleSignInService service = GoogleSignInService.getInstance();
     service.getClient().signOut().addOnCompleteListener((task) -> {
@@ -123,6 +87,14 @@ public class MainActivity extends AppCompatActivity {
       intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
       startActivity(intent);
     });
+  }
+
+  private LiveData<List<Trail>> getTrails() {
+    new Thread(() -> {
+      TrailsDatabase db = TrailsDatabase.getInstance(getApplication());
+      trails = db.trailDao().getAll();
+    }).start();
+    return trails;
   }
 
 }

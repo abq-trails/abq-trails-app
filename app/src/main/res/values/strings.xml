@@ -10,4 +10,5 @@
     <string name="box_search_location_here">Search Location here</string>
     <string name="authentication_error">Unable to authenticate user</string>
     <string name="sign_out">Sign out</string>
+  <string name="trail_list">Trail List</string>
 </resources>
