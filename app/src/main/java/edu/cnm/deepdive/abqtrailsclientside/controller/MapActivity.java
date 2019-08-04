@@ -8,10 +8,8 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.*;
-
 import edu.cnm.deepdive.abqtrailsclientside.R;
 import edu.cnm.deepdive.abqtrailsclientside.model.viewmodel.MapViewModel;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -110,8 +108,10 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     private void setupViewModel() {
         viewModel = ViewModelProviders.of(this).get(MapViewModel.class);
         viewModel.searchTrails(null).observe(this, (trails) -> {
-            // Iterate over trails and create markers for each, and put them on the map.
-        });
+
+
+
+       });
     }
 
 }
