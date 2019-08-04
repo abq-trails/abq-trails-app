@@ -10,7 +10,7 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="10dp"
     android:gravity="center_horizontal"
-    android:text="Please rate this trail."
+    android:text="@string/rating_request"
     android:textSize="20sp"
     android:textStyle="italic"/>
 
@@ -38,14 +38,14 @@
     android:layout_height="wrap_content"
     android:inputType="textMultiLine"
     android:lines="5"
-    android:hint="Tell us what you loved."
+    android:hint="@string/feedback_hint"
     android:gravity="top"/>
 
   <Button
     android:id="@+id/submit_button"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="Submit"
+    android:text="@string/submit"
     android:textColor="@android:color/white"/>
 
 

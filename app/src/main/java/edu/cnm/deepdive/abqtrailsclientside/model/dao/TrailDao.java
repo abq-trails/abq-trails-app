@@ -37,6 +37,7 @@ public interface TrailDao {
   @Update
   int update(Trail... trails);
 
+
   //Only used in ABQTrailsApplication.java to start db.
   @Delete
   int delete(Trail... trail);
