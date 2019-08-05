@@ -7,9 +7,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import edu.cnm.deepdive.abqtrailsclientside.BuildConfig;
 
-/**
- *
- */
+
 public class GoogleSignInService {
 
   private static Application context;
@@ -20,35 +18,21 @@ public class GoogleSignInService {
   private GoogleSignInService() {
     GoogleSignInOptions options = new GoogleSignInOptions.Builder()
         .requestEmail()
-        .requestId()
-        .requestProfile()
-        .requestIdToken(BuildConfig.CLIENT_ID)
+        .requestId() //can use to identify user as unique identifier not primary key
+        .requestProfile() //get image
+        .requestIdToken(BuildConfig.CLIENT_ID) //passport stamp for the webservice
         .build();
     client = GoogleSignIn.getClient(context, options);
   }
 
-  // Sets  for this instance.
-  // Returns  for this instance.
-
-
-  /**
-   * Sets context for this instance.
-   * @param context sets context
-   */
   public static void setContext(Application context) {
     GoogleSignInService.context = context;
   }
 
-  /**
-   * Returns client for this instance.
-   */
   public GoogleSignInClient getClient() {
     return client;
   }
 
-  /**
-   * Returns account for this instance.
-   */
   public GoogleSignInAccount getAccount() {
     return account;
   }
@@ -57,9 +41,6 @@ public class GoogleSignInService {
     this.account = account;
   }
 
-  /**
-   * Returns instance.
-   */
   public static GoogleSignInService getInstance() {
     return InstanceHolder.INSTANCE;
   }

@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.abqtrailsclientside;
+package edu.cnm.deepdive.abqtrailsclientside.controller;
 
 import android.os.Bundle;
 import androidx.fragment.app.FragmentActivity;
@@ -8,6 +8,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.*;
 
+import edu.cnm.deepdive.abqtrailsclientside.R;
 import java.util.Arrays;
 import java.util.List;
 

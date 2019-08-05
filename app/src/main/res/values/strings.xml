@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">ABQ Trails Client Side</string>
+    <string name="action_settings">Settings</string>
     <string name="title_activity_maps">Map</string>
     <string name="action_maps">Maps</string>
     <string name="action_user_profile">Profile</string>
@@ -7,6 +8,16 @@
     <string name="text_welcome_to_abq_trails">Welcome to ABQ Trails</string>
     <string name="action_reviews">Reviews</string>
     <string name="box_search_location_here">Search Location here</string>
-    <string name="action_settings">Settings</string>
-    <string name="action_sign_out">Sign Out</string>
+    <string name="authentication_error">Unable to authenticate user</string>
+    <string name="sign_out">Sign out</string>
+  <string name="trail_list">Trail List</string>
+    <string name="add_a_rating">Add a Rating</string>
+    <string name="an_image_of_the_trail">An image of the trail.</string>
+    <string name="is_dog_trail">An icon indicating if a trail is a dog trail.</string>
+    <string name="is_horse_trail">An icon indicating if a trail is an equestrian trail.</string>
+    <string name="is_bicycle_trail">An icon indicating if a trail is a bicycle trail</string>
+    <string name="ratings">Ratings</string>
+    <string name="feedback_hint">Tell us what you loved.</string>
+    <string name="submit">Submit</string>
+    <string name="rating_request">Please rate this trail.</string>
 </resources>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/frameLayout"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context="edu.cnm.deepdive.abqtrailsclientside.fragment.TrailViewFragment"
+  tools:ignore="MissingDefaultResource">
+
+  <Button
+    android:id="@+id/add_rating_button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/add_a_rating"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/satellite_view"
+    tools:layout_conversion_absoluteHeight="48dp"
+    tools:layout_conversion_absoluteWidth="119dp"/>
+
+  <ImageView
+    android:id="@+id/trail_image"
+    android:layout_width="0dp"
+    android:layout_height="139dp"
+    android:contentDescription="@string/an_image_of_the_trail"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:layout_conversion_absoluteHeight="0dp"
+    tools:layout_conversion_absoluteWidth="411dp"/>
+
+  <ImageView
+    android:id="@+id/dog_marker_black"
+    android:layout_width="@dimen/marker_size"
+    android:layout_height="@dimen/marker_size"
+    android:contentDescription="@string/is_dog_trail"
+    android:src="@drawable/ic_dog_black"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/trail_description"
+    />
+
+  <ImageView
+    android:id="@+id/horse_marker_black"
+    android:layout_width="@dimen/marker_size"
+    android:layout_height="@dimen/marker_size"
+    android:contentDescription="@string/is_horse_trail"
+    android:src="@drawable/ic_horse_black"
+    app:layout_constraintStart_toEndOf="@+id/dog_marker_black"
+    app:layout_constraintTop_toBottomOf="@+id/trail_description"
+    />
+
+  <ImageView
+    android:id="@+id/bicycle_marker_black"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/marker_size"
+    android:contentDescription="@string/is_bicycle_trail"
+    android:src="@drawable/ic_bicycle_black"
+    app:layout_constraintStart_toEndOf="@+id/horse_marker_black"
+    app:layout_constraintTop_toBottomOf="@+id/trail_description"/>
+
+
+  <ImageView
+    android:id="@+id/dog_marker_grey"
+    android:layout_width="@dimen/marker_size"
+    android:layout_height="@dimen/marker_size"
+    android:contentDescription="@string/is_dog_trail"
+    android:src="@drawable/ic_dog_grey"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/trail_description"
+    />
+
+  <ImageView
+    android:id="@+id/horse_marker_grey"
+    android:layout_width="@dimen/marker_size"
+    android:layout_height="@dimen/marker_size"
+    android:contentDescription="@string/is_horse_trail"
+    android:src="@drawable/ic_horse_grey"
+    app:layout_constraintStart_toEndOf="@+id/dog_marker_grey"
+    app:layout_constraintTop_toBottomOf="@+id/trail_description"
+    />
+
+  <ImageView
+    android:id="@+id/bicycle_marker_grey"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/marker_size"
+    android:contentDescription="@string/is_bicycle_trail"
+    android:src="@drawable/ic_bicycle_grey"
+    app:layout_constraintStart_toEndOf="@+id/horse_marker_grey"
+    app:layout_constraintTop_toBottomOf="@+id/trail_description"/>
+
+
+  <TextView
+    android:id="@+id/trail_description"
+    android:layout_width="0dp"
+    android:layout_height="149dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/trail_image"
+    tools:layout_conversion_absoluteHeight="19dp"
+    tools:layout_conversion_absoluteWidth="411dp"/>
+
+  <TextView
+    android:id="@+id/distance_marker"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="12.0 KM"
+    android:textSize="36dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toEndOf="@+id/bicycle_marker_black"
+    app:layout_constraintTop_toBottomOf="@+id/trail_description"
+    tools:layout_conversion_absoluteHeight="19dp"
+    tools:layout_conversion_absoluteWidth="0dp"/>
+
+  <TextView
+    android:id="@+id/ratings_text"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/ratings"
+    android:textSize="36sp"
+    app:layout_constraintBottom_toTopOf="@+id/ratings_cards"
+    app:layout_constraintEnd_toStartOf="@+id/add_rating_button"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/satellite_view"/>
+
+  <ListView
+    android:id="@+id/ratings_cards"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/add_rating_button"/>
+
+  <com.google.android.gms.maps.MapView
+    android:id="@+id/satellite_view"
+    android:layout_width="0dp"
+    android:layout_height="180dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/horse_marker_black"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
