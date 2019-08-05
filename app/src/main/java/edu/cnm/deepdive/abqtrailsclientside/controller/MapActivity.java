@@ -9,6 +9,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.*;
 import edu.cnm.deepdive.abqtrailsclientside.R;
+import edu.cnm.deepdive.abqtrailsclientside.model.entity.Trail;
 import edu.cnm.deepdive.abqtrailsclientside.model.viewmodel.MapViewModel;
 
 import java.util.Arrays;
@@ -73,6 +74,8 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                         new LatLng(35.16379710695103, -106.4648969014523)
                 ));
         polygon.setTag("Trail 140a");
+    // TODO make user dynamic input
+        viewModel.getTrailByCabqId(0);
     }
     // Hard coded in some features to the the trail lines.
     private void stylePolygon(Polygon polygon) {
@@ -108,23 +111,19 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
     private void setupViewModel() {
         viewModel = ViewModelProviders.of(this).get(MapViewModel.class);
+
         viewModel.getAllTrails().observe(this, (trails) ->{
+        // TODO housekeeping
 
         }) ;
         viewModel.getSearchResult().observe(this, (trails) -> {
 
-//            ArrayList<String> list = new ArrayList<String>();
-//            JSONArray jsonArray = (JSONArray)jsonObject;
-//            if (jsonArray != null) {
-//                int len = jsonArray.length();
-//                for (int i = 0; i < len; i++) {
-//                    list.add(jsonArray.get(i).toString);
-//                }
-//            }
-
-
 
        });
+    }
+
+    private Trail parseTrail (Trail trail) {
+    return trail;
     }
 
 }

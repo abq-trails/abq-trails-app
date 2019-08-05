@@ -18,7 +18,6 @@ public class MapViewModel extends AndroidViewModel implements LifecycleObserver 
     private MutableLiveData<String> searchTerm;
     private TrailDao dao;
 
-
     public MapViewModel(@NonNull Application application) {
         super(application);
         dao = TrailsDatabase.getInstance(application).trailDao();
@@ -35,5 +34,9 @@ public class MapViewModel extends AndroidViewModel implements LifecycleObserver 
 
     public LiveData<List<Trail>> getSearchResult() {
         return searchResult;
+    }
+
+    public Trail getTrailByCabqId (long id) {
+       return dao.findByCabqIdSynchronous(id);
     }
 }
