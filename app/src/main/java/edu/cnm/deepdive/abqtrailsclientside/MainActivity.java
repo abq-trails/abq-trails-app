@@ -2,19 +2,13 @@ package edu.cnm.deepdive.abqtrailsclientside;
 
 import android.content.Intent;
 import android.os.Bundle;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import edu.cnm.deepdive.abqtrailsclientside.controller.MapsActivity;
-import edu.cnm.deepdive.abqtrailsclientside.model.entity.Trail;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import edu.cnm.deepdive.abqtrailsclientside.controller.MapActivity;
 import edu.cnm.deepdive.abqtrailsclientside.model.viewmodel.TrailViewModel;
-import edu.cnm.deepdive.abqtrailsclientside.service.AbqTrailsService;
 
-//David Nelson put this here to commit.
 public class MainActivity extends AppCompatActivity {
 
   private TrailViewModel viewModel;
@@ -28,14 +22,6 @@ public class MainActivity extends AppCompatActivity {
     Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
-    FloatingActionButton fab = findViewById(R.id.fab);
-    fab.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View view) {
-        Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-            .setAction("Action", null).show();
-      }
-    });
 
   }
 
@@ -53,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     // as you specify a parent activity in AndroidManifest.xml.
     int id = item.getItemId();
     if (id == R.id.action_maps) {
-      Intent intent = new Intent(this, MapsActivity.class);
+      Intent intent = new Intent(this, MapActivity.class);
       startActivity(intent);
 //    } else if (id == R.id.action_settings) {
 //      // Hack needs to be removed.

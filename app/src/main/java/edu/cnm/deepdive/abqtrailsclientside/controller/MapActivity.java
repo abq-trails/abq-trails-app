@@ -10,9 +10,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.*;
 import edu.cnm.deepdive.abqtrailsclientside.R;
 import edu.cnm.deepdive.abqtrailsclientside.model.viewmodel.MapViewModel;
-import org.json.JSONArray;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -110,7 +108,10 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
     private void setupViewModel() {
         viewModel = ViewModelProviders.of(this).get(MapViewModel.class);
-        viewModel.searchTrails(null).observe(this, (trails) -> {
+        viewModel.getAllTrails().observe(this, (trails) ->{
+
+        }) ;
+        viewModel.getSearchResult().observe(this, (trails) -> {
 
 //            ArrayList<String> list = new ArrayList<String>();
 //            JSONArray jsonArray = (JSONArray)jsonObject;

@@ -1,7 +1,6 @@
 package edu.cnm.deepdive.abqtrailsclientside.model.database;
 
 import android.content.Context;
-import android.os.AsyncTask;
 import androidx.annotation.NonNull;
 import androidx.room.Database;
 import androidx.room.Room;
@@ -11,10 +10,7 @@ import edu.cnm.deepdive.abqtrailsclientside.model.dao.TrailDao;
 import edu.cnm.deepdive.abqtrailsclientside.model.entity.Trail;
 import edu.cnm.deepdive.abqtrailsclientside.model.viewmodel.TrailViewModel;
 import edu.cnm.deepdive.abqtrailsclientside.service.AbqTrailsService;
-import io.reactivex.Observable;
 import io.reactivex.schedulers.Schedulers;
-import java.util.LinkedList;
-import java.util.List;
 
 @Database(entities = Trail.class, version = 1, exportSchema = true)
 public abstract class TrailsDatabase extends RoomDatabase {
