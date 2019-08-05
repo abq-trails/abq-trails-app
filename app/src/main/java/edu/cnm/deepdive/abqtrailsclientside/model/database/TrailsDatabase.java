@@ -16,12 +16,21 @@ import io.reactivex.schedulers.Schedulers;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ *
+ *
+ */
 @Database(entities = Trail.class, version = 1, exportSchema = true)
 public abstract class TrailsDatabase extends RoomDatabase {
 
   private static TrailsDatabase INSTANCE;
   private static TrailViewModel viewModel;
 
+  /**
+   * Returns instance of this database.
+   * @param context this application context
+   * @return instance of this database
+   */
   public static TrailsDatabase getInstance(Context context) {
     if (INSTANCE == null) {
       INSTANCE = Room.databaseBuilder(context.getApplicationContext(), TrailsDatabase.class,
@@ -37,6 +46,10 @@ public abstract class TrailsDatabase extends RoomDatabase {
     return INSTANCE;
   }
 
+  /**
+   *
+   * @return
+   */
   public abstract TrailDao trailDao();
 
   private void getOnlineDb() {

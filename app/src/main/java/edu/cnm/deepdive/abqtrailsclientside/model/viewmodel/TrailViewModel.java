@@ -17,6 +17,9 @@ import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
 import java.util.List;
 
+/**
+ * Gets list of trails.
+ */
 public class TrailViewModel extends AndroidViewModel implements LifecycleObserver {
 
   private MutableLiveData<List<Trail>> trails;
@@ -25,6 +28,9 @@ public class TrailViewModel extends AndroidViewModel implements LifecycleObserve
   private TrailsDatabase db = TrailsDatabase.getInstance(getApplication());
   private String oauthHeader;
 
+  /**
+   * Initializes this instance with the specified {@link Application}
+   */
   public TrailViewModel(@NonNull Application application) {
     super(application);
     service = AbqTrailsService.getInstance();
@@ -32,6 +38,10 @@ public class TrailViewModel extends AndroidViewModel implements LifecycleObserve
         GoogleSignInService.getInstance().getAccount().getIdToken());
   }
 
+  /**
+   * Returns list of trails.
+   * @return list of trails
+   */
   public LiveData<List<Trail>> getTrails() {
     if (trails == null) {
       trails = new MutableLiveData<>();

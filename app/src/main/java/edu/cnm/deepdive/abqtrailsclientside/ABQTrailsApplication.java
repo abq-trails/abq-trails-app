@@ -6,6 +6,9 @@ import edu.cnm.deepdive.abqtrailsclientside.model.dao.TrailDao;
 import edu.cnm.deepdive.abqtrailsclientside.model.database.TrailsDatabase;
 import edu.cnm.deepdive.abqtrailsclientside.service.GoogleSignInService;
 
+/**
+ * Called when this application is starting
+ */
 public class ABQTrailsApplication extends Application {
 
   @Override

@@ -44,7 +44,7 @@ public class MapViewModel extends AndroidViewModel implements LifecycleObserver 
                             .subscribeOn(Schedulers.io())
                             .observeOn(AndroidSchedulers.mainThread())
                             .subscribe((searchCoordinates) -> {
-                                List<Trail> mapping = AbqTrailsService.getInstance().searchByCoordinates("q");
+                               // List<Trail> mapping = AbqTrailsService.getInstance().searchByCoordinates("q");
                                 List<Trail> trails = new LinkedList<>();
                                 mapCoordinates.setValue(trails);
                             }));
