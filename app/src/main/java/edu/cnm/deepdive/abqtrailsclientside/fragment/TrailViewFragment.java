@@ -11,14 +11,11 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
-import androidx.room.DatabaseConfiguration;
-import androidx.room.InvalidationTracker;
-import androidx.sqlite.db.SupportSQLiteOpenHelper;
 import edu.cnm.deepdive.abqtrailsclientside.R;
-import edu.cnm.deepdive.abqtrailsclientside.model.dao.TrailDao;
 import edu.cnm.deepdive.abqtrailsclientside.model.database.TrailsDatabase;
 import edu.cnm.deepdive.abqtrailsclientside.model.entity.Trail;
 import edu.cnm.deepdive.abqtrailsclientside.model.viewmodel.TrailViewModel;
@@ -26,9 +23,11 @@ import edu.cnm.deepdive.abqtrailsclientside.model.viewmodel.TrailViewModel;
 public class TrailViewFragment extends Fragment {
 
 
+  private boolean horse;
+  private boolean bike;
   private Context context;
-
   private TrailViewModel viewModel;
+  private long cabqId;
 
   public static TrailViewFragment newInstance() {
     return new TrailViewFragment();
@@ -52,37 +51,55 @@ public class TrailViewFragment extends Fragment {
   public void onActivityCreated(@Nullable Bundle savedInstanceState) {
     super.onActivityCreated(savedInstanceState);
     viewModel = ViewModelProviders.of(this).get(TrailViewModel.class);
-
+    View view = getView();
+    final TrailViewModel viewModel = ViewModelProviders.of(this).get(TrailViewModel.class);
     new Thread(() -> {
       TrailsDatabase db = TrailsDatabase.getInstance(getContext());
-      View view = getView();
-
-      final TrailViewModel viewModel = ViewModelProviders.of(this).get(TrailViewModel.class);
-      viewModel.getTrails().observe(this, trails -> {
-
-        final ArrayAdapter<Trail> adapter = new ArrayAdapter<>(context,
-            android.R.layout.simple_list_item_1, trails);
-
-        assert view != null;
-
-        ListView ratingsListView = view.findViewById(R.id.ratings_cards);
-        ratingsListView.setAdapter(adapter);
-
-          ImageView horse = (db.trailDao().findByCabqIdSynchronous(1L).isHorse()) ?
-            view.findViewById(R.id.horse_marker_black) : view.findViewById(R.id.horse_marker_grey);
-
-        ImageView bike = (db.trailDao().findByCabqIdSynchronous(1L).isBike()) ?
-            view.findViewById(R.id.bicycle_marker_black)
-            : view.findViewById(R.id.bicycle_marker_grey);
-      });
-
-      Button ratingsButton = view.findViewById(R.id.add_rating_button);
+        horse = (db.trailDao().findByIdSynchronous(1L).isHorse());
+        bike = (db.trailDao().findByIdSynchronous(1L).isBike());
 
     }).start();
+
+    viewModel.getTrails().observe(this, trails -> {
+      final ArrayAdapter<Trail> adapter = new ArrayAdapter<>(context,
+          android.R.layout.simple_list_item_1, trails);
+      assert view != null;
+
+      ListView ratingsListView = view.findViewById(R.id.ratings_list);
+      ratingsListView.setAdapter(adapter);
+      //FIXME Get this to pull a LiveData list, and then throw into a viewable list, of all ratings
+      // for the trail in question.
+
+      ImageView horse = view.findViewById(R.id.horse_marker_black);
+      if (!this.horse) {
+        horse.setAlpha(0.5f);
+      }
+      ImageView bike = view.findViewById(R.id.bicycle_marker_black);
+      if(!this.bike) {
+        bike.setAlpha(0.5f);
+      }
+      Button ratingsButton = view.findViewById(R.id.add_rating_button);
+      ratingsButton.setOnClickListener( (trail) ->{
+        UserRatingFragment ratingFragment = new UserRatingFragment();
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction
+            .replace(((ViewGroup)getView().getParent()).getId(), ratingFragment)
+            .addToBackStack(null)
+            .commit();
+
+        //FIXME Get this to send the trail's long id (or whichever id we end up using when we get
+        // this app finally talking to itself) to the rating fragment so that we can send a rating
+        // about the right trail to the server.
+      });
+
+
+
+    });
   }
 
-  //use reactivex, return object pulled from the db in a callback
-  //then throw it back on the UI thread
+  //TODO Check if it is wiser to use reactivex, return object
+  // pulled from the db in a callback and then throw it back on the UI thread
 
 }
 
