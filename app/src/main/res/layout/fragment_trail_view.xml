@@ -32,62 +32,23 @@
     tools:layout_conversion_absoluteWidth="411dp"/>
 
   <ImageView
-    android:id="@+id/dog_marker_black"
-    android:layout_width="@dimen/marker_size"
-    android:layout_height="@dimen/marker_size"
-    android:contentDescription="@string/is_dog_trail"
-    android:src="@drawable/ic_dog_black"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/trail_description"
-    />
-
-  <ImageView
     android:id="@+id/horse_marker_black"
     android:layout_width="@dimen/marker_size"
     android:layout_height="@dimen/marker_size"
     android:contentDescription="@string/is_horse_trail"
     android:src="@drawable/ic_horse_black"
-    app:layout_constraintStart_toEndOf="@+id/dog_marker_black"
-    app:layout_constraintTop_toBottomOf="@+id/trail_description"
-    />
-
-  <ImageView
-    android:id="@+id/bicycle_marker_black"
-    android:layout_width="wrap_content"
-    android:layout_height="@dimen/marker_size"
-    android:contentDescription="@string/is_bicycle_trail"
-    android:src="@drawable/ic_bicycle_black"
-    app:layout_constraintStart_toEndOf="@+id/horse_marker_black"
-    app:layout_constraintTop_toBottomOf="@+id/trail_description"/>
-
-
-  <ImageView
-    android:id="@+id/dog_marker_grey"
-    android:layout_width="@dimen/marker_size"
-    android:layout_height="@dimen/marker_size"
-    android:contentDescription="@string/is_dog_trail"
-    android:src="@drawable/ic_dog_grey"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/trail_description"
     />
 
-  <ImageView
-    android:id="@+id/horse_marker_grey"
-    android:layout_width="@dimen/marker_size"
-    android:layout_height="@dimen/marker_size"
-    android:contentDescription="@string/is_horse_trail"
-    android:src="@drawable/ic_horse_grey"
-    app:layout_constraintStart_toEndOf="@+id/dog_marker_grey"
-    app:layout_constraintTop_toBottomOf="@+id/trail_description"
-    />
 
   <ImageView
-    android:id="@+id/bicycle_marker_grey"
-    android:layout_width="wrap_content"
-    android:layout_height="@dimen/marker_size"
+    android:id="@+id/bicycle_marker_black"
+    android:layout_width="64dp"
+    android:layout_height="64dp"
     android:contentDescription="@string/is_bicycle_trail"
-    android:src="@drawable/ic_bicycle_grey"
-    app:layout_constraintStart_toEndOf="@+id/horse_marker_grey"
+    android:src="@drawable/ic_bicycle_black"
+    app:layout_constraintStart_toEndOf="@+id/horse_marker_black"
     app:layout_constraintTop_toBottomOf="@+id/trail_description"/>
 
 

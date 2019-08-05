@@ -2,6 +2,9 @@ package edu.cnm.deepdive.abqtrailsclientside;
 
 import android.content.Intent;
 import android.os.Bundle;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +13,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import edu.cnm.deepdive.abqtrailsclientside.controller.MapsActivity;
+import edu.cnm.deepdive.abqtrailsclientside.fragment.TrailViewFragment;
 
 //David Nelson put this here to commit.
 public class MainActivity extends AppCompatActivity {

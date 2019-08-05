@@ -17,18 +17,27 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.room.DatabaseConfiguration;
 import androidx.room.InvalidationTracker;
 import androidx.sqlite.db.SupportSQLiteOpenHelper;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import edu.cnm.deepdive.abqtrailsclientside.R;
 import edu.cnm.deepdive.abqtrailsclientside.model.dao.TrailDao;
 import edu.cnm.deepdive.abqtrailsclientside.model.database.TrailsDatabase;
 import edu.cnm.deepdive.abqtrailsclientside.model.entity.Trail;
 import edu.cnm.deepdive.abqtrailsclientside.model.viewmodel.TrailViewModel;
 
-public class TrailViewFragment extends Fragment {
+public class TrailViewFragment extends Fragment implements OnMapReadyCallback {
 
 
+  private boolean isHorse;
+  private boolean isBike;
   private Context context;
-
   private TrailViewModel viewModel;
+  private double lat;
+  private double lon;
 
   public static TrailViewFragment newInstance() {
     return new TrailViewFragment();
@@ -52,37 +61,45 @@ public class TrailViewFragment extends Fragment {
   public void onActivityCreated(@Nullable Bundle savedInstanceState) {
     super.onActivityCreated(savedInstanceState);
     viewModel = ViewModelProviders.of(this).get(TrailViewModel.class);
-
+    View view = getView();
+    final TrailViewModel viewModel = ViewModelProviders.of(this).get(TrailViewModel.class);
     new Thread(() -> {
       TrailsDatabase db = TrailsDatabase.getInstance(getContext());
-      View view = getView();
+      isHorse = (db.trailDao().findById(1L).isHorse());
+      isBike = (db.trailDao().findById(1L).isBike());
+//    lat = (db.trailDao().findById(trailId).getLatitude();
+//    lon = (db.trailDao().findById(trailId).getLongitude();
+    }).start();
 
-      final TrailViewModel viewModel = ViewModelProviders.of(this).get(TrailViewModel.class);
-      viewModel.getTrails().observe(this, trails -> {
+    viewModel.getTrails().observe(this, trails -> {
+      final ArrayAdapter<Trail> adapter = new ArrayAdapter<>(context,
+          android.R.layout.simple_list_item_1, trails);
+      assert view != null;
+      MapView mapView = view.findViewById(R.id.satellite_view);
 
-        final ArrayAdapter<Trail> adapter = new ArrayAdapter<>(context,
-            android.R.layout.simple_list_item_1, trails);
-
-        assert view != null;
-
-        ListView ratingsListView = view.findViewById(R.id.ratings_cards);
-        ratingsListView.setAdapter(adapter);
-
-        ImageView horse = (db.trailDao().findById(1L).isHorse()) ?
-            view.findViewById(R.id.horse_marker_black) : view.findViewById(R.id.horse_marker_grey);
-
-        ImageView bike = (db.trailDao().findById(1L).isBike()) ?
-            view.findViewById(R.id.bicycle_marker_black)
-            : view.findViewById(R.id.bicycle_marker_grey);
-      });
-
+      ListView ratingsListView = view.findViewById(R.id.ratings_cards);
+      ratingsListView.setAdapter(adapter);
+      ImageView horse = view.findViewById(R.id.horse_marker_black);
+      if (!isHorse) {
+        horse.setAlpha(0.5f);
+      }
+      ImageView bike = view.findViewById(R.id.bicycle_marker_black);
+      if(!isBike) {
+        bike.setAlpha(0.5f);
+      }
       Button ratingsButton = view.findViewById(R.id.add_rating_button);
 
-    }).start();
+    });
   }
 
-  //use reactivex, return object pulled from the db in a callback
-  //then throw it back on the UI thread
+  @Override
+  public void onMapReady(GoogleMap googleMap) {
+    MarkerOptions marker = new MarkerOptions();
+    marker.position(new LatLng(lat, lon));
+    googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat, lon), 10));
+  }
+  //TODO Check if it is wiser to use reactivex, return object
+  // pulled from the db in a callback and then throw it back on the UI thread
 
 }
 
