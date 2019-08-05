@@ -10,9 +10,16 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import edu.cnm.deepdive.abqtrailsclientside.controller.MapsActivity;
+import edu.cnm.deepdive.abqtrailsclientside.model.entity.Trail;
+import edu.cnm.deepdive.abqtrailsclientside.model.viewmodel.TrailViewModel;
+import edu.cnm.deepdive.abqtrailsclientside.service.AbqTrailsService;
 
 //David Nelson put this here to commit.
 public class MainActivity extends AppCompatActivity {
+
+  private TrailViewModel viewModel;
+
+
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -23,12 +30,13 @@ public class MainActivity extends AppCompatActivity {
 
     FloatingActionButton fab = findViewById(R.id.fab);
     fab.setOnClickListener(new View.OnClickListener() {
-        @Override
+      @Override
       public void onClick(View view) {
         Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
             .setAction("Action", null).show();
       }
     });
+
   }
 
   @Override
@@ -45,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
     // as you specify a parent activity in AndroidManifest.xml.
     int id = item.getItemId();
     if (id == R.id.action_maps) {
-        Intent intent = new Intent(this, MapsActivity.class);
-        startActivity(intent);
+      Intent intent = new Intent(this, MapsActivity.class);
+      startActivity(intent);
 //    } else if (id == R.id.action_settings) {
 //      // Hack needs to be removed.
 //      FragmentManager manager = getSupportFragmentManager();
@@ -72,8 +80,14 @@ public class MainActivity extends AppCompatActivity {
 //    if (id == R.id.action_user_profile) {
 //      Intent intent = new Intent(this, MapsActivity.class);
 //      startActivity(intent);    }
-      return super.onOptionsItemSelected(item);
+    return super.onOptionsItemSelected(item);
 
   }
 
+//  private void loadDb() {
+//    new Thread(() -> {
+//      viewModel.getTrails();
+//      viewModel.loadOnlineDb();
+//    });
+//  }
 }

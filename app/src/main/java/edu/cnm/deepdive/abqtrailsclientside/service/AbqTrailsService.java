@@ -1,11 +1,11 @@
 package edu.cnm.deepdive.abqtrailsclientside.service;
 
-import androidx.lifecycle.LiveData;
 import edu.cnm.deepdive.abqtrailsclientside.BuildConfig;
 import edu.cnm.deepdive.abqtrailsclientside.model.entity.Trail;
 import io.reactivex.Observable;
 import io.reactivex.Single;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import okhttp3.logging.HttpLoggingInterceptor.Level;
@@ -58,13 +58,19 @@ public interface AbqTrailsService {
       interceptor.setLevel(Level.BODY);
       OkHttpClient client = new OkHttpClient.Builder()
           .addInterceptor(interceptor)
+          .readTimeout(0, TimeUnit.MILLISECONDS)
           .build();
-      Retrofit retrofit = new Retrofit.Builder()
-          .client(client) // This should be removed/commented out for production release.
-          .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-          .addConverterFactory(GsonConverterFactory.create()) // TODO Check; maybe change?
-          .baseUrl(BuildConfig.CLIENT_ID)
-          .build();
+      Retrofit retrofit = null;
+      try {
+        retrofit = new Retrofit.Builder()
+            .client(client) // This should be removed/commented out for production release.
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create()) // TODO Check; maybe change?
+            .baseUrl(BuildConfig.BASE_URL)
+            .build();
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
       INSTANCE = retrofit.create(AbqTrailsService.class);
 
     }
