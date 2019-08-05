@@ -5,18 +5,17 @@ import edu.cnm.deepdive.abqtrailsclientside.model.entity.Trail;
 import io.reactivex.Observable;
 import io.reactivex.Single;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import okhttp3.logging.HttpLoggingInterceptor.Level;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.http.Body;
 import retrofit2.http.GET;
-import retrofit2.http.Header;
-import retrofit2.http.POST;
-import retrofit2.http.PUT;
 import retrofit2.http.Query;
+
+
 
 public interface AbqTrailsService {
 
@@ -59,13 +58,19 @@ public interface AbqTrailsService {
       interceptor.setLevel(Level.BODY);
       OkHttpClient client = new OkHttpClient.Builder()
           .addInterceptor(interceptor)
+          .readTimeout(0, TimeUnit.MILLISECONDS)
           .build();
-      Retrofit retrofit = new Retrofit.Builder()
-          .client(client) // This should be removed/commented out for production release.
-          .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-          .addConverterFactory(GsonConverterFactory.create()) // TODO Check; maybe change?
-          .baseUrl(BuildConfig.BASE_URL)
-          .build();
+      Retrofit retrofit = null;
+      try {
+        retrofit = new Retrofit.Builder()
+            .client(client) // This should be removed/commented out for production release.
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create()) // TODO Check; maybe change?
+            .baseUrl(BuildConfig.BASE_URL)
+            .build();
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
       INSTANCE = retrofit.create(AbqTrailsService.class);
 
     }

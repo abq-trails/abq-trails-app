@@ -7,6 +7,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import edu.cnm.deepdive.abqtrailsclientside.BuildConfig;
 
+
 public class GoogleSignInService {
 
   private static Application context;
@@ -17,9 +18,9 @@ public class GoogleSignInService {
   private GoogleSignInService() {
     GoogleSignInOptions options = new GoogleSignInOptions.Builder()
         .requestEmail()
-        .requestId()
-        .requestProfile()
-        .requestIdToken(BuildConfig.CLIENT_ID)
+        .requestId() //can use to identify user as unique identifier not primary key
+        .requestProfile() //get image
+        .requestIdToken(BuildConfig.CLIENT_ID) //passport stamp for the webservice
         .build();
     client = GoogleSignIn.getClient(context, options);
   }
