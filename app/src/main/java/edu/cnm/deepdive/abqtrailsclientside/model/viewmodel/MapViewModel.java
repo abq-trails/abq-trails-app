@@ -11,15 +11,26 @@ import io.reactivex.schedulers.Schedulers;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Gets coordinates of trails.
+ */
 public class MapViewModel extends AndroidViewModel implements LifecycleObserver {
 
     private MutableLiveData<List<Trail>> mapCoordinates;
     private CompositeDisposable pending = new CompositeDisposable();
 
+    /**
+     * Initializes this instance with the specified {@link Application}
+     */
     public MapViewModel(@NonNull Application application) {
         super(application);
     }
 
+    /**
+     * Adds result of search to database??
+     * @param term term inputted by ??
+     * @return result of search
+     */
     public LiveData<List<Trail>> getCoordinates(String term) {
         if (mapCoordinates == null) {
             mapCoordinates = new MutableLiveData<>();
@@ -43,6 +54,9 @@ public class MapViewModel extends AndroidViewModel implements LifecycleObserver 
         return mapCoordinates;
     }
 
+    /**
+     * Disposes obsolete thread references when activity?? stops.
+     */
     @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
     public void disposePending() {
         pending.clear();

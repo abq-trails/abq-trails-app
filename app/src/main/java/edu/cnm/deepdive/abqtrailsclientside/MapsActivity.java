@@ -11,6 +11,9 @@ import com.google.android.gms.maps.model.*;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * 
+ */
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private static final int COLOR_BLACK_ARGB = 0xff000000;

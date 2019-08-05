@@ -16,7 +16,9 @@ import com.google.android.material.snackbar.Snackbar;
 import edu.cnm.deepdive.abqtrailsclientside.fragment.UserRatingFragment;
 import edu.cnm.deepdive.abqtrailsclientside.service.GoogleSignInService;
 
-//David Nelson put this here to commit.
+/**
+ * Manages navigation between activities and fragments??
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override
