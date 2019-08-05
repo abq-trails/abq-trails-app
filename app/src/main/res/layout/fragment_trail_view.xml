@@ -24,6 +24,7 @@
     android:layout_width="0dp"
     android:layout_height="139dp"
     android:contentDescription="@string/an_image_of_the_trail"
+    android:src="raw/opentrail.jpg"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.0"
     app:layout_constraintStart_toStartOf="parent"
@@ -61,18 +62,6 @@
     app:layout_constraintTop_toBottomOf="@+id/trail_image"
     tools:layout_conversion_absoluteHeight="19dp"
     tools:layout_conversion_absoluteWidth="411dp"/>
-
-  <TextView
-    android:id="@+id/distance_marker"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="12.0 KM"
-    android:textSize="36dp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toEndOf="@+id/bicycle_marker_black"
-    app:layout_constraintTop_toBottomOf="@+id/trail_description"
-    tools:layout_conversion_absoluteHeight="19dp"
-    tools:layout_conversion_absoluteWidth="0dp"/>
 
   <TextView
     android:id="@+id/ratings_text"

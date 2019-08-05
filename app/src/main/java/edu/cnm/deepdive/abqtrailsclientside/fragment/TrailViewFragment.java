@@ -39,6 +39,7 @@ public class TrailViewFragment extends Fragment {
   private boolean isBike;
   private Context context;
   private TrailViewModel viewModel;
+  private long cabqId;
 
   public static TrailViewFragment newInstance() {
     return new TrailViewFragment();
