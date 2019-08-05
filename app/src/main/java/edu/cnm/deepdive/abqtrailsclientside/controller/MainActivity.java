@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 transaction.addToBackStack(tag);
                 transaction.commit();
                 break;
-            case R.id.action_signout:
+            case R.id.sign_out:
                 signOut();
                 break;
             default:

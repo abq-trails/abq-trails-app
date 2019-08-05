@@ -112,9 +112,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     private void setupViewModel() {
         viewModel = ViewModelProviders.of(this).get(MapViewModel.class);
         viewModel.searchTrails(null).observe(this, (trails) -> {
-
-
-
+            
        });
     }
 
