@@ -2,6 +2,9 @@ package edu.cnm.deepdive.abqtrailsclientside;
 
 import android.content.Intent;
 import android.os.Bundle;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +13,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import edu.cnm.deepdive.abqtrailsclientside.controller.MapsActivity;
+import edu.cnm.deepdive.abqtrailsclientside.fragment.TrailViewFragment;
 import edu.cnm.deepdive.abqtrailsclientside.model.entity.Trail;
 import edu.cnm.deepdive.abqtrailsclientside.model.viewmodel.TrailViewModel;
 import edu.cnm.deepdive.abqtrailsclientside.service.AbqTrailsService;
@@ -28,14 +32,6 @@ public class MainActivity extends AppCompatActivity {
     Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
-    FloatingActionButton fab = findViewById(R.id.fab);
-    fab.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View view) {
-        Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-            .setAction("Action", null).show();
-      }
-    });
 
   }
 
@@ -57,16 +53,16 @@ public class MainActivity extends AppCompatActivity {
       startActivity(intent);
 //    } else if (id == R.id.action_settings) {
 //      // Hack needs to be removed.
-//      FragmentManager manager = getSupportFragmentManager();
-//      Fragment fragment = TrailViewFragment.newInstance();
-//      String tag = fragment.getClass().getSimpleName() + "";
-//      if (manager.findFragmentByTag(tag) != null) {
-//        manager.popBackStackImmediate(tag, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-//      }
-//      FragmentTransaction transaction = manager.beginTransaction();
-//      transaction.replace(R.id.container, fragment, tag);
-//      transaction.addToBackStack(tag);
-//      transaction.commit();
+      FragmentManager manager = getSupportFragmentManager();
+      Fragment fragment = TrailViewFragment.newInstance();
+      String tag = fragment.getClass().getSimpleName() + "";
+      if (manager.findFragmentByTag(tag) != null) {
+        manager.popBackStackImmediate(tag, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+      }
+      FragmentTransaction transaction = manager.beginTransaction();
+      transaction.replace(R.id.container, fragment, tag);
+      transaction.addToBackStack(tag);
+      transaction.commit();
       // End of hack.
       return true;
     }

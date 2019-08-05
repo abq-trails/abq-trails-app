@@ -1,7 +1,6 @@
 package edu.cnm.deepdive.abqtrailsclientside.fragment;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,22 +11,11 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
-import androidx.room.DatabaseConfiguration;
-import androidx.room.InvalidationTracker;
-import androidx.sqlite.db.SupportSQLiteOpenHelper;
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapView;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 import edu.cnm.deepdive.abqtrailsclientside.R;
-import edu.cnm.deepdive.abqtrailsclientside.model.dao.TrailDao;
 import edu.cnm.deepdive.abqtrailsclientside.model.database.TrailsDatabase;
 import edu.cnm.deepdive.abqtrailsclientside.model.entity.Trail;
 import edu.cnm.deepdive.abqtrailsclientside.model.viewmodel.TrailViewModel;
@@ -35,8 +23,8 @@ import edu.cnm.deepdive.abqtrailsclientside.model.viewmodel.TrailViewModel;
 public class TrailViewFragment extends Fragment {
 
 
-  private boolean isHorse;
-  private boolean isBike;
+  private boolean horse;
+  private boolean bike;
   private Context context;
   private TrailViewModel viewModel;
   private long cabqId;
@@ -67,27 +55,27 @@ public class TrailViewFragment extends Fragment {
     final TrailViewModel viewModel = ViewModelProviders.of(this).get(TrailViewModel.class);
     new Thread(() -> {
       TrailsDatabase db = TrailsDatabase.getInstance(getContext());
-      isHorse = (db.trailDao().findById(1L).isHorse());
-      isBike = (db.trailDao().findById(1L).isBike());
+        horse = (db.trailDao().findByIdSynchronous(1L).isHorse());
+        bike = (db.trailDao().findByIdSynchronous(1L).isBike());
+
     }).start();
 
     viewModel.getTrails().observe(this, trails -> {
       final ArrayAdapter<Trail> adapter = new ArrayAdapter<>(context,
           android.R.layout.simple_list_item_1, trails);
       assert view != null;
-      MapView mapView = view.findViewById(R.id.satellite_view);
 
-      ListView ratingsListView = view.findViewById(R.id.ratings_cards);
+      ListView ratingsListView = view.findViewById(R.id.ratings_list);
       ratingsListView.setAdapter(adapter);
       //FIXME Get this to pull a LiveData list, and then throw into a viewable list, of all ratings
       // for the trail in question.
 
       ImageView horse = view.findViewById(R.id.horse_marker_black);
-      if (!isHorse) {
+      if (!this.horse) {
         horse.setAlpha(0.5f);
       }
       ImageView bike = view.findViewById(R.id.bicycle_marker_black);
-      if(!isBike) {
+      if(!this.bike) {
         bike.setAlpha(0.5f);
       }
       Button ratingsButton = view.findViewById(R.id.add_rating_button);

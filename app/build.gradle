@@ -10,7 +10,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField "String", "BASE_URL", '"http://10.0.2.2:28282/rest/abqtrails/"'
+        buildConfigField "String", "BASE_URL", '"http://10.0.2.2:3306/rest/abqtrails/"'
         buildConfigField "String", "CLIENT_ID", '"897420277761-lp06uk4jdv6k8hgo9er5mrbsobjt53ng.apps.googleusercontent.com"'
         buildConfigField "String", "AUTHORIZATION_FORMAT", '"Bearer %s"'
         javaCompileOptions {
