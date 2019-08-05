@@ -1,8 +1,10 @@
 package edu.cnm.deepdive.abqtrailsclientside.controller;
 
+import android.location.Location;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
+import com.google.android.gms.common.api.internal.IStatusCallback;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -10,6 +12,8 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.*;
 import edu.cnm.deepdive.abqtrailsclientside.R;
 import edu.cnm.deepdive.abqtrailsclientside.model.viewmodel.MapViewModel;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
