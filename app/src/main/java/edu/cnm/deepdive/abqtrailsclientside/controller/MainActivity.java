@@ -14,16 +14,14 @@ import edu.cnm.deepdive.abqtrailsclientside.R;
 import edu.cnm.deepdive.abqtrailsclientside.fragment.UserRatingFragment;
 import edu.cnm.deepdive.abqtrailsclientside.service.GoogleSignInService;
 
-//David Nelson put this here to commit.
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        super.onCreate(savedInstanceState);
     }
 
     @Override

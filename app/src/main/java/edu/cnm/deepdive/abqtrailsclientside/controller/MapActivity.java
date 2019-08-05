@@ -1,10 +1,8 @@
 package edu.cnm.deepdive.abqtrailsclientside.controller;
 
-import android.location.Location;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
-import com.google.android.gms.common.api.internal.IStatusCallback;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -112,7 +110,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     private void setupViewModel() {
         viewModel = ViewModelProviders.of(this).get(MapViewModel.class);
         viewModel.searchTrails(null).observe(this, (trails) -> {
-            
+
        });
     }
 
