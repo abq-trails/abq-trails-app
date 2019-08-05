@@ -44,5 +44,4 @@ public class MapViewModel extends AndroidViewModel implements LifecycleObserver 
     public void disposePending() {
         pending.clear();
     }
-
 }
