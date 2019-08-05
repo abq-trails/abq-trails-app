@@ -47,6 +47,7 @@ dependencies {
     implementation 'androidx.preference:preference:1.0.0' //Remove if we don't use preferences
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
     //I think this is for observers
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
     annotationProcessor 'androidx.room:room-compiler:2.1.0'
 
     implementation 'com.facebook.stetho:stetho:1.5.1' //For testing
@@ -77,4 +78,3 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }
-
