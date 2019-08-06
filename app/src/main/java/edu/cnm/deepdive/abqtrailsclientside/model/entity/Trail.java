@@ -121,7 +121,7 @@ public class Trail {
   }
 
   /**
-   * Returns <code>bike</code> for this instance.
+   * Returns bike flag for this instance.
    */
   public boolean isBike() {
     return bike;
@@ -142,7 +142,7 @@ public class Trail {
   }
 
   /**
-   * Sets horse for this instance.
+   * Sets horsev flag for this instance.
    */
   public void setHorse(boolean horse) {
     this.horse = horse;

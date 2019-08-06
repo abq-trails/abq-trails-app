@@ -22,10 +22,12 @@ import retrofit2.http.Query;
 public interface AbqTrailsService {
 
   /**
-   *
-   * @param fragment
-   * @return
+   * Specify the request type, pass the relative URL and wrap response in an Observable object with
+   * the type of the expected result.
+   * @param fragment ??
+   * @return trail specified.
    */
+
   @GET("trails/search")
   Single<Trail> searchById(@Query("cabqId") String fragment);
 
@@ -64,20 +66,24 @@ public interface AbqTrailsService {
 //  Observable<List<Review>> getReviews();
 
   /**
-   *
-   * @return
+   * Allows initialization on demand for this service.
+   * @return instance of this service
    */
+
   static AbqTrailsService getInstance() {
     return InstanceHolder.INSTANCE;
   }
 
   /**
-   *
+   * Implements singleton pattern for this service.
    */
   class InstanceHolder {
 
     private static final AbqTrailsService INSTANCE;
 
+    /**
+     * Creates a retrofit object and an instance of this service for making requests to the backend.
+     */
     static {
       // Following five lines should be removed/commented out for production release.
       HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
