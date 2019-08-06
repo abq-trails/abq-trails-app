@@ -17,6 +17,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 import edu.cnm.deepdive.abqtrailsclientside.R;
 import edu.cnm.deepdive.abqtrailsclientside.model.database.TrailsDatabase;
+import edu.cnm.deepdive.abqtrailsclientside.model.entity.Review;
 import edu.cnm.deepdive.abqtrailsclientside.model.entity.Trail;
 import edu.cnm.deepdive.abqtrailsclientside.model.viewmodel.TrailViewModel;
 
@@ -27,7 +28,7 @@ public class TrailViewFragment extends Fragment {
   private boolean bike;
   private Context context;
   private TrailViewModel viewModel;
-  private long cabqId;
+  private long cabqId = 1L;
 
   public static TrailViewFragment newInstance() {
     return new TrailViewFragment();
@@ -55,14 +56,14 @@ public class TrailViewFragment extends Fragment {
     final TrailViewModel viewModel = ViewModelProviders.of(this).get(TrailViewModel.class);
     new Thread(() -> {
       TrailsDatabase db = TrailsDatabase.getInstance(getContext());
-        horse = (db.trailDao().findByIdSynchronous(1L).isHorse());
-        bike = (db.trailDao().findByIdSynchronous(1L).isBike());
+        horse = (db.trailDao().findByIdSynchronous(cabqId).isHorse());
+        bike = (db.trailDao().findByIdSynchronous(cabqId).isBike());
 
     }).start();
 
-    viewModel.getTrails().observe(this, trails -> {
-      final ArrayAdapter<Trail> adapter = new ArrayAdapter<>(context,
-          android.R.layout.simple_list_item_1, trails);
+    viewModel.getReviews(cabqId).observe(this, reviews -> {
+      final ArrayAdapter<Review> adapter = new ArrayAdapter<>(context,
+          android.R.layout.simple_list_item_1, reviews);
       assert view != null;
 
       ListView ratingsListView = view.findViewById(R.id.ratings_list);

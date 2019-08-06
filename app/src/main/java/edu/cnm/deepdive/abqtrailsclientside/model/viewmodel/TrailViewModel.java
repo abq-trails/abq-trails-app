@@ -10,6 +10,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.OnLifecycleEvent;
 import edu.cnm.deepdive.abqtrailsclientside.BuildConfig;
 import edu.cnm.deepdive.abqtrailsclientside.model.database.TrailsDatabase;
+import edu.cnm.deepdive.abqtrailsclientside.model.entity.Review;
 import edu.cnm.deepdive.abqtrailsclientside.model.entity.Trail;
 import edu.cnm.deepdive.abqtrailsclientside.service.AbqTrailsService;
 import edu.cnm.deepdive.abqtrailsclientside.service.GoogleSignInService;
@@ -19,7 +20,7 @@ import java.util.List;
 
 public class TrailViewModel extends AndroidViewModel implements LifecycleObserver {
 
-  private MutableLiveData<List<Trail>> trails;
+  private MutableLiveData<List<Review>> reviews;
   private CompositeDisposable pending = new CompositeDisposable();
   private AbqTrailsService service;
   private TrailsDatabase db = TrailsDatabase.getInstance(getApplication());
@@ -32,16 +33,16 @@ public class TrailViewModel extends AndroidViewModel implements LifecycleObserve
         GoogleSignInService.getInstance().getAccount().getIdToken());
   }
 
-  public LiveData<List<Trail>> getTrails() {
-    if (trails == null) {
-      trails = new MutableLiveData<>();
+  public LiveData<List<Review>> getReviews(long cabqId) {
+    if (reviews == null) {
+      reviews = new MutableLiveData<>();
     }
     pending.add(
-        service.listTrails()
+        service.searchByCabqId(cabqId)
             .subscribeOn(Schedulers.io())
-            .subscribe((result) -> trails.postValue(result))
+            .subscribe((result) -> reviews.postValue(result))
     );
-    return trails;
+    return reviews;
   }
 
   @OnLifecycleEvent(Event.ON_STOP)

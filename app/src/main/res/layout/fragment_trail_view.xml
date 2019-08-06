@@ -23,6 +23,7 @@
     android:id="@+id/trail_image"
     android:layout_width="match_parent"
     android:layout_height="300dp"
+    android:scaleType="centerCrop"
     android:contentDescription="@string/an_image_of_the_trail"
     android:src="@drawable/opentrail"
     app:layout_constraintEnd_toEndOf="parent"
