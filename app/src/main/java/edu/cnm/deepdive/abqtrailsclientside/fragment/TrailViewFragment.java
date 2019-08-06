@@ -17,8 +17,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 import edu.cnm.deepdive.abqtrailsclientside.R;
 import edu.cnm.deepdive.abqtrailsclientside.model.database.TrailsDatabase;
-import edu.cnm.deepdive.abqtrailsclientside.model.entity.Review;
-import edu.cnm.deepdive.abqtrailsclientside.model.entity.Trail;
+import edu.cnm.deepdive.abqtrailsclientside.model.Review;
 import edu.cnm.deepdive.abqtrailsclientside.model.viewmodel.TrailViewModel;
 
 public class TrailViewFragment extends Fragment {
@@ -44,8 +43,7 @@ public class TrailViewFragment extends Fragment {
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
       @Nullable Bundle savedInstanceState) {
-    final View view = inflater.inflate(R.layout.fragment_trail_view, container, false);
-    return view;
+    return inflater.inflate(R.layout.fragment_trail_view, container, false);
   }
 
   @Override

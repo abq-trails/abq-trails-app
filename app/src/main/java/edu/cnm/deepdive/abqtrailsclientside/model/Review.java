@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.abqtrailsclientside.model.entity;
+package edu.cnm.deepdive.abqtrailsclientside.model;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;

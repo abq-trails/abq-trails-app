@@ -1,7 +1,7 @@
 package edu.cnm.deepdive.abqtrailsclientside.service;
 
 import edu.cnm.deepdive.abqtrailsclientside.BuildConfig;
-import edu.cnm.deepdive.abqtrailsclientside.model.entity.Review;
+import edu.cnm.deepdive.abqtrailsclientside.model.Review;
 import edu.cnm.deepdive.abqtrailsclientside.model.entity.Trail;
 import io.reactivex.Observable;
 import io.reactivex.Single;
