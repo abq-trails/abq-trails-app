@@ -74,11 +74,10 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     map = googleMap;
     setupViewModel();
     // Default on opening when maps is clicked
-//        MarkerOptions marker = new MarkerOptions();
-//        marker.position(new LatLng(35.0844, -106.6504));
-//        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(35.0844, -106.6504), 10));
-//        marker.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
-//        googleMap.addMarker(marker);
+        MarkerOptions marker = new MarkerOptions();
+        marker.position(new LatLng(35.0844, -106.6504));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(35.0844, -106.6504), 10));
+        googleMap.addMarker(marker);
   }
 
   // Hard coded in some features to the the trail lines.
