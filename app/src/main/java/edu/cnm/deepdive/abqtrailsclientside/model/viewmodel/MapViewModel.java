@@ -6,16 +6,13 @@ import androidx.lifecycle.*;
 import edu.cnm.deepdive.abqtrailsclientside.model.dao.TrailDao;
 import edu.cnm.deepdive.abqtrailsclientside.model.database.TrailsDatabase;
 import edu.cnm.deepdive.abqtrailsclientside.model.entity.Trail;
-import edu.cnm.deepdive.abqtrailsclientside.service.AbqTrailsService;
-import io.reactivex.schedulers.Schedulers;
 
-import java.util.LinkedList;
 import java.util.List;
 
 public class MapViewModel extends AndroidViewModel implements LifecycleObserver {
 
     private LiveData<List<Trail>> searchResult;
-    private MutableLiveData<String> searchTerm;
+    private MutableLiveData<String> searchTerm = new MutableLiveData<>();
     private TrailDao dao;
 
     public MapViewModel(@NonNull Application application) {
@@ -36,7 +33,7 @@ public class MapViewModel extends AndroidViewModel implements LifecycleObserver 
         return searchResult;
     }
 
-    public Trail getTrailByCabqId (long id) {
-       return dao.findByCabqIdSynchronous(id);
-    }
+//    public Trail getTrailByCabqId (long id) {
+//       return dao.findByCabqIdSynchronous(id);
+//    }
 }

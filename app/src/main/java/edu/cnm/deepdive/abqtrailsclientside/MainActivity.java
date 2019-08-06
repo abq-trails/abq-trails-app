@@ -4,20 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import edu.cnm.deepdive.abqtrailsclientside.controller.MapActivity;
-import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
-import edu.cnm.deepdive.abqtrailsclientside.controller.MapsActivity;
 import edu.cnm.deepdive.abqtrailsclientside.fragment.TrailViewFragment;
-import edu.cnm.deepdive.abqtrailsclientside.model.entity.Trail;
 import edu.cnm.deepdive.abqtrailsclientside.model.viewmodel.TrailViewModel;
 
 public class MainActivity extends AppCompatActivity {
