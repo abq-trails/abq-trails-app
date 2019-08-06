@@ -18,11 +18,11 @@ import com.google.maps.android.data.geojson.GeoJsonLayer;
 import com.google.maps.android.data.geojson.GeoJsonLineString;
 import com.google.maps.android.data.geojson.GeoJsonLineStringStyle;
 import com.google.maps.android.data.geojson.GeoJsonMultiLineString;
+import com.google.maps.android.data.geojson.GeoJsonPointStyle;
 import edu.cnm.deepdive.abqtrailsclientside.R;
 import edu.cnm.deepdive.abqtrailsclientside.model.entity.Trail;
 import edu.cnm.deepdive.abqtrailsclientside.model.viewmodel.MapViewModel;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -67,6 +67,9 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
   }
 
   private void addTrailsToMap(List<Trail> trails) {
+    GeoJsonLineStringStyle lineStringStyle = new GeoJsonLineStringStyle();
+    lineStringStyle.setColor(Color.rgb(34, 139, 34));
+    lineStringStyle.setLineStringWidth(6);
     try {
       if (layer != null && map != null) {
         layer.removeLayerFromMap();
@@ -80,27 +83,47 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         Object rawCoordinates = geometry.get("coordinates");
         Log.d(type, rawCoordinates.toString());
         if (type.equals("LineString")) {
+          LatLng trailHead = null;
           List<List<Double>> coordinates = (List<List<Double>>) rawCoordinates;
           List<LatLng> coordList = new LinkedList<>();
           for (List<Double> pair : coordinates) {
-            coordList.add(new LatLng(pair.get(1), pair.get(0)));
+            LatLng point = new LatLng(pair.get(1), pair.get(0));
+            if (trailHead == null) {
+              trailHead = point;
+            }
+            coordList.add(point);
           }
           GeoJsonFeature feature = new GeoJsonFeature(new GeoJsonLineString(coordList),
               trail.getName(), null, null);
+          GeoJsonPointStyle pointStyle = new GeoJsonPointStyle();
+          pointStyle.setTitle(trail.getName());
+          feature.setPointStyle(pointStyle);
+          feature.setLineStringStyle(lineStringStyle);
           layer.addFeature(feature);
+          // TODO Add marker using coordinates in trailHead.
         } else if (type.equals("MultiLineString")) {
+          LatLng trailHead = null;
           List<List<List<Double>>> coordinates = (List<List<List<Double>>>) rawCoordinates;
           List<GeoJsonLineString> lineList = new LinkedList<>();
           for (List<List<Double>> line : coordinates) {
             List<LatLng> coordList = new LinkedList<>();
             for (List<Double> pair : line) {
-              coordList.add(new LatLng(pair.get(1), pair.get(0)));
+              LatLng point = new LatLng(pair.get(1), pair.get(0));
+              if (trailHead == null) {
+                trailHead = point;
+              }
+              coordList.add(point);
             }
             lineList.add(new GeoJsonLineString(coordList));
           }
           GeoJsonFeature feature = new GeoJsonFeature(new GeoJsonMultiLineString(lineList),
               trail.getName(), null, null);
+          GeoJsonPointStyle pointStyle = new GeoJsonPointStyle();
+          pointStyle.setTitle(trail.getName());
+          feature.setPointStyle(pointStyle);
+          feature.setLineStringStyle(lineStringStyle);
           layer.addFeature(feature);
+          // TODO Add marker using coordinates in trailHead.
         }
       }
       layer.addLayerToMap();
@@ -111,8 +134,3 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     }
   }
 }
-//    private GeoJsonLineStringStyle lineStringStyle = new GeoJsonLineStringStyle();
-//        lineStringStyle.setColor(Color.GREEN);
-//        lineStringStyle.setClickable(true);
-//        lineStringStyle.setLineStringWidth(12);
-//        lineStringFeature.setLineStringStyle(lineStringStyle);
