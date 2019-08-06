@@ -55,8 +55,8 @@ public class TrailViewFragment extends Fragment {
     final TrailViewModel viewModel = ViewModelProviders.of(this).get(TrailViewModel.class);
     new Thread(() -> {
       TrailsDatabase db = TrailsDatabase.getInstance(getContext());
-        horse = (db.trailDao().findByIdSynchronous(1L).isHorse());
-        bike = (db.trailDao().findByIdSynchronous(1L).isBike());
+      horse = (db.trailDao().findByIdSynchronous(1L).isHorse());
+      bike = (db.trailDao().findByIdSynchronous(1L).isBike());
 
     }).start();
 
@@ -75,16 +75,16 @@ public class TrailViewFragment extends Fragment {
         horse.setAlpha(0.5f);
       }
       ImageView bike = view.findViewById(R.id.bicycle_marker_black);
-      if(!this.bike) {
+      if (!this.bike) {
         bike.setAlpha(0.5f);
       }
       Button ratingsButton = view.findViewById(R.id.add_rating_button);
-      ratingsButton.setOnClickListener( (trail) ->{
+      ratingsButton.setOnClickListener((trail) -> {
         UserRatingFragment ratingFragment = new UserRatingFragment();
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction
-            .replace(((ViewGroup)getView().getParent()).getId(), ratingFragment)
+            .replace(((ViewGroup) getView().getParent()).getId(), ratingFragment)
             .addToBackStack(null)
             .commit();
 
@@ -92,7 +92,6 @@ public class TrailViewFragment extends Fragment {
         // this app finally talking to itself) to the rating fragment so that we can send a rating
         // about the right trail to the server.
       });
-
 
 
     });

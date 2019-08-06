@@ -38,23 +38,23 @@ public abstract class TrailsDatabase extends RoomDatabase {
   private void getOnlineDb() {
 
     TrailDao dao = trailDao();
-     AbqTrailsService service = AbqTrailsService.getInstance();
-     service.listTrails()
-         .subscribeOn(Schedulers.io())
-         .subscribe((trails) -> {
-           for (Trail trail : trails) {
-             long id = dao.insert(trail);
-             if (id < 0) {
-               Trail existing = dao.findByCabqIdSynchronous(trail.getCabqId());
-               existing.setCoordinates(trail.getCoordinates());
-               existing.setRating(trail.getRating());
-               existing.setHorse(trail.isHorse());
-               existing.setBike(trail.isBike());
-               existing.setName(trail.getName());
-               existing.setLength(trail.getLength());
-               dao.update(existing);
-             }
-           }
-         });
+    AbqTrailsService service = AbqTrailsService.getInstance();
+    service.listTrails()
+        .subscribeOn(Schedulers.io())
+        .subscribe((trails) -> {
+          for (Trail trail : trails) {
+            long id = dao.insert(trail);
+            if (id < 0) {
+              Trail existing = dao.findByCabqIdSynchronous(trail.getCabqId());
+              existing.setCoordinates(trail.getCoordinates());
+              existing.setRating(trail.getRating());
+              existing.setHorse(trail.isHorse());
+              existing.setBike(trail.isBike());
+              existing.setName(trail.getName());
+              existing.setLength(trail.getLength());
+              dao.update(existing);
+            }
+          }
+        });
   }
 }

@@ -19,13 +19,21 @@ import edu.cnm.deepdive.abqtrailsclientside.R;
  */
 public class UserRatingFragment extends Fragment {
 
-  private RatingBar ratingBar; /**Stars for users to rate trail */
-  private TextView ratingScale; /**Users rate trails on a scale if 1-5 */
-  private EditText feedback; /** Comment box for users to leave a comment. */
+  private RatingBar ratingBar;
+  /**
+   * Stars for users to rate trail
+   */
+  private TextView ratingScale;
+  /**
+   * Users rate trails on a scale if 1-5
+   */
+  private EditText feedback;
+  /**
+   * Comment box for users to leave a comment.
+   */
   private Button sendFeedback; /** Button for submitting feedback. */
 
   /**
-   *
    * @return
    */
   public static UserRatingFragment newInstance() {
@@ -78,12 +86,12 @@ public class UserRatingFragment extends Fragment {
         //if (feedback.getText().toString().isEmpty()) {
         //  Toast.makeText(getContext(), "Please leave feedback.", Toast.LENGTH_SHORT).show();
         //} else {
-          feedback.setText("");
-          ratingBar.setRating(0);
-          Toast.makeText(getContext(), "Thank you for sharing your feedback.", Toast.LENGTH_SHORT)
-              .show();
-        }
-      });
+        feedback.setText("");
+        ratingBar.setRating(0);
+        Toast.makeText(getContext(), "Thank you for sharing your feedback.", Toast.LENGTH_SHORT)
+            .show();
+      }
+    });
 
     return view;
   }

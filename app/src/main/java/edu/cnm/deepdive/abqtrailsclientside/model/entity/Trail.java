@@ -12,7 +12,7 @@ public class Trail {
   @PrimaryKey(autoGenerate = true)
   @ColumnInfo(name = "trail_id")
   @SerializedName("ignored_id")
-  private long  id;
+  private long id;
 
   //change to Long if long does not work.
   @ColumnInfo(name = "cabq_id")

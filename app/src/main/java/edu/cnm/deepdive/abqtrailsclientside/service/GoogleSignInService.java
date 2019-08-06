@@ -29,6 +29,10 @@ public class GoogleSignInService {
     GoogleSignInService.context = context;
   }
 
+  public static GoogleSignInService getInstance() {
+    return InstanceHolder.INSTANCE;
+  }
+
   public GoogleSignInClient getClient() {
     return client;
   }
@@ -39,10 +43,6 @@ public class GoogleSignInService {
 
   public void setAccount(GoogleSignInAccount account) {
     this.account = account;
-  }
-
-  public static GoogleSignInService getInstance() {
-    return InstanceHolder.INSTANCE;
   }
 
   private static class InstanceHolder {

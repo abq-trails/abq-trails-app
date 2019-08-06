@@ -2,7 +2,6 @@ package edu.cnm.deepdive.abqtrailsclientside;
 
 import android.app.Application;
 import com.facebook.stetho.Stetho;
-import edu.cnm.deepdive.abqtrailsclientside.model.dao.TrailDao;
 import edu.cnm.deepdive.abqtrailsclientside.model.database.TrailsDatabase;
 import edu.cnm.deepdive.abqtrailsclientside.service.GoogleSignInService;
 

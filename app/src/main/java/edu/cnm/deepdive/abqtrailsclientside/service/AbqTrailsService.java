@@ -16,8 +16,11 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 
-
 public interface AbqTrailsService {
+
+  static AbqTrailsService getInstance() {
+    return InstanceHolder.INSTANCE;
+  }
 
   @GET("trails/search")
   Single<Trail> searchById(@Query("cabqId") String id);
@@ -27,9 +30,6 @@ public interface AbqTrailsService {
 
   @GET("trails")
   Observable<List<Trail>> listTrails();
-
-  @GET("trails/{id}")
-  Single<Trail> id();
 
 //  @GET("users/{id}")
 //  Single<User> getById();
@@ -43,10 +43,8 @@ public interface AbqTrailsService {
 //  @GET("reviews")
 //  Observable<List<Review>> getReviews();
 
-
-  static AbqTrailsService getInstance() {
-    return InstanceHolder.INSTANCE;
-  }
+  @GET("trails/{id}")
+  Single<Trail> id();
 
   class InstanceHolder {
 

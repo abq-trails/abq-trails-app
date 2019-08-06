@@ -16,58 +16,58 @@ import edu.cnm.deepdive.abqtrailsclientside.service.GoogleSignInService;
 
 public class MainActivity extends AppCompatActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        super.onCreate(savedInstanceState);
-    }
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    setContentView(R.layout.activity_main);
+    Toolbar toolbar = findViewById(R.id.toolbar);
+    setSupportActionBar(toolbar);
+    super.onCreate(savedInstanceState);
+  }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
+  @Override
+  public boolean onCreateOptionsMenu(Menu menu) {
+    // Inflate the menu; this adds items to the action bar if it is present.
+    getMenuInflater().inflate(R.menu.menu_main, menu);
+    return true;
+  }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        boolean handled = true;
-        switch (item.getItemId()) {
-            case R.id.action_maps:
-                Intent intent = new Intent(this, MapActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.action_reviews:
-                FragmentManager manager = getSupportFragmentManager();
-                Fragment fragment = UserRatingFragment.newInstance();
-                String tag = fragment.getClass().getSimpleName() + "";
-                if (manager.findFragmentByTag(tag) != null) {
-                    manager.popBackStackImmediate(tag, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-                }
-                FragmentTransaction transaction = manager.beginTransaction();
-                transaction.replace(R.id.container, fragment, tag);
-                transaction.addToBackStack(tag);
-                transaction.commit();
-                break;
-            case R.id.sign_out:
-                signOut();
-                break;
-            default:
-                handled = super.onOptionsItemSelected(item);
+  @Override
+  public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+    boolean handled = true;
+    switch (item.getItemId()) {
+      case R.id.action_maps:
+        Intent intent = new Intent(this, MapActivity.class);
+        startActivity(intent);
+        break;
+      case R.id.action_reviews:
+        FragmentManager manager = getSupportFragmentManager();
+        Fragment fragment = UserRatingFragment.newInstance();
+        String tag = fragment.getClass().getSimpleName() + "";
+        if (manager.findFragmentByTag(tag) != null) {
+          manager.popBackStackImmediate(tag, FragmentManager.POP_BACK_STACK_INCLUSIVE);
         }
-        return handled;
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.replace(R.id.container, fragment, tag);
+        transaction.addToBackStack(tag);
+        transaction.commit();
+        break;
+      case R.id.sign_out:
+        signOut();
+        break;
+      default:
+        handled = super.onOptionsItemSelected(item);
     }
+    return handled;
+  }
 
-    private void signOut() {
-        GoogleSignInService service = GoogleSignInService.getInstance();
-        service.getClient().signOut().addOnCompleteListener((task) -> {
-            service.setAccount(null);
-            Intent intent = new Intent(this, GoogleSignInService.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
-        });
-    }
+  private void signOut() {
+    GoogleSignInService service = GoogleSignInService.getInstance();
+    service.getClient().signOut().addOnCompleteListener((task) -> {
+      service.setAccount(null);
+      Intent intent = new Intent(this, GoogleSignInService.class);
+      intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+      startActivity(intent);
+    });
+  }
 
 }
