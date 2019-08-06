@@ -21,15 +21,33 @@ import retrofit2.http.Query;
  */
 public interface AbqTrailsService {
 
+  /**
+   *
+   * @param fragment
+   * @return
+   */
   @GET("trails/search")
   Single<Trail> searchById(@Query("cabqId") String fragment);
 
+  /**
+   *
+   * @param fragment
+   * @return
+   */
   @GET("trails/search")
   Observable<List<Trail>> searchByName(@Query("nameFrag") String fragment);
 
+  /**
+   *
+   * @return
+   */
   @GET("trails")
   Observable<List<Trail>> listTrails();
 
+  /**
+   *
+   * @return
+   */
   @GET("trails/{id}")
   Single<Trail> id();
 
@@ -45,11 +63,17 @@ public interface AbqTrailsService {
 //  @GET("reviews")
 //  Observable<List<Review>> getReviews();
 
-
+  /**
+   *
+   * @return
+   */
   static AbqTrailsService getInstance() {
     return InstanceHolder.INSTANCE;
   }
 
+  /**
+   *
+   */
   class InstanceHolder {
 
     private static final AbqTrailsService INSTANCE;

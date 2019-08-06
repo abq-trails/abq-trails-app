@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * 
+ * Sets markers for trailheads.
  */
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 

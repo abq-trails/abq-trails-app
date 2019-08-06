@@ -13,7 +13,9 @@ import edu.cnm.deepdive.abqtrailsclientside.MainActivity;
 import edu.cnm.deepdive.abqtrailsclientside.R;
 import edu.cnm.deepdive.abqtrailsclientside.service.GoogleSignInService;
 
-
+/**
+ * Handles login procedures via GoogleSignIn.
+ */
 public class LoginActivity extends AppCompatActivity {
 
   private static final int LOGIN_REQUEST_CODE = 1000;

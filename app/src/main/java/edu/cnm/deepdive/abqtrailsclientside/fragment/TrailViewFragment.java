@@ -23,6 +23,9 @@ import edu.cnm.deepdive.abqtrailsclientside.model.database.TrailsDatabase;
 import edu.cnm.deepdive.abqtrailsclientside.model.entity.Trail;
 import edu.cnm.deepdive.abqtrailsclientside.model.viewmodel.TrailViewModel;
 
+/**
+ *
+ */
 public class TrailViewFragment extends Fragment {
 
 
@@ -30,6 +33,10 @@ public class TrailViewFragment extends Fragment {
 
   private TrailViewModel viewModel;
 
+  /**
+   *
+   * @return
+   */
   public static TrailViewFragment newInstance() {
     return new TrailViewFragment();
   }
