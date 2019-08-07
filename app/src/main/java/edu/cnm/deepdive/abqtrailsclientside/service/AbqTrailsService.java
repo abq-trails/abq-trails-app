@@ -1,6 +1,7 @@
 package edu.cnm.deepdive.abqtrailsclientside.service;
 
 import edu.cnm.deepdive.abqtrailsclientside.BuildConfig;
+import edu.cnm.deepdive.abqtrailsclientside.model.Review;
 import edu.cnm.deepdive.abqtrailsclientside.model.entity.Trail;
 import io.reactivex.Observable;
 import io.reactivex.Single;
@@ -31,6 +32,12 @@ public interface AbqTrailsService {
   @GET("trails")
   Observable<List<Trail>> listTrails();
 
+  @GET("trails/{id}")
+  Single<Trail> id();
+
+  @GET("reviews/search")
+  Observable<List<Review>> searchByCabqId(@Query("cabqId") long cabqId);
+
 //  @GET("users/{id}")
 //  Single<User> getById();
 //
@@ -41,7 +48,7 @@ public interface AbqTrailsService {
 //  Single<Review> create(@Header("Authorization") String oauthHeader, @Body Review review);
 //
 //  @GET("reviews")
-//  Observable<List<Review>> getReviews();
+//  Observable<List<Review>> getReviewsById(@Query("trailId") long id);
 
   @GET("trails/{id}")
   Single<Trail> id();

@@ -55,19 +55,19 @@ public class UserRatingFragment extends Fragment {
         ratingScale.setText(String.valueOf(v));
         switch ((int) ratingBar.getRating()) {
           case 1:
-            ratingScale.setText("Very bad.");
+            ratingScale.setText(R.string.rating_1);
             break;
           case 2:
-            ratingScale.setText("Needs some improvements");
+            ratingScale.setText(R.string.rating_2);
             break;
           case 3:
-            ratingScale.setText("Good");
+            ratingScale.setText(R.string.rating_3);
             break;
           case 4:
-            ratingScale.setText("Great");
+            ratingScale.setText(R.string.rating_4);
             break;
           case 5:
-            ratingScale.setText("Awesome");
+            ratingScale.setText(R.string.rating_5);
             break;
           default:
             ratingScale.setText("");
@@ -86,12 +86,12 @@ public class UserRatingFragment extends Fragment {
         //if (feedback.getText().toString().isEmpty()) {
         //  Toast.makeText(getContext(), "Please leave feedback.", Toast.LENGTH_SHORT).show();
         //} else {
-        feedback.setText("");
-        ratingBar.setRating(0);
-        Toast.makeText(getContext(), "Thank you for sharing your feedback.", Toast.LENGTH_SHORT)
-            .show();
-      }
-    });
+          feedback.setText("");
+          ratingBar.setRating(0);
+          Toast.makeText(getContext(), R.string.feedback_thanks, Toast.LENGTH_SHORT)
+              .show();
+        }
+      });
 
     return view;
   }

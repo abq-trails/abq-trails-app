@@ -19,4 +19,10 @@
     <string name="feedback_hint">Tell us what you loved.</string>
     <string name="submit">Submit</string>
     <string name="rating_request">Please rate this trail.</string>
+  <string name="rating_1">Very bad.</string>
+  <string name="rating_2">Needs some improvements</string>
+  <string name="rating_3">Good</string>
+  <string name="rating_4">Great</string>
+  <string name="rating_5">Awesome</string>
+  <string name="feedback_thanks">Thank you for sharing your feedback.</string>
 </resources>
