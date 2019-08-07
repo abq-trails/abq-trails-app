@@ -39,11 +39,11 @@
                 android:value="AIzaSyBmj2E4nR0pHN0_vsaLOMKp4HoQ2LFZLF8"/>
 
         <activity
-          android:name=".controller.MapsActivity"
+          android:name=".controller.MapActivity"
                 android:label="@string/title_activity_maps">
         </activity>
         <activity
-          android:name=".MainActivity"
+          android:name=".controller.MainActivity"
                 android:label="@string/app_name"
                 android:theme="@style/AppTheme.NoActionBar">
 <!--            <intent-filter>-->
@@ -83,7 +83,7 @@
 
         <activity
                 android:name="com.google.android.gms.common.api.GoogleApiActivity"
-                android:parentActivityName=".MainActivity"
+                android:parentActivityName=".controller.MainActivity"
                 android:exported="false"/>
 
         <meta-data

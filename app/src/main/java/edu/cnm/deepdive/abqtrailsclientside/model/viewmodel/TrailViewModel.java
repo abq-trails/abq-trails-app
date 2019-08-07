@@ -24,7 +24,10 @@ import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.OnLifecycleEvent;
+import androidx.lifecycle.Transformations;
 import edu.cnm.deepdive.abqtrailsclientside.BuildConfig;
+import edu.cnm.deepdive.abqtrailsclientside.model.Review;
+import edu.cnm.deepdive.abqtrailsclientside.model.dao.TrailDao;
 import edu.cnm.deepdive.abqtrailsclientside.model.database.TrailsDatabase;
 import edu.cnm.deepdive.abqtrailsclientside.model.entity.Trail;
 import edu.cnm.deepdive.abqtrailsclientside.service.AbqTrailsService;
@@ -38,10 +41,13 @@ import java.util.List;
  */
 public class TrailViewModel extends AndroidViewModel implements LifecycleObserver {
 
-  private MutableLiveData<List<Trail>> trails;
+  private MutableLiveData<Long> cabqId = new MutableLiveData<>();
+  private LiveData<Trail> trail;
+  private MutableLiveData<List<Review>> reviews;
   private CompositeDisposable pending = new CompositeDisposable();
   private AbqTrailsService service;
-  private TrailsDatabase db = TrailsDatabase.getInstance(getApplication());
+  private TrailsDatabase db;
+  private TrailDao trailDao;
   private String oauthHeader;
 
   /**
@@ -52,8 +58,23 @@ public class TrailViewModel extends AndroidViewModel implements LifecycleObserve
     service = AbqTrailsService.getInstance();
     oauthHeader = String.format(BuildConfig.AUTHORIZATION_FORMAT,
         GoogleSignInService.getInstance().getAccount().getIdToken());
+    db = TrailsDatabase.getInstance(application);
+    trailDao = db.trailDao();
+    trail = Transformations.switchMap(cabqId, (id) -> trailDao.findById(id));
+
   }
 
+  public void setCabqId(long cabqId) {
+    this.cabqId.setValue(cabqId);
+  }
+
+  public LiveData<Trail> getTrail() {
+    return trail;
+  }
+
+  public LiveData<List<Review>> getReviews(long cabqId) {
+    if (reviews == null) {
+      reviews = new MutableLiveData<>();
   /**
    * Returns list of trails.
    *
@@ -64,11 +85,11 @@ public class TrailViewModel extends AndroidViewModel implements LifecycleObserve
       trails = new MutableLiveData<>();
     }
     pending.add(
-        service.listTrails()
+        service.searchByCabqId(cabqId)
             .subscribeOn(Schedulers.io())
-            .subscribe((result) -> trails.postValue(result))
+            .subscribe((result) -> reviews.postValue(result))
     );
-    return trails;
+    return reviews;
   }
 
   @OnLifecycleEvent(Event.ON_STOP)

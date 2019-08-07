@@ -10,7 +10,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField "String", "BASE_URL", '"http://10.0.2.2:28282/rest/abqtrails/"'
+        buildConfigField "String", "BASE_URL", '"http://10.0.2.2:3306/rest/abqtrails/"'
         buildConfigField "String", "CLIENT_ID", '"897420277761-lp06uk4jdv6k8hgo9er5mrbsobjt53ng.apps.googleusercontent.com"'
         buildConfigField "String", "AUTHORIZATION_FORMAT", '"Bearer %s"'
         javaCompileOptions {
@@ -57,10 +57,11 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:17.0.0'
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
     implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'com.google.maps.android:android-maps-utils:0.5'
 
     //Used for asynchronous tasks
-    implementation 'io.reactivex.rxjava2:rxjava:2.2.10'
-    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+//    implementation 'io.reactivex.rxjava2:rxjava:2.2.10'
+//    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
 
     //Used to make a synchronous or asynchronous HTTP request to the remote webserver
     def retrofit_version = "2.6.0"
@@ -68,7 +69,7 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
 
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.14.2'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.14.2'//for console logging
 
     //Implementation testing
     androidTestImplementation 'androidx.arch.core:core-testing:2.0.1'
@@ -78,3 +79,4 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }
+

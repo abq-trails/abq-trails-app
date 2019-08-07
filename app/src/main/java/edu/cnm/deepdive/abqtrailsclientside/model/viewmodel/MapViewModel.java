@@ -19,17 +19,19 @@ package edu.cnm.deepdive.abqtrailsclientside.model.viewmodel;
 import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LifecycleObserver;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Transformations;
+import edu.cnm.deepdive.abqtrailsclientside.model.dao.TrailDao;
+import edu.cnm.deepdive.abqtrailsclientside.model.database.TrailsDatabase;
+import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.OnLifecycleEvent;
 import edu.cnm.deepdive.abqtrailsclientside.model.entity.Trail;
-import edu.cnm.deepdive.abqtrailsclientside.service.AbqTrailsService;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.CompositeDisposable;
-import io.reactivex.schedulers.Schedulers;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -37,9 +39,15 @@ import java.util.List;
  */
 public class MapViewModel extends AndroidViewModel implements LifecycleObserver {
 
-  private MutableLiveData<List<Trail>> mapCoordinates;
-  private CompositeDisposable pending = new CompositeDisposable();
+  private LiveData<List<Trail>> searchResult;
+  private MutableLiveData<String> searchTerm = new MutableLiveData<>();
+  private TrailDao dao;
 
+  public MapViewModel(@NonNull Application application) {
+    super(application);
+    dao = TrailsDatabase.getInstance(application).trailDao();
+    searchResult = Transformations.switchMap(searchTerm, (searchFrag) -> dao.search(searchFrag));
+  }
   /**
    * Initializes this instance with the specified {@link Application}
    */
@@ -47,6 +55,13 @@ public class MapViewModel extends AndroidViewModel implements LifecycleObserver 
     super(application);
   }
 
+  public LiveData<List<Trail>> getAllTrails() {
+    return dao.getAll();
+  }
+
+  public void setSearchTerm(String term) {
+    this.searchTerm.setValue(term);
+  }
   /**
    * Returns a list of trails searched for by user.
    *
@@ -76,6 +91,13 @@ public class MapViewModel extends AndroidViewModel implements LifecycleObserver 
     return mapCoordinates;
   }
 
+  public LiveData<List<Trail>> getSearchResult() {
+    return searchResult;
+  }
+
+//    public Trail getTrailByCabqId (long id) {
+//       return dao.findByCabqIdSynchronous(id);
+//    }
   /**
    * Disposes obsolete thread references when activity?? stops.
    */

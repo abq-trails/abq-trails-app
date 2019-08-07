@@ -17,6 +17,7 @@ Copyright 2019 Denelle Britton Linebarger, Alana Chigbrow, Anita Martin, David N
 package edu.cnm.deepdive.abqtrailsclientside.service;
 
 import edu.cnm.deepdive.abqtrailsclientside.BuildConfig;
+import edu.cnm.deepdive.abqtrailsclientside.model.Review;
 import edu.cnm.deepdive.abqtrailsclientside.model.entity.Trail;
 import io.reactivex.Observable;
 import io.reactivex.Single;
@@ -36,6 +37,10 @@ import retrofit2.http.Query;
  * Provides access to the backend controller database.
  */
 public interface AbqTrailsService {
+
+  static AbqTrailsService getInstance() {
+    return InstanceHolder.INSTANCE;
+  }
 
   /**
    * Allows initialization on demand for this service.
@@ -57,7 +62,7 @@ public interface AbqTrailsService {
    */
 
   @GET("trails/search")
-  Single<Trail> searchById(@Query("cabqId") String fragment);
+  Single<Trail> searchById(@Query("cabqId") String id);
 
   /**
    * Specify the request type, pass the relative URL and wrap response in an Observable
@@ -68,7 +73,7 @@ public interface AbqTrailsService {
    * @return list of trails.
    */
   @GET("trails/search")
-  Observable<List<Trail>> searchByName(@Query("nameFrag") String fragment);
+  Observable<List<Trail>> searchByName(@Query("nameFrag") String name);
 
   /**
    *Specify the request type, pass the relative URL and wrap response in an Observable
@@ -78,6 +83,12 @@ public interface AbqTrailsService {
    */
   @GET("trails")
   Observable<List<Trail>> listTrails();
+
+  @GET("trails/{id}")
+  Single<Trail> id();
+
+  @GET("reviews/search")
+  Observable<List<Review>> searchByCabqId(@Query("cabqId") long cabqId);
 
 //  @GET("users/{id}")
 //  Single<User> getById();
@@ -89,7 +100,7 @@ public interface AbqTrailsService {
 //  Single<Review> create(@Header("Authorization") String oauthHeader, @Body Review review);
 //
 //  @GET("reviews")
-//  Observable<List<Review>> getReviews();
+//  Observable<List<Review>> getReviewsById(@Query("trailId") long id);
 
   /**
    *
@@ -100,6 +111,9 @@ public interface AbqTrailsService {
   /**
    * Implements singleton pattern for this service.
    */
+  @GET("trails/{id}")
+  Single<Trail> id();
+
   class InstanceHolder {
 
     private static final AbqTrailsService INSTANCE;
