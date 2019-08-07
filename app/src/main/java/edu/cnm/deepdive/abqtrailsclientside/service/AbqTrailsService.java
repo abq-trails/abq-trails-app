@@ -76,6 +76,9 @@ public interface AbqTrailsService {
   @GET("trails")
   Observable<List<Trail>> listTrails();
 
+  @GET("trails/{id}")
+  Single<Trail> id();
+
   @GET("reviews/search")
   Observable<List<Review>> searchByCabqId(@Query("cabqId") long cabqId);
 

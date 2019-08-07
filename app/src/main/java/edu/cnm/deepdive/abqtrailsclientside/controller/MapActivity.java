@@ -15,13 +15,18 @@ Copyright 2019 Denelle Britton Linebarger, Alana Chigbrow, Anita Martin, David N
  */
 package edu.cnm.deepdive.abqtrailsclientside.controller;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ViewGroup;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
@@ -30,12 +35,14 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.google.maps.android.data.Geometry;
 import com.google.maps.android.data.geojson.GeoJsonFeature;
 import com.google.maps.android.data.geojson.GeoJsonLayer;
 import com.google.maps.android.data.geojson.GeoJsonLineString;
 import com.google.maps.android.data.geojson.GeoJsonLineStringStyle;
 import com.google.maps.android.data.geojson.GeoJsonMultiLineString;
 import edu.cnm.deepdive.abqtrailsclientside.R;
+import edu.cnm.deepdive.abqtrailsclientside.fragment.TrailViewFragment;
 import edu.cnm.deepdive.abqtrailsclientside.model.entity.Trail;
 import edu.cnm.deepdive.abqtrailsclientside.model.viewmodel.MapViewModel;
 import java.io.IOException;
@@ -47,11 +54,15 @@ import org.json.JSONException;
 /**
  * Sets markers for trailheads.
  */
-public class MapActivity extends AppCompatActivity implements OnMapReadyCallback {
+
+public class MapActivity extends AppCompatActivity
+    implements OnMapReadyCallback, OnMarkerClickListener {
+
   private MapViewModel viewModel;
   private GoogleMap map;
   private GeoJsonLayer layer;
   private Gson gson;
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -62,12 +73,24 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         .findFragmentById(R.id.map);
     mapFragment.getMapAsync(this);
   }
+
   @Override
   public void onMapReady(GoogleMap googleMap) {
     map = googleMap;
     googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
       @Override
       public boolean onMarkerClick(Marker marker) {
+        long cabqId = ((Trail) marker.getTag()).getCabqId();
+        Bundle args = new Bundle();
+        args.putLong("cabqId", cabqId);
+        TrailViewFragment trailView = new TrailViewFragment();
+        trailView.setArguments(args);
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.map_activity, trailView).commitNow();
+
+//        transaction.add(trailView, "")
+//                    .addToBackStack(null)
+//            .commit();
         return false;
       }
     });
@@ -77,6 +100,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     marker.position(new LatLng(35.0844, -106.6504));
     googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(35.0844, -106.6504), 10));
   }
+
   private void setupViewModel() {
     viewModel = ViewModelProviders.of(this).get(MapViewModel.class);
     viewModel.getAllTrails().observe(this, (trails) -> {
@@ -86,6 +110,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
       addTrailsToMap(trails);
     });
   }
+
   private void addTrailsToMap(List<Trail> trails) {
     GeoJsonLineStringStyle lineStringStyle = new GeoJsonLineStringStyle();
     lineStringStyle.setColor(Color.rgb(34, 139, 34));
@@ -113,14 +138,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
             }
             coordList.add(point);
           }
-          GeoJsonFeature feature = new GeoJsonFeature(new GeoJsonLineString(coordList),
-              trail.getName(), null, null);
-          feature.setLineStringStyle(lineStringStyle);
-          layer.addFeature(feature);
-          map.addMarker(new MarkerOptions().position(trailHead)
-              .title(trail.getName())
-              .snippet("")
-              .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+          addFeature(new GeoJsonLineString(coordList), lineStringStyle, trail, trailHead);
         } else if (type.equals("MultiLineString")) {
           LatLng trailHead = null;
           List<List<List<Double>>> coordinates = (List<List<List<Double>>>) rawCoordinates;
@@ -136,14 +154,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
             }
             lineList.add(new GeoJsonLineString(coordList));
           }
-          GeoJsonFeature feature = new GeoJsonFeature(new GeoJsonMultiLineString(lineList),
-              trail.getName(), null, null);
-          feature.setLineStringStyle(lineStringStyle);
-          layer.addFeature(feature);
-          map.addMarker(new MarkerOptions().position(trailHead)
-              .title(trail.getName())
-              .snippet("")
-              .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+          addFeature(new GeoJsonMultiLineString(lineList), lineStringStyle, trail, trailHead);
         }
       }
       layer.addLayerToMap();
@@ -152,5 +163,33 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     } catch (JSONException e) {
       e.printStackTrace();
     }
+  }
+
+  private void addFeature(
+      Geometry geometry, GeoJsonLineStringStyle lineStringStyle, Trail trail, LatLng trailHead) {
+    GeoJsonFeature feature = new GeoJsonFeature(geometry, trail.getName(), null, null);
+    feature.setLineStringStyle(lineStringStyle);
+    layer.addFeature(feature);
+    map.addMarker(
+        new MarkerOptions()
+            .position(trailHead)
+            .title(trail.getName())
+            .snippet("")
+            .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)))
+        .setTag(trail);
+  }
+
+  @Override
+  public boolean onMarkerClick(Marker marker) {
+    long cabqId = ((Trail) marker.getTag()).getCabqId();
+    Bundle args = new Bundle();
+    args.putLong("cabqId", cabqId);
+    TrailViewFragment trailView = new TrailViewFragment();
+    trailView.setArguments(args);
+    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+    transaction.add(trailView, "")
+        .addToBackStack(null)
+        .commit();
+    return false;
   }
 }
