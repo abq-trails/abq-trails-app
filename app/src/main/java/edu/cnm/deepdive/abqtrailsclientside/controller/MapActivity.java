@@ -9,7 +9,9 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -95,12 +97,15 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
           }
           GeoJsonFeature feature = new GeoJsonFeature(new GeoJsonLineString(coordList),
               trail.getName(), null, null);
-          GeoJsonPointStyle pointStyle = new GeoJsonPointStyle();
-          pointStyle.setTitle(trail.getName());
-          feature.setPointStyle(pointStyle);
+//          GeoJsonPointStyle pointStyle = new GeoJsonPointStyle();
+//          pointStyle.setTitle(trail.getName());
+//          feature.setPointStyle(pointStyle);
           feature.setLineStringStyle(lineStringStyle);
           layer.addFeature(feature);
-          // TODO Add marker using coordinates in trailHead.
+          map.addMarker(new MarkerOptions().position(trailHead)
+              .title(trail.getName())
+              .snippet("")
+              .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
         } else if (type.equals("MultiLineString")) {
           LatLng trailHead = null;
           List<List<List<Double>>> coordinates = (List<List<List<Double>>>) rawCoordinates;
@@ -118,12 +123,15 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
           }
           GeoJsonFeature feature = new GeoJsonFeature(new GeoJsonMultiLineString(lineList),
               trail.getName(), null, null);
-          GeoJsonPointStyle pointStyle = new GeoJsonPointStyle();
-          pointStyle.setTitle(trail.getName());
-          feature.setPointStyle(pointStyle);
+//          GeoJsonPointStyle pointStyle = new GeoJsonPointStyle();
+//          pointStyle.setTitle(trail.getName());
+//          feature.setPointStyle(pointStyle);
           feature.setLineStringStyle(lineStringStyle);
           layer.addFeature(feature);
-          // TODO Add marker using coordinates in trailHead.
+          map.addMarker(new MarkerOptions().position(trailHead)
+              .title(trail.getName())
+              .snippet("")
+              .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
         }
       }
       layer.addLayerToMap();
