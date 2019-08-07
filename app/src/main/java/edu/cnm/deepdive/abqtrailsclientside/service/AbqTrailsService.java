@@ -59,8 +59,8 @@ public interface AbqTrailsService {
   Single<Trail> searchById(@Query("cabqId") String id);
 
   /**
-   * Specify the request type, pass the relative URL and wrap response in an Observable
-   * object with the type of the expected result.
+   * Specify the request type, pass the relative URL and wrap response in an Observable object with
+   * the type of the expected result.
    *
    * @return list of trails.
    */
@@ -68,16 +68,20 @@ public interface AbqTrailsService {
   Observable<List<Trail>> searchByName(@Query("nameFrag") String name);
 
   /**
-   *Specify the request type, pass the relative URL and wrap response in an Observable
-   * object with the type of the expected result.
+   * Specify the request type, pass the relative URL and wrap response in an Observable object with
+   * the type of the expected result.
    *
    * @return list of trails.
    */
   @GET("trails")
   Observable<List<Trail>> listTrails();
 
+  /**
+   * Implements singleton pattern for this service.
+   */
   @GET("trails/{id}")
   Single<Trail> id();
+
 
   @GET("reviews/search")
   Observable<List<Review>> searchByCabqId(@Query("cabqId") long cabqId);
@@ -94,13 +98,6 @@ public interface AbqTrailsService {
 //  @GET("reviews")
 //  Observable<List<Review>> getReviewsById(@Query("trailId") long id);
 
-
-
-  /**
-   * Implements singleton pattern for this service.
-   */
-  @GET("trails/{id}")
-  Single<Trail> id();
 
   class InstanceHolder {
 
