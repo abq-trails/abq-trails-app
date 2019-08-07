@@ -61,8 +61,8 @@ public class TrailViewModel extends AndroidViewModel implements LifecycleObserve
     db = TrailsDatabase.getInstance(application);
     trailDao = db.trailDao();
     trail = Transformations.switchMap(cabqId, (id) -> trailDao.findById(id));
-
   }
+
 
   public void setCabqId(long cabqId) {
     this.cabqId.setValue(cabqId);
@@ -75,14 +75,6 @@ public class TrailViewModel extends AndroidViewModel implements LifecycleObserve
   public LiveData<List<Review>> getReviews(long cabqId) {
     if (reviews == null) {
       reviews = new MutableLiveData<>();
-  /**
-   * Returns list of trails.
-   *
-   * @return list of trails
-   */
-  public LiveData<List<Trail>> getTrails() {
-    if (trails == null) {
-      trails = new MutableLiveData<>();
     }
     pending.add(
         service.searchByCabqId(cabqId)
@@ -91,9 +83,9 @@ public class TrailViewModel extends AndroidViewModel implements LifecycleObserve
     );
     return reviews;
   }
-
   @OnLifecycleEvent(Event.ON_STOP)
   private void deletePending() {
     pending.clear();
   }
-}
+    }
+

@@ -1,3 +1,18 @@
+/*
+Copyright 2019 Denelle Britton Linebarger, Alana Chigbrow, Anita Martin, David Nelson
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ */
 package edu.cnm.deepdive.abqtrailsclientside.controller;
 
 import android.graphics.Color;
@@ -29,13 +44,14 @@ import java.util.List;
 import java.util.Map;
 import org.json.JSONException;
 
+/**
+ * Sets markers for trailheads.
+ */
 public class MapActivity extends AppCompatActivity implements OnMapReadyCallback {
-
   private MapViewModel viewModel;
   private GoogleMap map;
   private GeoJsonLayer layer;
   private Gson gson;
-
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -46,7 +62,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         .findFragmentById(R.id.map);
     mapFragment.getMapAsync(this);
   }
-
   @Override
   public void onMapReady(GoogleMap googleMap) {
     map = googleMap;
@@ -62,7 +77,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     marker.position(new LatLng(35.0844, -106.6504));
     googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(35.0844, -106.6504), 10));
   }
-
   private void setupViewModel() {
     viewModel = ViewModelProviders.of(this).get(MapViewModel.class);
     viewModel.getAllTrails().observe(this, (trails) -> {
@@ -72,7 +86,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
       addTrailsToMap(trails);
     });
   }
-
   private void addTrailsToMap(List<Trail> trails) {
     GeoJsonLineStringStyle lineStringStyle = new GeoJsonLineStringStyle();
     lineStringStyle.setColor(Color.rgb(34, 139, 34));

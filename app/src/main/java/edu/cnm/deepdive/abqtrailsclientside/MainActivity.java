@@ -20,7 +20,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -28,11 +27,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import edu.cnm.deepdive.abqtrailsclientside.controller.MapActivity;
-import edu.cnm.deepdive.abqtrailsclientside.fragment.TrailViewFragment;
 import edu.cnm.deepdive.abqtrailsclientside.model.viewmodel.TrailViewModel;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import edu.cnm.deepdive.abqtrailsclientside.controller.MapsActivity;
 import edu.cnm.deepdive.abqtrailsclientside.fragment.UserRatingFragment;
 import edu.cnm.deepdive.abqtrailsclientside.service.GoogleSignInService;
 
@@ -66,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
     boolean handled = true;
     switch (item.getItemId()) {
       case R.id.action_maps:
-        Intent intent = new Intent(this, MapsActivity.class);
+        Intent intent = new Intent(this, MapActivity.class);
         startActivity(intent);
         break;
       case R.id.action_reviews:

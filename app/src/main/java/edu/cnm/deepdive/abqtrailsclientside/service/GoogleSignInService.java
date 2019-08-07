@@ -52,9 +52,7 @@ public class GoogleSignInService {
     GoogleSignInService.context = context;
   }
 
-  public static GoogleSignInService getInstance() {
-    return InstanceHolder.INSTANCE;
-  }
+
 
   /**
    * Returns instance.

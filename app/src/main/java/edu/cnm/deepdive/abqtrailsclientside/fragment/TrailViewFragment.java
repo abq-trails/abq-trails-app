@@ -16,6 +16,7 @@ Copyright 2019 Denelle Britton Linebarger, Alana Chigbrow, Anita Martin, David N
 
 package edu.cnm.deepdive.abqtrailsclientside.fragment;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -101,6 +102,8 @@ public class TrailViewFragment extends Fragment {
       //FIXME Get this to pull a LiveData list, and then throw into a viewable list, of all ratings
       // for the trail in question.
 
+      Activity view;
+
       ratingsButton.setOnClickListener((trail) -> {
         args.putLong("cabqId", cabqId);
         UserRatingFragment ratingFragment = new UserRatingFragment();
@@ -111,17 +114,10 @@ public class TrailViewFragment extends Fragment {
             .replace(((ViewGroup) getView().getParent()).getId(), ratingFragment)
             .addToBackStack(null)
             .commit();
-        ImageView horse = (db.trailDao().findByCabqIdSynchronous(1L).isHorse()) ?
-            view.findViewById(R.id.horse_marker_black) : view.findViewById(R.id.horse_marker_grey);
 
-        ImageView bike = (db.trailDao().findByCabqIdSynchronous(1L).isBike()) ?
-            view.findViewById(R.id.bicycle_marker_black)
-            : view.findViewById(R.id.bicycle_marker_grey);
       });
 
-      Button ratingsButton = view.findViewById(R.id.add_rating_button);
-
-    }).start();
+    });
   }
 
   //TODO Check if it is wiser to use reactivex, return object

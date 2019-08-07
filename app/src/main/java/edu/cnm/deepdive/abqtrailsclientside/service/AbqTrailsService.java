@@ -38,10 +38,6 @@ import retrofit2.http.Query;
  */
 public interface AbqTrailsService {
 
-  static AbqTrailsService getInstance() {
-    return InstanceHolder.INSTANCE;
-  }
-
   /**
    * Allows initialization on demand for this service.
    *
@@ -56,8 +52,6 @@ public interface AbqTrailsService {
    * Specify the request type, pass the relative URL and wrap response in an Observable object with
    * the type of the expected result.
    *
-   * @param fragment cabqId of trail.
-   *
    * @return trail specified.
    */
 
@@ -67,8 +61,6 @@ public interface AbqTrailsService {
   /**
    * Specify the request type, pass the relative URL and wrap response in an Observable
    * object with the type of the expected result.
-   *
-   * @param fragment name of trail.
    *
    * @return list of trails.
    */
@@ -83,9 +75,6 @@ public interface AbqTrailsService {
    */
   @GET("trails")
   Observable<List<Trail>> listTrails();
-
-  @GET("trails/{id}")
-  Single<Trail> id();
 
   @GET("reviews/search")
   Observable<List<Review>> searchByCabqId(@Query("cabqId") long cabqId);
@@ -102,11 +91,7 @@ public interface AbqTrailsService {
 //  @GET("reviews")
 //  Observable<List<Review>> getReviewsById(@Query("trailId") long id);
 
-  /**
-   *
-   */
-  @GET("trails/{id}")
-  Single<Trail> id();
+
 
   /**
    * Implements singleton pattern for this service.
