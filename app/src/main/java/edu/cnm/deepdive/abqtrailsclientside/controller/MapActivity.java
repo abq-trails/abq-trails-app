@@ -15,13 +15,10 @@ Copyright 2019 Denelle Britton Linebarger, Alana Chigbrow, Anita Martin, David N
  */
 package edu.cnm.deepdive.abqtrailsclientside.controller;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.ViewGroup;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -54,7 +51,6 @@ import org.json.JSONException;
 /**
  * Sets markers for trailheads.
  */
-
 public class MapActivity extends AppCompatActivity
     implements OnMapReadyCallback, OnMarkerClickListener {
 
