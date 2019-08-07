@@ -29,7 +29,7 @@ import edu.cnm.deepdive.abqtrailsclientside.service.AbqTrailsService;
 import io.reactivex.schedulers.Schedulers;
 
 /**
- * ??
+ * Creates RoomDatabase.
  */
 @Database(entities = Trail.class, version = 1, exportSchema = true)
 public abstract class TrailsDatabase extends RoomDatabase {
@@ -59,7 +59,7 @@ public abstract class TrailsDatabase extends RoomDatabase {
   }
 
   /**
-   * ??
+   * Allows trail access to the TrailDao inside the database.
    */
   public abstract TrailDao trailDao();
 

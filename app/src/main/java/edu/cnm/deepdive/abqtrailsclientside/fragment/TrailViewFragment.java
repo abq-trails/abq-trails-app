@@ -35,7 +35,7 @@ import edu.cnm.deepdive.abqtrailsclientside.model.entity.Trail;
 import edu.cnm.deepdive.abqtrailsclientside.model.viewmodel.TrailViewModel;
 
 /**
- * ??
+ * Uses service class to provide access to the database.
  */
 public class TrailViewFragment extends Fragment {
 

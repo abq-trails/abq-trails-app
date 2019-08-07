@@ -33,7 +33,7 @@ import retrofit2.http.Query;
 
 
 /**
- * Provides access to ??
+ * Provides access to the backend controller database.
  */
 public interface AbqTrailsService {
 
@@ -51,7 +51,7 @@ public interface AbqTrailsService {
    * Specify the request type, pass the relative URL and wrap response in an Observable object with
    * the type of the expected result.
    *
-   * @param fragment ??
+   * @param fragment cabqId of trail.
    *
    * @return trail specified.
    */
@@ -63,7 +63,7 @@ public interface AbqTrailsService {
    * Specify the request type, pass the relative URL and wrap response in an Observable
    * object with the type of the expected result.
    *
-   * @param fragment
+   * @param fragment name of trail.
    *
    * @return list of trails.
    */

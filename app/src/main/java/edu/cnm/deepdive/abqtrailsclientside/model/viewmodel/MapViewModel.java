@@ -48,10 +48,10 @@ public class MapViewModel extends AndroidViewModel implements LifecycleObserver 
   }
 
   /**
-   * Adds result of search to database??
+   * Returns a list of trails searched for by user.
    *
-   * @param term term inputted by ??
-   * @return result of search
+   * @param term term inputted by user.
+   * @return a list of trails.
    */
   public LiveData<List<Trail>> getCoordinates(String term) {
     if (mapCoordinates == null) {
