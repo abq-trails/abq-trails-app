@@ -12,7 +12,9 @@ import android.widget.RatingBar.OnRatingBarChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProviders;
 import edu.cnm.deepdive.abqtrailsclientside.R;
+import edu.cnm.deepdive.abqtrailsclientside.model.viewmodel.TrailViewModel;
 
 /**
  *
@@ -23,6 +25,9 @@ public class UserRatingFragment extends Fragment {
   private TextView ratingScale; /**Users rate trails on a scale if 1-5 */
   private EditText feedback; /** Comment box for users to leave a comment. */
   private Button sendFeedback; /** Button for submitting feedback. */
+  private TrailViewModel viewModel;
+  private String message;
+  private int rating;
 
   /**
    *
@@ -78,14 +83,22 @@ public class UserRatingFragment extends Fragment {
         //if (feedback.getText().toString().isEmpty()) {
         //  Toast.makeText(getContext(), "Please leave feedback.", Toast.LENGTH_SHORT).show();
         //} else {
-          feedback.setText("");
-          ratingBar.setRating(0);
-          Toast.makeText(getContext(), "Thank you for sharing your feedback.", Toast.LENGTH_SHORT)
-              .show();
-        }
-      });
 
+        message = feedback.getText().toString().replaceAll("\\n", "<br />");
+        rating = ratingBar.getNumStars();
+        viewModel.postReview(message, rating);
+        feedback.setText("");
+        ratingBar.setRating(0);
+        Toast.makeText(getContext(), "Thank you for sharing your feedback.", Toast.LENGTH_SHORT)
+            .show();
+      }
+    });
     return view;
+  }
+
+  private void setupViewModel() {
+    viewModel = ViewModelProviders.of(this).get(TrailViewModel.class);
+    getLifecycle().addObserver(viewModel);
   }
 
 }

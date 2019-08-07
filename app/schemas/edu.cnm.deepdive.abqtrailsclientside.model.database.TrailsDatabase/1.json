@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "e792348b3f85e707040223a0785c3f84",
+    "identityHash": "5bc376a02109effba09dbed3ed950896",
     "entities": [
       {
         "tableName": "Trail",
@@ -74,12 +74,56 @@
           }
         ],
         "foreignKeys": []
+      },
+      {
+        "tableName": "Review",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`app_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `cabq_id` INTEGER NOT NULL, `trail_rating` INTEGER NOT NULL, `trail_review` TEXT, `username` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "appId",
+            "columnName": "app_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cabqId",
+            "columnName": "cabq_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rating",
+            "columnName": "trail_rating",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "review",
+            "columnName": "trail_review",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "username",
+            "columnName": "username",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "app_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
       }
     ],
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'e792348b3f85e707040223a0785c3f84')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '5bc376a02109effba09dbed3ed950896')"
     ]
   }
 }

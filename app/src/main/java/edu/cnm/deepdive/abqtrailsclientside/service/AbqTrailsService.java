@@ -1,6 +1,7 @@
 package edu.cnm.deepdive.abqtrailsclientside.service;
 
 import edu.cnm.deepdive.abqtrailsclientside.BuildConfig;
+import edu.cnm.deepdive.abqtrailsclientside.model.entity.Review;
 import edu.cnm.deepdive.abqtrailsclientside.model.entity.Trail;
 import io.reactivex.Observable;
 import io.reactivex.Single;
@@ -12,7 +13,9 @@ import okhttp3.logging.HttpLoggingInterceptor.Level;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 
@@ -37,9 +40,9 @@ public interface AbqTrailsService {
 //  @GET("users")
 //  Observable<List<User>> listUsers();
 //
-//  @POST("reviews")
-//  Single<Review> create(@Header("Authorization") String oauthHeader, @Body Review review);
-//
+  @POST("reviews")
+  Single<Review> create( @Body Review review);
+
 //  @GET("reviews")
 //  Observable<List<Review>> getReviews();
 

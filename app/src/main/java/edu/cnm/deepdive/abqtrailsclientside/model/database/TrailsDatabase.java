@@ -7,7 +7,9 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
+import edu.cnm.deepdive.abqtrailsclientside.model.dao.ReviewDao;
 import edu.cnm.deepdive.abqtrailsclientside.model.dao.TrailDao;
+import edu.cnm.deepdive.abqtrailsclientside.model.entity.Review;
 import edu.cnm.deepdive.abqtrailsclientside.model.entity.Trail;
 import edu.cnm.deepdive.abqtrailsclientside.model.viewmodel.TrailViewModel;
 import edu.cnm.deepdive.abqtrailsclientside.service.AbqTrailsService;
@@ -16,11 +18,12 @@ import io.reactivex.schedulers.Schedulers;
 import java.util.LinkedList;
 import java.util.List;
 
-@Database(entities = Trail.class, version = 1, exportSchema = true)
+@Database(entities = {Trail.class, Review.class}, version = 1, exportSchema = true)
 public abstract class TrailsDatabase extends RoomDatabase {
 
   private static TrailsDatabase INSTANCE;
   private static TrailViewModel viewModel;
+
 
   public static TrailsDatabase getInstance(Context context) {
     if (INSTANCE == null) {
@@ -38,6 +41,7 @@ public abstract class TrailsDatabase extends RoomDatabase {
   }
 
   public abstract TrailDao trailDao();
+  public abstract ReviewDao reviewDao();
 
   private void getOnlineDb() {
 
