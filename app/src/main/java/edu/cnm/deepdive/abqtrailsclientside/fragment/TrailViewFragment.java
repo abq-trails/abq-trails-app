@@ -1,3 +1,17 @@
+//Copyright 2019 Denelle Britton Linebarger, Alana Chigbrow, Anita Martin, David Nelson
+//
+//    Licensed under the Apache License, Version 2.0 (the "License");
+//    you may not use this file except in compliance with the License.
+//    You may obtain a copy of the License at
+//
+//    http://www.apache.org/licenses/LICENSE-2.0
+//
+//    Unless required by applicable law or agreed to in writing, software
+//    distributed under the License is distributed on an "AS IS" BASIS,
+//    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//    See the License for the specific language governing permissions and
+//    limitations under the License.
+
 package edu.cnm.deepdive.abqtrailsclientside.fragment;
 
 import android.content.Context;
@@ -11,14 +25,9 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
-import androidx.room.DatabaseConfiguration;
-import androidx.room.InvalidationTracker;
-import androidx.sqlite.db.SupportSQLiteOpenHelper;
 import edu.cnm.deepdive.abqtrailsclientside.R;
-import edu.cnm.deepdive.abqtrailsclientside.model.dao.TrailDao;
 import edu.cnm.deepdive.abqtrailsclientside.model.database.TrailsDatabase;
 import edu.cnm.deepdive.abqtrailsclientside.model.entity.Trail;
 import edu.cnm.deepdive.abqtrailsclientside.model.viewmodel.TrailViewModel;
@@ -35,7 +44,6 @@ public class TrailViewFragment extends Fragment {
 
   /**
    *
-   * @return
    */
   public static TrailViewFragment newInstance() {
     return new TrailViewFragment();
@@ -75,7 +83,7 @@ public class TrailViewFragment extends Fragment {
         ListView ratingsListView = view.findViewById(R.id.ratings_cards);
         ratingsListView.setAdapter(adapter);
 
-          ImageView horse = (db.trailDao().findByCabqIdSynchronous(1L).isHorse()) ?
+        ImageView horse = (db.trailDao().findByCabqIdSynchronous(1L).isHorse()) ?
             view.findViewById(R.id.horse_marker_black) : view.findViewById(R.id.horse_marker_grey);
 
         ImageView bike = (db.trailDao().findByCabqIdSynchronous(1L).isBike()) ?

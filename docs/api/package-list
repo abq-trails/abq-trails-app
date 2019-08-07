@@ -1,0 +1,8 @@
+edu.cnm.deepdive.abqtrailsclientside
+edu.cnm.deepdive.abqtrailsclientside.controller
+edu.cnm.deepdive.abqtrailsclientside.fragment
+edu.cnm.deepdive.abqtrailsclientside.model.dao
+edu.cnm.deepdive.abqtrailsclientside.model.database
+edu.cnm.deepdive.abqtrailsclientside.model.entity
+edu.cnm.deepdive.abqtrailsclientside.model.viewmodel
+edu.cnm.deepdive.abqtrailsclientside.service

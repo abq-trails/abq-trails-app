@@ -1,3 +1,17 @@
+//Copyright 2019 Denelle Britton Linebarger, Alana Chigbrow, Anita Martin, David Nelson
+//
+//    Licensed under the Apache License, Version 2.0 (the "License");
+//    you may not use this file except in compliance with the License.
+//    You may obtain a copy of the License at
+//
+//    http://www.apache.org/licenses/LICENSE-2.0
+//
+//    Unless required by applicable law or agreed to in writing, software
+//    distributed under the License is distributed on an "AS IS" BASIS,
+//    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//    See the License for the specific language governing permissions and
+//    limitations under the License.
+
 package edu.cnm.deepdive.abqtrailsclientside.service;
 
 import edu.cnm.deepdive.abqtrailsclientside.BuildConfig;
@@ -22,8 +36,19 @@ import retrofit2.http.Query;
 public interface AbqTrailsService {
 
   /**
+   * Allows initialization on demand for this service.
+   *
+   * @return instance of this service
+   */
+
+  static AbqTrailsService getInstance() {
+    return InstanceHolder.INSTANCE;
+  }
+
+  /**
    * Specify the request type, pass the relative URL and wrap response in an Observable object with
    * the type of the expected result.
+   *
    * @param fragment ??
    * @return trail specified.
    */
@@ -33,25 +58,15 @@ public interface AbqTrailsService {
 
   /**
    *
-   * @param fragment
-   * @return
    */
   @GET("trails/search")
   Observable<List<Trail>> searchByName(@Query("nameFrag") String fragment);
 
   /**
    *
-   * @return
    */
   @GET("trails")
   Observable<List<Trail>> listTrails();
-
-  /**
-   *
-   * @return
-   */
-  @GET("trails/{id}")
-  Single<Trail> id();
 
 //  @GET("users/{id}")
 //  Single<User> getById();
@@ -66,13 +81,10 @@ public interface AbqTrailsService {
 //  Observable<List<Review>> getReviews();
 
   /**
-   * Allows initialization on demand for this service.
-   * @return instance of this service
+   *
    */
-
-  static AbqTrailsService getInstance() {
-    return InstanceHolder.INSTANCE;
-  }
+  @GET("trails/{id}")
+  Single<Trail> id();
 
   /**
    * Implements singleton pattern for this service.
