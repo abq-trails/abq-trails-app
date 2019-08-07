@@ -1,16 +1,18 @@
-//Copyright 2019 Denelle Britton Linebarger, Alana Chigbrow, Anita Martin, David Nelson
-//
-//    Licensed under the Apache License, Version 2.0 (the "License");
-//    you may not use this file except in compliance with the License.
-//    You may obtain a copy of the License at
-//
-//    http://www.apache.org/licenses/LICENSE-2.0
-//
-//    Unless required by applicable law or agreed to in writing, software
-//    distributed under the License is distributed on an "AS IS" BASIS,
-//    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//    See the License for the specific language governing permissions and
-//    limitations under the License.
+/*
+Copyright 2019 Denelle Britton Linebarger, Alana Chigbrow, Anita Martin, David Nelson
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ */
 
 package edu.cnm.deepdive.abqtrailsclientside.model.dao;
 
@@ -35,6 +37,7 @@ public interface TrailDao {
    * Inserts instance of {@link Trail} into database.
    *
    * @param trail instance of trail
+   *
    * @return instance of trail
    */
   @Insert(onConflict = OnConflictStrategy.IGNORE)
@@ -52,15 +55,17 @@ public interface TrailDao {
    * Returns the {@link Trail} specified by the <code>id</code> from the database.
    *
    * @param id {@link Trail} primary key value
+   *
    * @return trail instance.
    */
   @Query("SELECT * FROM Trail WHERE trail_id = :id")
   LiveData<Trail> findById(Long id);
 
   /**
-   * Returns a list of trails using search ?
+   * Returns a list of trails.
    *
-   * @param searchString search term?
+   * @param searchString search term.
+   *
    * @return trail instance
    */
   @Query("SELECT * FROM Trail WHERE trail_name LIKE :searchString")
@@ -70,6 +75,7 @@ public interface TrailDao {
    * Returns a trail using id.
    *
    * @param id of trail.
+   *
    * @return trail.
    */
   @Query("SELECT * FROM Trail WHERE trail_id = :id")
@@ -88,6 +94,7 @@ public interface TrailDao {
    * Returns a trail using cabqId.
    *
    * @param cabqId id of trail.
+   *
    * @return trail.
    */
   @Query("SELECT * FROM Trail WHERE cabq_id = :cabqId")
@@ -97,6 +104,7 @@ public interface TrailDao {
    * Updates trail data.
    *
    * @param trails trails
+   *
    * @return updated trail data.
    */
   @Update
