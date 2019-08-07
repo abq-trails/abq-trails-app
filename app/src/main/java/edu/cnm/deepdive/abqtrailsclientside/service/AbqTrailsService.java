@@ -50,8 +50,6 @@ public interface AbqTrailsService {
 //  @GET("reviews")
 //  Observable<List<Review>> getReviewsById(@Query("trailId") long id);
 
-  @GET("trails/{id}")
-  Single<Trail> id();
 
   class InstanceHolder {
 
