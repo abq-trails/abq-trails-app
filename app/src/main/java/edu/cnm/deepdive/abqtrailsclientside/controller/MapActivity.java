@@ -20,7 +20,6 @@ import com.google.maps.android.data.geojson.GeoJsonLayer;
 import com.google.maps.android.data.geojson.GeoJsonLineString;
 import com.google.maps.android.data.geojson.GeoJsonLineStringStyle;
 import com.google.maps.android.data.geojson.GeoJsonMultiLineString;
-import com.google.maps.android.data.geojson.GeoJsonPointStyle;
 import edu.cnm.deepdive.abqtrailsclientside.R;
 import edu.cnm.deepdive.abqtrailsclientside.model.entity.Trail;
 import edu.cnm.deepdive.abqtrailsclientside.model.viewmodel.MapViewModel;
@@ -51,6 +50,12 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
   @Override
   public void onMapReady(GoogleMap googleMap) {
     map = googleMap;
+    googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+      @Override
+      public boolean onMarkerClick(Marker marker) {
+        return false;
+      }
+    });
     setupViewModel();
     // Default on opening when maps is clicked
     MarkerOptions marker = new MarkerOptions();
@@ -97,9 +102,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
           }
           GeoJsonFeature feature = new GeoJsonFeature(new GeoJsonLineString(coordList),
               trail.getName(), null, null);
-//          GeoJsonPointStyle pointStyle = new GeoJsonPointStyle();
-//          pointStyle.setTitle(trail.getName());
-//          feature.setPointStyle(pointStyle);
           feature.setLineStringStyle(lineStringStyle);
           layer.addFeature(feature);
           map.addMarker(new MarkerOptions().position(trailHead)
@@ -123,9 +125,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
           }
           GeoJsonFeature feature = new GeoJsonFeature(new GeoJsonMultiLineString(lineList),
               trail.getName(), null, null);
-//          GeoJsonPointStyle pointStyle = new GeoJsonPointStyle();
-//          pointStyle.setTitle(trail.getName());
-//          feature.setPointStyle(pointStyle);
           feature.setLineStringStyle(lineStringStyle);
           layer.addFeature(feature);
           map.addMarker(new MarkerOptions().position(trailHead)
